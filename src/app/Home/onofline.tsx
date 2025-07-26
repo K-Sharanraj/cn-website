@@ -50,9 +50,10 @@ function OnlineOffline() {
     return (
         <div className="container py-2">
             <div className="mx-auto flex-wrap xl:container">
-                <h1 className="text-center lg:w-full w-60 mx-auto xl:container lg:text-4xl text-xl font-bold my-4">
+                <h1 className="text-center font-bold my-4 text-xl lg:text-4xl w-60 lg:w-full mx-auto xl:container tracking-wider" style={{ fontFamily: 'Loubag' }}>
                     Learn. Practice. Earn. <br /> Have Fun!
                 </h1>
+
 
 
                 <section>
@@ -108,7 +109,7 @@ function OnlineOffline() {
                                         : '-translate-y-full opacity-0'
                                         }`}
                                 >
-                                    <h1 className="text-4xl font-bold text-black">
+                                    <h1 style={{ fontFamily: 'Loubag' }} className="text-4xl font-bold text-black tracking-wider">
                                         Hi Sagos
                                     </h1>
                                 </div>
@@ -118,7 +119,7 @@ function OnlineOffline() {
                                         : 'translate-y-full opacity-0'
                                         }`}
                                 >
-                                    <h1 className="text-4xl font-bold text-black">
+                                    <h1 style={{ fontFamily: 'Loubag' }} className="text-4xl font-bold text-black tracking-wider" >
                                         Hello Sagos
                                     </h1>
                                 </div>

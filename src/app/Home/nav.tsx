@@ -13,7 +13,9 @@ const navItems = [
     { name: 'Programs', link: '/Program' },
     // { name: 'Events', link: '/Events' },
     { name: 'Blogs', link: '/Blogs' },
-    { name: 'Contact', link: '/contact' },
+    {name:'Events',link:'/Events'},
+    { name: 'Contact', link: '/contact' }
+    
 ];
 
 export default function Navbar() {

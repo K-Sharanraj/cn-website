@@ -48,7 +48,7 @@ export default function Page() {
             <div className="container mx-auto relative hidden lg:flex items-center justify-center h-[40rem] ">
                 <div className='relative h-full w-full'>
                     <div className="relative left-0 z-20 w-96 bg-sky-50 p-5 h-80">
-                        <h2 className="text-5xl font-bold text-gray-900">
+                        <h2 style={{ fontFamily: 'Loubag' }} className="text-5xl font-bold text-gray-900 tracking-wider">
                             OUR
                             <br />
                             MILESTONES

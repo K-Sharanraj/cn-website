@@ -246,18 +246,7 @@
 import React from 'react';
 import ImageSlider from '@/app/Home/ImageSlider';
 
-const galleryImages = [
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742447942/SRM_etmb9m.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742447962/Mou_2_bozcfe.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742447983/Mou_4_yuw2uy.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448013/Mou_3_f9v75n.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448032/Mou_5_l7nhrm.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448052/Mou_6_w3rlc1.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448073/Mou_7_vm79ij.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448101/Mou_8_epcyae.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448100/Mou_9_igsnht.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448098/Mou_10_wno0g9.jpg'
-];  
+
 
 const outreachImages  = [
   'https://res.cloudinary.com/dn60aovto/image/upload/v1742448505/Outreach_1_lc97mp.jpg',
@@ -274,7 +263,49 @@ const outreachImages  = [
   'https://res.cloudinary.com/dn60aovto/image/upload/v1742448560/outreach12_u2u8ui.jpg',
   'https://res.cloudinary.com/dn60aovto/image/upload/v1742448563/outreach13_det5iq.jpg',
 ];
-  
+  const galleryImages = [ // MOU signing images
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/IMG_6137_vrppyd.jpg', // srm ist
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504296/IMG_0279_hkuqgw.jpg',// ssn
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504297/IMG_1701_qe20ur.jpg',//
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504302/IMG_0452_houk0x.jpg',//
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504298/IMG_5014_w9btdk.jpg',//
+  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448052/Mou_6_w3rlc1.jpg',
+  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448073/Mou_7_vm79ij.jpg',
+  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448101/Mou_8_epcyae.jpg',
+  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448100/Mou_9_igsnht.jpg',
+  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448098/Mou_10_wno0g9.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504298/IMG_8203_zt5ocg.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504298/WhatsApp_Image_2025-07-26_at_12.18.24_AM_2_pvc5vs.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/IMG_6635_csgkur.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/1d721912-70fb-42b5-b1b8-e27e9b134c5e_xsceam.jpg'
+];  
+// const imageNames = [
+//   "SRM Institute Of Science And Technology",
+//   "Sri Sivasubramaniya Nadar College of Engineering",
+//   "Vivekanandha College of Engineering for Women ",
+//   "VLB Janakiammal College Of Arts & Science ",
+//   "Gnanamani College of Technology",
+//   "PGP College Of Arts & Science",
+//   "SRM Institute Of Science And Technology ",
+//   "Meenakshi College Of Engineering",
+//   "Sri Muthukumaran Institute of Technology (SMIT) ",
+//   "Kings Engineering College ",
+// ];
+
+// const imageDescriptions = [
+//   " Ramapuram, Chennai",
+//   " Kalavakkam, Chennai",
+//   " Tiruchengode",
+//   "Kovaipudur",
+//   "Namakkal",
+//   " Namakkal",
+//   " Chennai",
+//   "Ramapuram, Chennai",
+//   " Chennai",
+//   "Chennai",
+//   "Chennai",
+// ];
+
 const imageNames = [
   "SRM Institute Of Science And Technology",
   "Sri Sivasubramaniya Nadar College of Engineering",
@@ -286,6 +317,11 @@ const imageNames = [
   "Meenakshi College Of Engineering",
   "Sri Muthukumaran Institute of Technology (SMIT) ",
   "Kings Engineering College ",
+  "Indra Ganesan College of Engineering", // from here
+  "SKP Engineering College",
+  "JKKN College of Engineering and Technology",
+  "Mahendra College of Engineering"
+
 ];
 
 const imageDescriptions = [
@@ -299,7 +335,11 @@ const imageDescriptions = [
   "Ramapuram, Chennai",
   " Chennai",
   "Chennai",
-  "Chennai",
+  "Tiruchirappalli, Tamil Nadu", // from here
+  "Kilnachipattu, Tamil Nadu",
+  "Komarapalayam, Tamil Nadu",
+  "Minnampalli, Salem, Tamilnadu"
+
 ];
 
 const outreachImageNames = [

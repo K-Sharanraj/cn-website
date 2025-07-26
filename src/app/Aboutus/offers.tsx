@@ -191,10 +191,10 @@ const Offers = () => {
 
                             <div className=''>
                                 <div className=''>
-                                    <h1 className="flex w-full  text-2xl lg:text-5xl">What we offer for
+                                    <h1  className="flex w-full  text-2xl lg:text-5xl ">What we offer for
 
                                     </h1>
-                                    <h1 className="flex w-full text-sky-500 font-bold text-2xl lg:text-5xl">{activeTab === 'colleges' ? 'colleges' : 'companies'}</h1>
+                                    <h1  className="flex w-full text-sky-500 font-bold text-2xl lg:text-5xl tracking-wider">{activeTab === 'colleges' ? 'colleges' : 'companies'}</h1>
                                     <h1 className='my-2 flex w-full text-start text-sm  lg:text-4xl'>Cybernaut Edu-Tech has conducted 100+ outreach programs, partnered with 25+ colleges for VAC and placement training, and supported 25+ institutions with product and tech solutions. We bridge the gap between academics and industry, empowering institutions for digital success.</h1>
 
                                     <ul className='w-full pb-5'>
@@ -252,7 +252,7 @@ const Offers = () => {
 
 
 
-                                        <h1 className="text-3xl font-semibold w-[30rem] flex justify-start">What We Offer for Colleges to Enhance Learning and Growth</h1>
+                                        <h1 style={{ fontFamily: 'Loubag' }} className="text-3xl font-semibold w-[30rem] flex justify-start tracking-wider">What We Offer for Colleges to Enhance Learning and Growth</h1>
 
                                     
 
@@ -300,7 +300,7 @@ const Offers = () => {
                                                 ))}
                                             </div>
                                         </div>
-                                        <h1 className="text-3xl font-semibold flex w-[31rem] justify-start">What We Offer for Companies to Enhance Growth and Success</h1>
+                                        <h1 style={{ fontFamily: 'Loubag' }} className="text-3xl font-semibold flex w-[31rem] justify-start tracking-wider">What We Offer for Companies to Enhance Growth and Success</h1>
                                      
                                         <p className="text-gray-800  text-justify w-[565px] min-h-20 ">
                                             Cybernaut Edu-Tech helps companies build strong teams, streamline hiring, and drive impactful initiatives, offering solutions to grow, adapt, and thrive in a dynamic corporate landscape.

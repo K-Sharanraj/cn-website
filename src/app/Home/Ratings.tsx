@@ -34,46 +34,47 @@ const Ratings: React.FC<RatingsProps> = () => {
         }
     ];
 
-    return (
+        return (
         <>
-            <div className="md:flex hidden w-full items-center place-content-center relative -top-10 container mx-auto justify-center">
-                <div className="flex place-items-center place-content-center justify-center h-[120px] w-[600px] gap-10 bg-white md:px-10 md:py-5 md:rounded-full md:shadow-[0px_26px_40px_0px_rgba(43,45,54,0.05)]">
-                    {items.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center gap-2 text-center px-3">
-                            <div className="flex items-center gap-2">
-                                <p className="lg:text-3xl text-md font-bold">{item.Ratings}</p>
-                                {item.starIcon}
-                            </div>
-                            <p className="lg:text-md md:text-sm text-[0.7rem] font-normal text-gray-700">{item.Reviews}</p>
-                            {index < items.length - 1 && (
-                                <div className="relative align-middle place-items-center bottom-14">
-                                    <div className="absolute w-0.5 h-14 lg:left-20 left-14 bg-blue-500"></div>
-                                </div>
-                            )}
-                        </div>
-                    ))}
+            {/* Desktop View */}
+            <div className="hidden md:grid grid-cols-3 gap-6 px-10 py-8 w-full">
+            {items.map((item, index) => (
+                <div
+                key={index}
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col items-center"
+                >
+                <div className="flex items-center gap-2 text-4xl font-bold text-blue-600">
+                    <span>{item.Ratings}</span>
+                    {item.starIcon}
                 </div>
+                <p className="mt-2 text-gray-600 text-sm">{item.Reviews}</p>
+                </div>
+            ))}
             </div>
 
-            {/* Mobile view */}
-            <div className=" md:hidden w-full py-10 space-y-2">
-                <h1 className="lg:text-4xl text-xl font-bold py-5 lg:py-0 text-center">MILESTONES</h1>
-                <div className="w-80 mx-auto h-20 rounded-full flex place-items-center place-content-center justify-center bg-white shadow-[0px_26px_40px_0px_rgba(43,45,54,0.05)]">
-                    <div className="flex justify-center items-center gap-2 text-center px-2">
-                        {items.map((item, index) => (
-                            <div key={index} className={`flex flex-col justify-center items-center w-20 h-16 ${index < items.length - 1 ? 'border-r-2 border-blue-500' : ''}`}>
-                                <h1 className='flex items-center gap-1 justify-center'>
-                                    {item.Ratings}
-                                    {item.starIcon}
-                                </h1>
-                                <p className={`text-[${index === 0 ? '0.7rem' : '0.7rem'}] font-normal text-gray-700`}>{item.Reviews}</p>
-                            </div>
-                        ))}
+            {/* Mobile View */}
+            <div className="md:hidden w-full px-4 py-10">
+            <h1 className="text-xl font-semibold text-center mb-6 text-blue-800">Our Achievements</h1>
+            <div className="space-y-4">
+                {items.map((item, index) => (
+                <div
+                    key={index}
+                    className="bg-white shadow-md rounded-xl p-4 flex justify-between items-center"
+                >
+                    <div className="flex flex-col items-start">
+                    <span className="text-2xl font-bold text-blue-600 flex items-center gap-1">
+                        {item.Ratings} {item.starIcon}
+                    </span>
+                    <p className="text-gray-600 text-sm">{item.Reviews}</p>
                     </div>
                 </div>
+                ))}
+            </div>
             </div>
         </>
-    );
+        );
+
+
 };
 
 export default Ratings;

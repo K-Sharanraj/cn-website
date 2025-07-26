@@ -102,7 +102,7 @@ function About() {
                         </div>
                     </div>
                     {/* Main Heading */}
-                    <h1 className="text-xl lg:text-4xl max-w-xl font-bold text-gray-800">
+                    <h1 style={{ fontFamily: 'Loubag' }} className="text-xl lg:text-4xl max-w-xl font-bold text-gray-800 tracking-wider">
                         Building a Community for Lifelong Learning and Growth
                     </h1>
                     {/* Description */}

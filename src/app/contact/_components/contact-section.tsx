@@ -58,7 +58,7 @@ export default function ContactSection() {
     <section className="container mx-auto my-16 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       <div className="mx-auto max-w-2xl lg:max-w-6xl">
         <div className="text-center">
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-neutral-200 dark:text-black md:text-4xl md:leading-tight">
+          <h1 style={{ fontFamily: 'Loubag' }} className="text-balance text-2xl font-bold tracking-wider text-neutral-200 dark:text-black md:text-4xl md:leading-tight">
             Contact Us
           </h1>
           <p className="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">

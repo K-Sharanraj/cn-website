@@ -103,7 +103,7 @@ export default function Journey() {
       <section className="lg:block hidden px-4 py-10 bg-sky-50 md:px-6 lg:px-8 mx-auto xl:container">
         <div className="hidden lg:block mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">
+            <h1 style={{ fontFamily: 'Loubag' }} className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4 tracking-wider">
               Our Journey
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -203,7 +203,7 @@ export default function Journey() {
       <section className='lg:hidden block bg-red-500 min-h-screen w-full'>
         <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-center text-gray-900 mb-4">
+            <h1 style={{ fontFamily: 'Loubag' }} className="text-4xl font-bold text-center text-gray-900 mb-4 tracking-wider">
               Our Journey
             </h1>
 

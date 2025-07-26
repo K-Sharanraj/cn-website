@@ -41,6 +41,7 @@ const MOU = () => {
     { icon: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742389924/Collage_Logo_06_q3d4qf.png' },
     { icon: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742389924/Collage_Logo_02_ma5lls.png' },
     { icon: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742389924/Collage_Logo_03_pghsg5.png' },
+
   ];
 
   const Mobiledata = [
@@ -59,7 +60,7 @@ const MOU = () => {
     <>
       <div className="container hidden min-h-20 lg:block overflow-hidden mx-auto  p-10 px-6 text-center relative space-y-5">
         {/* Header Section */}
-        <h1 className="text-[#141515] font-bold mb-4 lg:text-4xl text-xl">OUR MOU PARTNERS</h1>
+        <h1 className="text-[#141515] font-heading font-bold mb-4 lg:text-4xl text-xl" style={{ fontFamily: 'Loubag' }}>OUR MOU PARTNERS</h1>
         <p className="mb-8 lg:w-8/12 w-12/12 mx-auto text-center">
           At Cybernaut Edu-Tech, we offer premier educational solutions, including products, services, and training programs. Partner with us to enhance your institution&apos;s learning experience.
         </p>
@@ -82,7 +83,7 @@ const MOU = () => {
       {/* Mobile view */}
       <div className="container  lg:hidden block mx-auto xl:container min-h-80 text-center overflow-hidden relative lg:my-20">
         {/* Header Section */}
-        <h1 className="lg:text-4xl text-xl font-bold py-5 lg:py-0">OUR MOU PARTNERS</h1>
+        <h1 className="lg:text-4xl text-xl font-bold py-5 lg:py-0" style={{ fontFamily: 'Loubag' }}>OUR MOU PARTNERS</h1>
         <p className="w-11/12 mx-auto text-sm  text-center">
           At Cybernaut Edu-Tech, we offer premier educational solutions, including products, services, and training programs. Partner with us to enhance your institution&apos;s learning experience.
         </p>

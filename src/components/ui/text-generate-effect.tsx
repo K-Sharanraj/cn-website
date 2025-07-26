@@ -142,7 +142,8 @@ export const TextGenerateEffect = ({
               initial={{ opacity: 0, filter: filter ? "blur(10px)" : "none" }}
               animate={isInView ? { opacity: 1, filter: filter ? "blur(0px)" : "none" } : {}}
               transition={{ duration, delay: idx * 0.2 }}
-              className={cn( className)}
+              className={cn( className,"tracking-wider") }
+              style={{ fontFamily: 'Loubag' }}
             >
               {word}{" "}
             </motion.span>

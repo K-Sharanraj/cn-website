@@ -86,7 +86,7 @@ function Contact() {
                         <div className='relative w-full  px-6 py-2  lg:w-1/2 p-6 md:p-8 lg:p-12 backdrop-blur-sm rounded-3xl transition-shadow duration-300'>
                             <div className='max-w-md mx-auto space-y-4'>
                                 <div className="space-y-2 animate-fade-in">
-                                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">Subscribe to Our Newsletter</h3>
+                                    <h3 style={{ fontFamily: 'Loubag' }} className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 tracking-wider">Subscribe to Our Newsletter</h3>
                                     <p className="text-gray-600 md:text-lg">Stay updated with our latest courses and opportunities</p>
                                 </div>
 

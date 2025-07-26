@@ -47,7 +47,7 @@ function Vision() {
       {/* Left side content */}
       <div className="w-full md:w-1/2  mx-auto flex flex-col justify-center pr-0 md:pr-8  lg:space-y-5">
 
-        <h1 style={{ lineHeight: "1.2" }} className="text-3xl md:te xt-4xl lg:text-5xl font-bold text-gray-900">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-wider" style={{ lineHeight: "1.4", fontFamily: "Loubag" }}>
           Cybernaut Developers Student Community
         </h1>
         

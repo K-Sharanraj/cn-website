@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand } from 'next/font/google';
 import "./globals.css";
 import SmoothScrolling from "@/globals/smooth-scroll";
 
@@ -11,6 +12,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  variable: '--font-quicksand', 
 });
 
 export const metadata: Metadata = {
@@ -29,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en"className={quicksand.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased __variable_4d318d __variable_ea5f4b`}
         cz-shortcut-listen="true"

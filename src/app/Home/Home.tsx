@@ -382,7 +382,7 @@ export default function Home() {
                     <main className="mx-auto h-auto w-12/12 rounded-xl sticky top-24 place-content-center overflow-hidden shadow-[0px_-80px_50px_5px_#F8F8F8]">                        <div className="flex items-center justify-center w-full">
                         <div className="min-h-auto w-1/2 space-y-4">
                             <h1 className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl w-[35rem] md:w-[30rem] lg:w-[35rem] xl:w-[40rem] text-start font-semibold md:font-medium lg:font-semibold xl:font-bold transition-all duration-300 ease-in-out">
-                                <span className="text-[clamp(1.5rem,4vw,2.5rem)]">
+                                <span className="text-[clamp(1.5rem,4vw,2.5rem)] tracking-wider" style={{ fontFamily: 'Loubag' }}>
                                     {getContent(scrollTranslate)}
                                 </span>
                             </h1>

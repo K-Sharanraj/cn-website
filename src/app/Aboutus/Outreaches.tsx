@@ -84,7 +84,7 @@ const Outreaches = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Content section */}
             <div className="lg:col-span-4 flex flex-col w-96 mx-auto space-y-4 h-[26rem] justify-center z-20">
-              <h2 className="text-4xl font-bold text-white tracking-tight">Our Outreaches</h2>
+              <h2 style={{ fontFamily: 'Loubag' }} className="text-4xl font-bold text-white tracking-wider">Our Outreaches</h2>
               <p className="text-lg text-gray-200  leading-relaxed">Power Up with Our Outreach Workshops</p>
               <div className="h-1 w-24 bg-white"></div>
               <p className="text-gray-200 text-sm leading-relaxed">
