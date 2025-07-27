@@ -269,11 +269,11 @@ const outreachImages  = [
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504297/IMG_1701_qe20ur.jpg',//
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504302/IMG_0452_houk0x.jpg',//
   'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504298/IMG_5014_w9btdk.jpg',//
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448052/Mou_6_w3rlc1.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448073/Mou_7_vm79ij.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448101/Mou_8_epcyae.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448100/Mou_9_igsnht.jpg',
-  'https://res.cloudinary.com/dn60aovto/image/upload/v1742448098/Mou_10_wno0g9.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504299/IMG_8981_ioagir.jpg',//
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504296/IMG_6147_jgwbgj.jpg',//
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504298/IMG_7118_c5cdga.jpeg',//
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504295/IMG_0181_ep1uck.jpeg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504299/IMG_9998_zf9szz.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504298/IMG_8203_zt5ocg.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504298/WhatsApp_Image_2025-07-26_at_12.18.24_AM_2_pvc5vs.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/IMG_6635_csgkur.jpg',
@@ -307,7 +307,7 @@ const outreachImages  = [
 // ];
 
 const imageNames = [
-  "SRM Institute Of Science And Technology",
+  "SRM University",
   "Sri Sivasubramaniya Nadar College of Engineering",
   "Vivekanandha College of Engineering for Women ",
   "VLB Janakiammal College Of Arts & Science ",
@@ -325,20 +325,20 @@ const imageNames = [
 ];
 
 const imageDescriptions = [
-  " Ramapuram, Chennai",
-  " Kalavakkam, Chennai",
-  " Tiruchengode",
-  "Kovaipudur",
-  "Namakkal",
-  " Namakkal",
-  " Chennai",
   "Ramapuram, Chennai",
-  " Chennai",
-  "Chennai",
+  "Kalavakkam, Chennai",
+  "Elaiyampalayam, Tamil Nadu",
+  "Kovaipudur, Tamil Nadu",
+  "Namakkal, Tamil Nadu",
+  "Paramathi, Tamil Nadu",
+  "Ramapuram, Chennai",
+  "Chennai, Tamil Nadu",
+  "Chennai, Tamil Nadu",
+  "Sriperumbudur, Irungattukottai, Tamil Nadu",
   "Tiruchirappalli, Tamil Nadu", // from here
-  "Kilnachipattu, Tamil Nadu",
+  "Tiruvannamalai, Tamil Nadu",
   "Komarapalayam, Tamil Nadu",
-  "Minnampalli, Salem, Tamilnadu"
+  "Minnampalli, Post, Salem, Tamil Nadu"
 
 ];
 
