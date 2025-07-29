@@ -29,47 +29,47 @@ const OutreachCard = ({ imageUrl, className }: { imageUrl: string | StaticImageD
 
 const Outreaches = () => {
   // Temporary placeholder images from Unsplash
-  const placeholderImages = [
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455630/25_zz0bjf.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455620/24_sw2aiy.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455618/26_qerppp.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455434/27_bqtmg7.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455432/23_vmqr9e.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455430/22_t6naya.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455428/21_eikhrs.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455425/20_w8e4wo.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455423/19_yaqzbo.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455421/18_mhxhhj.jpg",
+  const placeholderImages = [// 10 images
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753759037/IMG_8394_kkpoki.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758993/IMG_2056_xawfmd.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758994/IMG_7885_idhzrk.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758994/IMG_2583_ypbta9.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758992/IMG_8065_yhfrpf.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758994/IMG_7104_pwja2i.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753758992/WhatsApp_Image_2025-07-26_at_12.18.23_AM_a9emrb.jpg",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758992/IMG_3525_ahgwe3.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758993/IMG_3493_r3a8be.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758993/IMG_3493_r3a8be.png",
 
 
 
 
   ];
-  const placeholderImagesrow1 = [
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455419/17_czsizo.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455417/16_ujderi.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455415/15_ylloii.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455413/14_dc5wrt.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455410/13_pr8yqn.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455409/12_wysddy.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455407/11_yi3ozj.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455404/10_jkktdm.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455402/9_y17tkp.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455400/8_xjdepz.jpg",
+  const placeholderImagesrow1 = [ // 10 images
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758994/IMG_4567_s6i16y.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753758992/WhatsApp_Image_2025-07-26_at_12.30.12_AM_fgix6u.jpg",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753758991/IMG_6403_1_y1zcuu.jpg",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758991/IMG_2577_t0ssfk.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758991/IMG_2796_ii0d9i.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758989/IMG_2279_pjssrp.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758990/IMG_5942_mylzyn.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758989/IMG_5868_l5s6fm.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758991/IMG_6854_o0rkis.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758989/IMG_4455_jqmdvm.png",
 
   ]
-  const placeholderImagesrow2 = [
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455397/7_l9blpo.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455397/6_a7dwqm.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742455395/5_nu5gyk.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454982/4_ndfs4c.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454980/2_qigetm.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454934/1_jfvjr8.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454933/32_otixbk.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454931/31_yqp6io.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454929/29_vxsi9s.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454929/30_xfylqd.jpg",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742454928/28_aeroxc.jpg",
+  const placeholderImagesrow2 = [// 11 images
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758991/IMG_3367_nkatlv.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758989/IMG_2316_scdei7.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758989/IMG_5656_azq1f2.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758988/IMG_5297_z5iucs.jpg",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758989/IMG_2387_mhlm3g.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758987/IMG_4170_o7s478.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758987/IMG_3612_xau9ti.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758987/IMG_2149_wybozu.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758987/IMG_2037_nk1k7t.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758987/DSC05921_etypcu.jpg",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753758987/IMG_1044_plwnor.png",
 
   ]
 

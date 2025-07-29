@@ -15,12 +15,12 @@ const timelineContent: {
   '2021': {
     cards: [
       {
-        image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742451517/club_var5za.png",
+        image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760551/99995e63-ed0a-412b-afb3-2c5a57166b94.png",
         title: 'Beginning as a Club',
         description: 'Cybernaut started as a college club by a visionary and two tech enthusiasts, mentoring SRM students, growing into a thriving community.',
       },
       {
-        image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742451512/techcommunity_gahdpd.png",
+        image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760571/2cf794dc-a57d-4d14-99ea-7ba3ce92def7.png",
         title: 'Developed into a Tech Community',
         description: 'Seeing the gap between education and workforce needs, we grew into a developer community, enriching students learning experiences.',
       },

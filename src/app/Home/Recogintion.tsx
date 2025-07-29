@@ -13,15 +13,15 @@ const Recognition: React.FC = () => {
             alt: 'Ministry of Corporate Affairs logo'
         },
         {
-            logo: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742447819/DPIIT_tpe47d.png',
+            logo: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715158/54a85f39-308d-4485-a9bc-18f0c8eb024a.png',
             alt: 'Department for Promotion of Industry and Internal Trade logo'
         },
         {
-            logo: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742447840/stqrtupindia_hagbxo.png',
+            logo: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715305/9bcbb7d7-220e-482e-b568-cb6ad8f4255a.png',
             alt: 'Startup India logo'
         },
         {
-            logo: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742447858/ISO_p9sebu.png',
+            logo: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715334/b14d6819-455e-4160-bdb4-8fa3d5e511e9.png',
             alt: 'ISO 9001:2015 Certified logo'
         }
     ];

@@ -231,7 +231,7 @@ const Offers = () => {
                             </div>
 
                             <div className='flex gap-5  justify-center relative -top-24 md:-top-[8rem] lg:top-0 w-full '>
-                                <Image width={500} height={500} src="https://res.cloudinary.com/dn60aovto/image/upload/v1742448505/Outreach_1_lc97mp.jpg" alt='' className='lg:w-[100rem] w-1/2 object-contain' />
+                                <Image width={500} height={500} src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504501/IMG_6403_1_vimqzs.jpg" alt='' className='lg:w-[100rem] w-1/2 object-contain' />
                                 <Image width={500} height={500} src={What} alt='' className='lg:hidden w-1/2 object-contain' />
                             </div>
 
@@ -284,7 +284,7 @@ const Offers = () => {
                                 </div>
                                 <div>
                                     <div className='w-[30rem] h-[35rem] items-center justify-center flex relative left-32 top-8 '>
-                                        <Image width={500} height={500} src="https://res.cloudinary.com/dn60aovto/image/upload/v1742448505/Outreach_1_lc97mp.jpg" alt='' className='w-full h-full rounded-lg object-cover' />
+                                        <Image width={500} height={500} src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504501/IMG_6403_1_vimqzs.jpg" alt='' className='w-full h-full rounded-lg object-cover' />
                                     </div>
                                 </div>
                             </TabsContent>
@@ -327,7 +327,7 @@ const Offers = () => {
                                 </div>
                                 <div className='w-[30rem]  items-center justify-center flex relative left-32'>
                                     <div>
-                                        <Image width={500} height={500} src="https://res.cloudinary.com/dn60aovto/image/upload/v1742450774/forCompanies_kgsikx.jpg" alt='' className='w-full h-full rounded-lg object-cover' />
+                                        <Image width={500} height={500} src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717500/0ecc75ea-28cd-4c67-aacd-376dfc92d8fc.png" alt='' className='w-full h-full rounded-lg object-cover' />
                                     </div>
                                 </div>
                             </TabsContent>

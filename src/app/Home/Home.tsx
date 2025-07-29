@@ -78,27 +78,43 @@ function HeroIllustration() {
         if (scrollTranslate <= 1000) return 'border-orange-500 bg-orange-100';
         return 'border-green-500 bg-green-100';
     };
-
+    // const sliderImages = [  // old images 
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742388576/teaching2_cbsc8b.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Herosection1_ixcwp8.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Herosection2_pg9smu.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Herosection4_fpza5i.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386632/herosection5_bycxql.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386632/Herosection6_zicjax.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Herosection4_fpza5i.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Mou_2_oxpf57.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Mou_4_jemwd3.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386635/Mou_11_irulgg.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Community4_uropla.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386629/Communit3_pev1so.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/community2_nu8zpz.jpg',
+    //     'https://res.cloudinary.com/dn60aovto/image/upload/v1742386634/Community1_sbfhwy.jpg'
+    // ];
     const sliderImages = [
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742388576/teaching2_cbsc8b.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Herosection1_ixcwp8.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Herosection2_pg9smu.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Herosection4_fpza5i.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386632/herosection5_bycxql.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386632/Herosection6_zicjax.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Herosection4_fpza5i.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Mou_2_oxpf57.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Mou_4_jemwd3.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386635/Mou_11_irulgg.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Community4_uropla.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386629/Communit3_pev1so.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/community2_nu8zpz.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386634/Community1_sbfhwy.jpg'
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716405/c2a66f6b-1757-4270-aa37-2e87a2460b6d.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716430/2d27f8b0-0f8c-46c6-ba81-0eef3a5d8144.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716373/2e31533e-2f20-4db9-b937-1fab48bd5722.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716357/9acf9192-d373-4c83-9a3b-94f7d459fc10.png', 
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716388/b7df062c-5516-4433-916b-16454077b74e.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504481/IMG_8114_h8xeri.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504483/IMG_8448_brmbpu.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504295/IMG_6137_vrppyd.jpg',//
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504297/IMG_1701_qe20ur.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504296/IMG_0279_hkuqgw.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716015/f14ceae9-18f7-4e6e-8dc9-74d11a12ac97.png', //
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715988/d3a6a190-c4ad-49fd-bc1c-2cec97198808.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715927/7e381005-e555-46cd-9604-e2f9b6331f91.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504500/IMG_4455_vpcx0u.png'
     ];
+    
 
     const getImageSrc = () => {
-        if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[3], sliderImages[5], sliderImages[6], sliderImages[2], sliderImages[4], sliderImages[1]];
-        if (scrollTranslate <= 1000) return [sliderImages[8], sliderImages[7], sliderImages[9]];
+        if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[1], sliderImages[2], sliderImages[3], sliderImages[4], sliderImages[5], sliderImages[6]];
+        if (scrollTranslate <= 1000) return [sliderImages[7], sliderImages[8], sliderImages[9]];
         return [sliderImages[10], sliderImages[11], sliderImages[12], sliderImages[13]];
     };
 
@@ -308,26 +324,27 @@ export default function Home() {
     }, []);
     // slider
     const [, setCurrentSlide] = useState(0)
-    const sliderImages = [
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742388576/teaching2_cbsc8b.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Herosection1_ixcwp8.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Herosection2_pg9smu.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Herosection4_fpza5i.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386632/herosection5_bycxql.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386632/Herosection6_zicjax.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Herosection4_fpza5i.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Mou_2_oxpf57.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386631/Mou_4_jemwd3.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386635/Mou_11_irulgg.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/Community4_uropla.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386629/Communit3_pev1so.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386630/community2_nu8zpz.jpg',
-        'https://res.cloudinary.com/dn60aovto/image/upload/v1742386634/Community1_sbfhwy.jpg'
+     const sliderImages = [
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716405/c2a66f6b-1757-4270-aa37-2e87a2460b6d.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716430/2d27f8b0-0f8c-46c6-ba81-0eef3a5d8144.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716373/2e31533e-2f20-4db9-b937-1fab48bd5722.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716357/9acf9192-d373-4c83-9a3b-94f7d459fc10.png', 
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716388/b7df062c-5516-4433-916b-16454077b74e.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504481/IMG_8114_h8xeri.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504483/IMG_8448_brmbpu.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504295/IMG_6137_vrppyd.jpg',//
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504297/IMG_1701_qe20ur.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504296/IMG_0279_hkuqgw.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716015/f14ceae9-18f7-4e6e-8dc9-74d11a12ac97.png', //
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715988/d3a6a190-c4ad-49fd-bc1c-2cec97198808.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715927/7e381005-e555-46cd-9604-e2f9b6331f91.png',
+        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504500/IMG_4455_vpcx0u.png'
     ];
+    
 
     const getImageSrc = () => {
-        if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[3], sliderImages[5], sliderImages[6], sliderImages[2], sliderImages[4], sliderImages[1]];
-        if (scrollTranslate <= 1000) return [sliderImages[8], sliderImages[7], sliderImages[9]];
+        if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[1], sliderImages[2], sliderImages[3], sliderImages[4], sliderImages[5], sliderImages[6]];
+        if (scrollTranslate <= 1000) return [sliderImages[7], sliderImages[8], sliderImages[9]];
         return [sliderImages[10], sliderImages[11], sliderImages[12], sliderImages[13]];
     };
 

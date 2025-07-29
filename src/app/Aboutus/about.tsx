@@ -58,7 +58,7 @@ function About() {
                             <Image
                                 width={500}
                                 height={500}
-                                src="https://res.cloudinary.com/dn60aovto/image/upload/v1742450501/OfficeView_kecvxi.jpg"
+                                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716867/3f92a41b-5030-4950-be9a-8dbf26da6525.png"
                                 alt="Educational workshop"
                                 className="w-full  object-cover"
                             />

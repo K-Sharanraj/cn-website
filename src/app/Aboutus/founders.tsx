@@ -14,25 +14,25 @@ const people: { id: number; name: string; designation: string; image: string | S
     id: 1,
     name: "Anitha",
     designation: "Grapic Designer",
-    image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684466/iamge_5_p6bhi7.jpg'
+    image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717566/0b38d4ce-d19e-433d-af59-05e52045b588.png'
   },
   {
     id: 2,
     name: "Rajkumar",
     designation: "Data Analyst",
-    image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684466/image_3_ak86ua.jpg'
+    image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717597/7a1f412f-cf20-43e2-b3e1-1f417a4c5ef8.png'
   },
   {
     id: 3,
     name: "Kavitha",
     designation: "Web Developer",
-    image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684468/image_4_klk704.jpg'
+    image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717617/a2595015-a6f5-439e-8c47-ca20474c399f.png'
   },
   {
     id: 4,
     name: "MohanKumar ",
     designation: "AI Expert",
-    image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684469/image_1_ozdukk.jpg'
+    image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717640/f22c68a7-a4c1-4903-970c-6bf72d5f1498.png'
   }
 
 ];
@@ -89,7 +89,7 @@ const Founders = () => {
                       <Image
                         width={300}
                         height={354}
-                        src='https://res.cloudinary.com/dn60aovto/image/upload/v1742450995/JS_hkszd9.png'
+                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717698/9a62482b-6138-4bee-a938-0a50eae0e7fc.png'
                         alt="Profile"
                         className="h-full w-full object-cover"
                       />
@@ -150,7 +150,7 @@ const Founders = () => {
                         <Image
                           width={300}
                           height={354}
-                          src="https://res.cloudinary.com/dn60aovto/image/upload/v1742451262/Manish_q6qmq6.png"
+                          src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717974/5a33f30a-75c3-440b-9e6e-8112c76886f4.png"
                           alt="Profile"
                           className="h-full w-full object-cover"
                         />
@@ -277,7 +277,7 @@ const Founders = () => {
               <Image
                 width={350}
                 height={354}
-                src="https://res.cloudinary.com/dn60aovto/image/upload/v1742450995/JS_hkszd9.png"
+                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717698/9a62482b-6138-4bee-a938-0a50eae0e7fc.png"
                 alt="Profile"
                 className="lg:rounded-[2rem] place-self-start  lg:w-[30rem] w-[35rem] relative z-10 object-cover"
               />
@@ -294,14 +294,14 @@ const Founders = () => {
               <Image
                 width={300}
                 height={354}
-                src="https://res.cloudinary.com/dn60aovto/image/upload/v1742451262/Manish_q6qmq6.png"
+                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717974/5a33f30a-75c3-440b-9e6e-8112c76886f4.png"
                 alt="Profile"
                 className="rounded-[2rem] w-[30rem] h-[30rem] relative z-10 object-cover hidden lg:block"
               />
               <Image
                 width={300}
                 height={354}
-                src="https://res.cloudinary.com/dn60aovto/image/upload/v1742814922/Manish_mydood.png"
+                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717974/5a33f30a-75c3-440b-9e6e-8112c76886f4.png"
                 alt="Profile"
                 className="rounded-[2rem] w-[30rem] h-96 relative z-10 object-cover lg:hidden"
               />
@@ -433,7 +433,7 @@ const Founders = () => {
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742450995/JS_hkszd9.png"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717698/9a62482b-6138-4bee-a938-0a50eae0e7fc.png"
                   alt="Jayasurya Gnanavel"
                   className="rounded-[2rem] relative z-10 object-cover w-full max-w-xl mx-auto"
                 />
@@ -449,14 +449,14 @@ const Founders = () => {
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742451262/Manish_q6qmq6.png"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717974/5a33f30a-75c3-440b-9e6e-8112c76886f4.png"
                   alt="Manish Kumar"
                   className="rounded-[2rem] relative z-10 object-cover w-full max-w-xl mx-auto hidden lg:block"
                 />
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742814922/Manish_mydood.png"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717974/5a33f30a-75c3-440b-9e6e-8112c76886f4.png"
                   alt="Manish Kumar"
                   className="rounded-[2rem] relative z-10 object-cover w-full max-w-xl mx-auto lg:hidden"
                 />
