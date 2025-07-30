@@ -19,22 +19,22 @@ function Vision() {
     switch (openSection) {
       case 'vision':
         return {
-          url: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742449979/CDSE2_mokoow.jpg',
+          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753867853/CDSE2_mokoow_lcwq7h.webp',
           title: "OUR VISION"
         };
       case 'mission':
         return {
-          url: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742449991/Mission_f4gns0.jpg',
+          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753867815/Mission_f4gns0_cwji4w.webp',
           title: "OUR MISSION"
         };
       case 'activities':
         return {
-          url: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742450002/Activities_tjmsge.jpg',
+          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753867843/Activities_tjmsge_e2n7ie.webp',
           title: "CORE ACTIVITIES"
         };
       default:
         return {
-          url: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742449979/CDSE2_mokoow.jpg',
+          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753867853/CDSE2_mokoow_lcwq7h.webp',
           title: "OUR VISION"
         };
     }
