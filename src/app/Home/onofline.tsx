@@ -16,30 +16,30 @@ function OnlineOffline() {
     const onlineCards = [
         {
             title: 'Tech Trio',
-            bgImage: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742448913/Tech_trio_avv3ny.png'
+            bgImage: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760318/dc8b4334-3d0e-4aba-b3b9-d62167505ff3.png'
         },
         {
             title: 'UX Design',
-            bgImage: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742448913/ux_xfzu2m.png'
+            bgImage: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760341/98647341-97d9-47a2-8b3f-ed544fa5ba91.png'
         },
         {
             title: 'Full Stack',
-            bgImage: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742448916/Full_Stack_pwfclb.png'
+            bgImage: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png'
         },
         {
             title: 'Data Analytics',
-            bgImage: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742448915/DataAnalytics_vnount.png'
+            bgImage: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760383/fea80710-ebb8-4ee2-a6a6-9a10fd096bcb.png'
         }
     ];
 
     const offlineCards = [
         {
             title: 'Metazen',
-            bgImage: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742448914/Metazen_bvsqdi.png'
+            bgImage: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760409/978dd857-95f0-4d01-bca2-0ace606959c0.png'
         },
         {
             title: 'Beyondzen',
-            bgImage: 'https://res.cloudinary.com/dn60aovto/image/upload/v1742448914/Beyondzen_l4n76p.png'
+            bgImage: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753971196/Beyondzen_l4n76p_whkk9i.webp'
         },
     ];
 

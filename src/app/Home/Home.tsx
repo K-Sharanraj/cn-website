@@ -287,25 +287,25 @@ export default function Home() {
             id: 1,
             name: "Anitha",
             designation: "Grapic Designer",
-            image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684466/iamge_5_p6bhi7.jpg'
+            image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717566/0b38d4ce-d19e-433d-af59-05e52045b588.png'
         },
         {
             id: 2,
             name: "Rajkumar",
             designation: "Data Analyst",
-            image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684466/image_3_ak86ua.jpg'
+            image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717597/7a1f412f-cf20-43e2-b3e1-1f417a4c5ef8.png'
         },
         {
             id: 3,
             name: "Kavitha",
             designation: "Web Developer",
-            image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684468/image_4_klk704.jpg'
+            image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717617/a2595015-a6f5-439e-8c47-ca20474c399f.png'
         },
         {
             id: 4,
             name: "MohanKumar",
             designation: "Web Developer",
-            image: 'https://res.cloudinary.com/dn60aovto/image/upload/v1745684469/image_1_ozdukk.jpg'
+            image: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717640/f22c68a7-a4c1-4903-970c-6bf72d5f1498.png'
         }
 
     ];

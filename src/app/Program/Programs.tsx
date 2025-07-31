@@ -8,14 +8,14 @@ import CourseCards from './Components/Coursecards';
 
 
 const sliderImages = [
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742456520/Tech_Trio_pyxdnh.png",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742456521/ux_Program_wjhkki.png",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1742456520/Beyond_Program_nc5pcb.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753971430/a730f563-a5c6-4b59-b849-d4bcc3211e09.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753971446/2052f652-9c7d-403a-9d45-22c48682e8f1.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753971466/c4b4818a-58fd-4448-9230-228b938b92e0.png",
 ]
 const mobileSliderImages = [
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1743159267/Ad_Banner1_vkobud.png",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1743159267/Ad_Banner3_ulu36c.png",
-    "https://res.cloudinary.com/dn60aovto/image/upload/v1743159267/Ad_Banner2_mionuo.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753972741/Ad_Banner_tsj1ry.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753972744/Ad_Banner2_iwueyg.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760409/978dd857-95f0-4d01-bca2-0ace606959c0.png",
 ]
 
 const Programs = () => {
