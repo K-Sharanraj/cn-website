@@ -31,7 +31,7 @@ const WhatWeDo = () => {
             <Image
               width={500}
               height={500}
-              src='https://res.cloudinary.com/dn60aovto/image/upload/v1742391211/What_tu8dmd.jpg'
+              src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1754141255/99b84a29-b19d-4f4a-ac79-782497aa2c2d.png'
               alt="Students in a classroom"
               className="w-full lg:h-[35rem]  rounded-2xl object-cover shadow-lg transition-transform duration-200"
             />
