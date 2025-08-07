@@ -65,7 +65,7 @@ const Founders = () => {
   return (
     <>
       <div className='hidden'>
-        <h1 className='lg:text-3xl text-2xl flex items-center  font-bold text-center my-2 '>MEET OUR <span className='text-blue-500'>FOUNDERS</span></h1>
+        <h1 className='lg:text-2xl text-lg flex items-center font-professional font-bold text-center my-2 '>MEET OUR <span className='text-blue-500'>FOUNDERS</span></h1>
 
         <p className='lg:text-lg mx-auto my-8 lg:px-[130px] lg:w-11/12 w-10/12 lg:text-center text-start xl:container '>Unlock your potential with our advanced educational tools and top-tier training. Join 10,000+ successful learners and enhance your skills with Tech Trio, Full Stack, UI & UX, and more. Find the perfect program for your career goals today.</p>
         <div>
@@ -74,7 +74,7 @@ const Founders = () => {
               <div className="flex flex-col gap-8 lg:flex-row lg:items-start  lg:justify-between">
                 <div className="space-y-6 lg:max-w-[60%] hidden lg:block p-5">
                   <h2 className="text-xl text-gray-600 font-medium">Founder & CEO</h2>
-                  <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+                  <h1 className="text-3xl font-professional font-bold tracking-tight lg:text-4xl">
                     Jayasurya Gnanavel
                   </h1>
                   <p className="text-lg text-justify  leading-relaxed text-gray-800">
@@ -105,7 +105,7 @@ const Founders = () => {
                   </div>
                   <div className="flex">
                     <p className="text-lg w-[15rem] text-gray-800">
-                      Students Trained <span className="text-2xl font-bold">30K+</span>
+                      Students Trained <span className="text-lg font-professional font-semibold">30K+</span>
                     </p>
                   </div>
                 </div>

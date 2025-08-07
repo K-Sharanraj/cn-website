@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from 'next-themes';
 import { useSmoothScrollAnimation } from '@/hooks/useSmoothScrollAnimation';
 
 const navItems = [
@@ -18,9 +19,10 @@ const navItems = [
     { name: 'Contact', link: '/contact' }
 ];
 
-export default function Navbar() {
+export default function NavbarEnhanced() {
     const [isOpen, setIsOpen] = useState(false);
     const path = usePathname();
+    const { theme } = useTheme();
     
     // Use the new smooth scroll animation hook
     const {
@@ -41,7 +43,7 @@ export default function Navbar() {
         maxScale: 1,
         minBlur: 8,
         maxBlur: 20,
-        minHeight: 60,
+        minHeight: 56,
         maxHeight: 80,
         scrollThreshold: 10,
         hideThreshold: 150,
@@ -50,53 +52,55 @@ export default function Navbar() {
         disableHiding: true // Don't hide the navbar, keep it visible
     });
 
-    // Dynamic styles based on scroll animation
-    const backgroundOpacity = 0.2 + (scrollProgress * 0.3); // Increase background opacity on scroll
-    const navbarStyle = {
-        height: `${height}px`,
-        opacity: opacity,
-        transform: `scale(${scale}) translateY(${translateY}px)`,
-        backdropFilter: `blur(${blur}px)`,
-        backgroundColor: `rgba(255, 255, 255, ${backgroundOpacity})`,
-        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-    };
-
-    // Calculate logo size based on scroll progress
-    const logoScale = 1 - (scrollProgress * 0.15); // Shrink logo by up to 15%
-    const logoSize = {
-        transform: `scale(${logoScale})`,
-        transition: 'transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    // Animation variants for the navbar
+    const navVariants = {
+        visible: {
+            height: 80,
+            scale: 1,
+            y: 0,
+            transition: {
+                duration: 0.3,
+                ease: 'easeInOut'
+            }
+        },
+        hidden: {
+            height: 56,
+            scale: 0.98,
+            y: -10,
+            transition: {
+                duration: 0.3,
+                ease: 'easeInOut'
+            }
+        }
     };
 
     return (
         <motion.header
-            style={navbarStyle}
+            initial="visible"
+            animate={hidden ? 'hidden' : 'visible'}
+            variants={navVariants}
             className={cn(
-                'fixed z-50 flex items-center justify-center',
-                'w-full',
-                // Mobile: top-2 with smaller margins, Desktop: top-5
-                'top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 lg:top-5 lg:left-0 lg:right-0 lg:mx-auto',
-                // Responsive max-width and border radius
-                'rounded-2xl sm:rounded-3xl lg:rounded-full',
-                scrollProgress > 0.5 ? 'lg:max-w-5xl' : 'lg:max-w-7xl',
-                'border border-white/20',
-                'shadow-lg shadow-black/10'
+                'fixed top-5 left-0 right-0 mx-auto z-50 flex items-center justify-center transition-all duration-300',
+                'w-full max-w-6xl rounded-2xl',
+                theme === 'dark' 
+                    ? 'bg-black/30 backdrop-blur-lg border border-white/10 shadow-lg shadow-white/5'
+                    : 'bg-white/30 backdrop-blur-lg border border-white/20 shadow-lg shadow-black/10',
+                'overflow-hidden'
             )}
         >
-            <nav className="w-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10">
-                <div className="flex items-center justify-between h-full min-h-[60px] sm:min-h-[70px] lg:min-h-[80px]">
+            <nav className="w-full px-6 sm:px-8 lg:px-10">
+                <div className="flex items-center justify-between h-full">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center py-2 flex-shrink-0">
+                    <Link href="/" className="flex items-center py-2">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            style={logoSize}
                         >
                             <Image
                                 src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753970365/9cbdf72c-7336-48df-8cab-7f6c3be6a73d.png"
                                 width={500}
                                 height={100}
-                                className="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 h-auto"
+                                className="w-[7rem] lg:w-36"
                                 alt="Logo"
                                 priority
                             />
@@ -104,27 +108,21 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex space-x-2 xl:space-x-4 items-center justify-center flex-1 max-w-2xl mx-4">
-                        {navItems.map(({ link, name }, index) => (
+                    <div className="hidden md:flex space-x-4 lg:space-x-6 items-center justify-center">
+                        {navItems.map(({ link, name }) => (
                             <motion.div
                                 key={link}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ 
-                                    opacity: 1, 
-                                    y: 0,
-                                    transition: { delay: index * 0.1 }
-                                }}
                             >
                                 <Link
                                     href={link}
                                     className={cn(
-                                        'text-xs xl:text-sm font-semibold transition-all duration-300 px-2 xl:px-3 py-2 rounded-full whitespace-nowrap',
-                                        'hover:bg-white/20 hover:backdrop-blur-sm',
+                                        'text-sm font-semibold transition-all duration-300 px-3 py-2 rounded-full',
+                                        'hover:bg-white/20 dark:hover:bg-white/10 hover:backdrop-blur-sm',
                                         path === link 
-                                            ? 'text-blue-600 bg-white/30' 
-                                            : 'text-gray-800'
+                                            ? 'text-blue-600 dark:text-blue-400 bg-white/30 dark:bg-white/10' 
+                                            : 'text-gray-800 dark:text-gray-200'
                                     )}
                                 >
                                     {name}
@@ -136,10 +134,10 @@ export default function Navbar() {
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="hidden lg:block flex-shrink-0"
+                        className="hidden md:block"
                     >
                         <Link href="/contact">
-                            <button className='bg-blue-500 hover:bg-blue-600 cursor-pointer text-white py-2 xl:py-2.5 px-4 xl:px-6 flex justify-center items-center rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-xs xl:text-sm whitespace-nowrap'>
+                            <button className='bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 cursor-pointer text-white py-2.5 px-6 flex justify-center items-center rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg'>
                                 Get in Touch
                             </button>
                         </Link>
@@ -150,7 +148,7 @@ export default function Navbar() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsOpen(!isOpen)}
-                        className="lg:hidden p-2 rounded-full text-gray-800 hover:bg-white/20 hover:text-blue-600 focus:outline-none transition-all duration-300 flex-shrink-0"
+                        className="md:hidden p-2 rounded-full text-gray-800 dark:text-gray-200 hover:bg-white/20 dark:hover:bg-white/10 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none transition-all duration-300"
                     >
                         <span className="sr-only">Open menu</span>
                         <AnimatePresence mode="wait">
@@ -162,7 +160,7 @@ export default function Navbar() {
                                     exit={{ rotate: 90, opacity: 0 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <X className="h-5 w-5 sm:h-6 sm:w-6" />
+                                    <X className="h-6 w-6" />
                                 </motion.div>
                             ) : (
                                 <motion.div
@@ -172,7 +170,7 @@ export default function Navbar() {
                                     exit={{ rotate: -90, opacity: 0 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+                                    <Menu className="h-6 w-6" />
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -189,10 +187,15 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="lg:hidden fixed top-20 left-2 right-2 sm:left-3 sm:right-3 z-[60]"
+                        className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4"
                     >
-                        <div className="bg-white/95 backdrop-blur-lg rounded-xl sm:rounded-2xl shadow-lg border border-white/20 overflow-hidden">
-                            <ul className="py-1 sm:py-2">
+                        <div className={cn(
+                            "rounded-2xl shadow-lg border overflow-hidden",
+                            theme === 'dark'
+                                ? "bg-black/90 backdrop-blur-lg border-white/10"
+                                : "bg-white/90 backdrop-blur-lg border-white/20"
+                        )}>
+                            <ul className="py-2">
                                 {navItems.map(({ link, name }, index) => (
                                     <motion.li
                                         key={link}
@@ -203,10 +206,10 @@ export default function Navbar() {
                                         <Link
                                             href={link}
                                             className={cn(
-                                                'block px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium transition-all duration-300',
+                                                'block px-6 py-3 text-base font-medium transition-all duration-300',
                                                 path === link 
-                                                    ? 'bg-blue-500/20 text-blue-600 border-l-4 border-blue-500' 
-                                                    : 'text-gray-700 hover:bg-gray-100/50 hover:text-blue-600'
+                                                    ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border-l-4 border-blue-500' 
+                                                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-white/10 hover:text-blue-600 dark:hover:text-blue-400'
                                             )}
                                             onClick={() => setIsOpen(false)}
                                         >
@@ -218,10 +221,10 @@ export default function Navbar() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: navItems.length * 0.1 }}
-                                    className="px-3 sm:px-4 py-2 sm:py-3"
+                                    className="px-4 py-3"
                                 >
                                     <Link href="/contact" onClick={() => setIsOpen(false)}>
-                                        <button className='w-full bg-blue-500 hover:bg-blue-600 cursor-pointer text-white py-2 sm:py-2.5 px-4 sm:px-6 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base'>
+                                        <button className='w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 cursor-pointer text-white py-2.5 px-6 rounded-full font-semibold transition-all duration-300'>
                                             Get in Touch
                                         </button>
                                     </Link>

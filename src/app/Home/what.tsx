@@ -44,10 +44,10 @@ const WhatWeDo = () => {
           >
             <div className="space-y-5">
               {/* About Us heading */}
-              <h3 className="text-blue-500 font-bold">About Us</h3>
+              <h3 className="text-blue-500 font-professional font-semibold">About Us</h3>
 
               {/* Main heading */}
-              <h1 className="text-3xl w-full text-[#141515] font-bold mb-4 tracking-wider" style={{ fontFamily: 'Loubag' }}>Edu-Tech Platform for Skill Development</h1>
+              <h1 className="text-2xl w-full text-[#141515] font-professional font-bold mb-4 tracking-wider">Edu-Tech Platform for Skill Development</h1>
 
               {/* Description */}
               <p className="text-gray-600">
@@ -70,7 +70,7 @@ const WhatWeDo = () => {
                       <BookOpen className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-800">Innovative Learning</h3>
+                      <h3 className="font-professional font-medium text-gray-800">Innovative Learning</h3>
                       <p className="text-sm text-gray-600 mt-1">
                         Hands-on training, AI-driven tools, and real-world projects to build future-ready skills and industry expertise.
                       </p>
@@ -92,7 +92,7 @@ const WhatWeDo = () => {
                       <Briefcase className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-800">Career Success</h3>
+                      <h3 className="font-professional font-medium text-gray-800">Career Success</h3>
                       <p className="text-sm text-gray-600 mt-1">
                         Partnered with 50+ institutions, shaping the next-gen tech leaders with guidance for MAANG and top-tier opportunities.
                       </p>

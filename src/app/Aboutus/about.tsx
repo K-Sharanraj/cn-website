@@ -20,7 +20,7 @@ function About() {
 
                             {/* +230 Stats */}
                             <div className="mb-2 absolute bg-white rounded-lg left-10  lg:px-10 lg:py-5 px-5 py-3 flex flex-col items-center justify-center z-30 top-10">
-                                <h2 className="text-blue-500 text-3xl font-bold">+230</h2>
+                                <h2 className="text-blue-500 text-2xl font-professional font-semibold">+230</h2>
                                 <p className="text-gray-600 text-sm">Outreach Events</p>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ function About() {
                 <div className="w-full md:w-1/2 pt-10 lg:py-0 space-y-4">
                     {/* About Us Header */}
                     <div className="flex items-center gap-2 ">
-                        <h3 className="text-blue-500 font-bold text-xl">About Us</h3>
+                        <h3 className="text-blue-500 font-professional font-semibold text-lg">About Us</h3>
                         <div className="flex">
                             {[1, 2, 3, 4].map((_, index) => (
                                 <span key={index} className="text-blue-500 text-xl">&#62;</span>
@@ -102,7 +102,7 @@ function About() {
                         </div>
                     </div>
                     {/* Main Heading */}
-                    <h1 style={{ fontFamily: 'Loubag' }} className="text-xl lg:text-4xl max-w-xl font-bold text-gray-800 tracking-wider">
+                    <h1 className="text-lg lg:text-3xl max-w-xl font-professional font-bold text-gray-800 tracking-wider">
                         Building a Community for Lifelong Learning and Growth
                     </h1>
                     {/* Description */}
@@ -139,7 +139,7 @@ function About() {
                                     </defs>
                                 </svg>
                             </span>
-                            <h3 className="text-2xl font-bold  text-gray-800 ">Our Mission</h3>
+                            <h3 className="text-lg font-professional font-semibold text-gray-800">Our Mission</h3>
                         </div>
                         <div>
                             <p className="text-gray-600 lg:w-10/12 lg:text-start text-justify px-3">
@@ -173,7 +173,7 @@ function About() {
                                     <path d="M4.17734 28.7472L1.86641 30.5316C1.78159 30.5929 1.70996 30.6707 1.65578 30.7602C1.6016 30.8498 1.56597 30.9493 1.551 31.0529C1.53603 31.1565 1.54203 31.2621 1.56865 31.3633C1.59527 31.4645 1.64195 31.5594 1.70594 31.6422C1.76993 31.7251 1.84991 31.7942 1.94113 31.8455C2.03236 31.8969 2.13297 31.9293 2.23699 31.941C2.341 31.9527 2.44631 31.9434 2.54665 31.9136C2.64699 31.8838 2.74032 31.8341 2.82109 31.7675L5.13203 29.9832C5.21685 29.9218 5.28848 29.8441 5.34266 29.7545C5.39684 29.6649 5.43247 29.5654 5.44744 29.4618C5.46241 29.3582 5.45641 29.2527 5.42979 29.1514C5.40317 29.0502 5.35648 28.9554 5.2925 28.8725C5.22851 28.7897 5.14853 28.7205 5.05731 28.6692C4.96608 28.6179 4.86547 28.5854 4.76145 28.5737C4.65743 28.562 4.55213 28.5714 4.45179 28.6012C4.35145 28.631 4.25812 28.6806 4.17734 28.7472Z" fill="#00A3FF" />
                                 </svg>
                             </span>
-                            <h3 className="text-2xl font-bold  text-gray-800 ">Our Vision</h3>
+                            <h3 className="text-lg font-professional font-semibold text-gray-800">Our Vision</h3>
                         </div>
                         <div>
                             <p className="text-gray-600 lg:w-9/12 lg:text-start text-justify px-3">
