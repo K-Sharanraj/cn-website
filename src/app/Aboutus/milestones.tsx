@@ -134,16 +134,16 @@ export default function Page() {
                             >
                                 <path
                                     d="M130.912 130.912a71.997 71.997 0 0 0-10.911-110.778A71.999 71.999 0 0 0 9.383 94.046a72.004 72.004 0 0 0 19.705 36.866"
-                                    stroke-width="16"
-                                    stroke-linecap="round"
+                                    strokeWidth="16"
+                                    strokeLinecap="round"
                                     stroke="#abddff"
                                 ></path>
                                 <path
                                     d="M146.65 52.764A72.004 72.004 0 0 0 69.647 8.748a71.998 71.998 0 0 0-40.559 122.164"
                                     className="duration-[1s] [stroke-dasharray:100] [stroke-dashoffset:0]"
                                     pathLength="100"
-                                    stroke-width="16"
-                                    stroke-linecap="round"
+                                    strokeWidth="16"
+                                    strokeLinecap="round"
                                     stroke="#09b9ff"
                                 ></path>
                             </svg>

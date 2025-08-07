@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,15 +26,11 @@ export default function NavbarEnhanced() {
     
     // Use the new smooth scroll animation hook
     const {
-        scrollY,
-        scrollProgress,
-        isScrolled,
         opacity,
         scale,
         blur,
         height,
-        translateY,
-        scrollDirection
+        translateY
     } = useSmoothScrollAnimation({
         maxScroll: 300, // Animation range after the start threshold
         minOpacity: 0.85,
