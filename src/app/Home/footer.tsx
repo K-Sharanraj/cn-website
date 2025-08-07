@@ -69,7 +69,7 @@ const Footer = () => {
           <Image 
             width={240}
             height={64}
-            src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753971319/da23e160-fd84-45ce-98fe-4bc09c3742bb.png"
+            src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753970365/9cbdf72c-7336-48df-8cab-7f6c3be6a73d.png"
             alt="Cybernaut Logo"
             className='w-full max-w-[120px] sm:max-w-[140px] lg:max-w-[150px] mx-auto sm:mx-0 h-auto' 
           />
