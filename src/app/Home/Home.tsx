@@ -395,10 +395,10 @@ export default function Home() {
         <>
             {/* Desktop View */}
             <div className="container mx-auto hidden lg:block w-full max-w-[90vw] min-h-screen px-4 pb-40">
-                <section className="container mx-auto min-h-[140rem] relative top-24 w-full">
-                    <main className="mx-auto h-auto w-12/12 rounded-xl sticky top-24 place-content-center overflow-hidden shadow-[0px_-80px_50px_5px_#F8F8F8]">                        <div className="flex items-center justify-center w-full">
+                <section className="container mx-auto min-h-[140rem] relative top-28 w-full">
+                    <main className="mx-auto h-auto w-12/12 rounded-xl sticky top-28 place-content-center overflow-hidden shadow-[0px_-80px_50px_5px_#F8F8F8]">                        <div className="flex items-center justify-center w-full">
                         <div className="min-h-auto w-1/2 space-y-4">
-                            <h1 className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl w-[35rem] md:w-[30rem] lg:w-[35rem] xl:w-[40rem] text-start font-semibold md:font-medium lg:font-semibold xl:font-bold transition-all duration-300 ease-in-out">
+                            <h1 className="text-2xl md:text-xl lg:text-2xl xl:text-3xl w-[35rem] md:w-[30rem] lg:w-[35rem] xl:w-[40rem] text-start font-professional font-semibold transition-all duration-300 ease-in-out">
                                 <span className="text-[clamp(1.5rem,4vw,2.5rem)] tracking-wider" style={{ fontFamily: 'Loubag' }}>
                                     {getContent(scrollTranslate)}
                                 </span>
@@ -437,12 +437,12 @@ export default function Home() {
                                         <h6 className="text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium text-gray-400">Students Trusted on</h6>
                                         <div className="flex flex-row items-start justify-start w-[12rem] md:w-[10rem] lg:w-[12rem] xl:w-[14rem] gap-2">
                                             <AnimatedTooltip items={people} />
-                                            <h1 className="pl-5 font-bold text-[22px] md:text-[20px] lg:text-[22px] xl:text-[24px]">1L+</h1>
+                                            <h1 className="pl-5 font-professional font-semibold text-[19px] md:text-[17px] lg:text-[19px] xl:text-[21px]">1L+</h1>
                                         </div>
                                     </div>
                                     <div className="w-1/2 h-16 space-y-3 text-end">
                                         <h6 className="text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium text-gray-400">Students Trained</h6>
-                                        <h1 className="pl-5 font-bold text-[22px] md:text-[20px] lg:text-[22px] xl:text-[24px]">75K+</h1>
+                                        <h1 className="pl-5 font-professional font-semibold text-[19px] md:text-[17px] lg:text-[19px] xl:text-[21px]">75K+</h1>
                                     </div>
                                 </div>
                             </div>
@@ -485,7 +485,7 @@ export default function Home() {
                     <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
 
-                    <div className="relative py-16 mt-10 px-8">
+                    <div className="relative py-16 mt-12 px-8">
                         <div className="container mx-auto">
                             <div className="max-w-4xl mx-auto">
                                 <div className="space-y-8">
@@ -493,7 +493,7 @@ export default function Home() {
                                     <div className="space-y-10">
                                         <h1
                                             style={{ lineHeight: '1.2' }}
-                                            className={`text-[clamp(2rem, 2.5vw, 3rem)]  min-h-2  tracking-wide py-3 text-start lg:text-5xl font-extrabold transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
+                                            className={`text-[clamp(1.7rem, 2.2vw, 2.7rem)]  min-h-2  tracking-wide py-3 text-start lg:text-4xl font-professional font-bold transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
                                                 }`}
                                         >
                                             {autoContents[autoContentIndex]}
@@ -560,12 +560,12 @@ export default function Home() {
             </section>
 
             {/* Mobile View */}
-            <section className='block md:hidden container  mt-10'>
+            <section className='block md:hidden container  mt-24'>
                 <div className="heading pb-5 p-4">
                     <div className='w-full py-5 min-h-[13rem] '>
                         <p
                             style={{ lineHeight: '1.2' }}
-                            className={`text-[26px] min-h-32 tracking-wide py-3 text-start lg:text-5xl font-extrabold transform transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-0 ' : 'opacity-100'}`}
+                            className={`text-[23px] min-h-32 tracking-wide py-3 text-start lg:text-4xl font-professional font-bold transform transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-0 ' : 'opacity-100'}`}
                         >
                             {autoContents[autoContentIndex]}
                         </p>
@@ -603,12 +603,12 @@ export default function Home() {
                             <h6 className='text-sm w-60 font-medium text-gray-400'>Students Trusted on</h6>
                             <div className="flex flex-row items-start  relative   justify-start  w-[15rem] gap-2">
                                 <AnimatedTooltip items={people} />
-                                <h1 className='pl-5 font-bold text-[25px]'>1L+</h1>
+                                <h1 className='pl-5 font-professional font-semibold text-[22px]'>1L+</h1>
                             </div>
                         </div>
                         <div className='w-1/2 h-16 space-y-3'>
                             <h6 className='text-sm text-end font-medium text-gray-400'>Students Trained</h6>
-                            <h1 className='pl-5 text-end font-bold text-[25px]'>75K+</h1>
+                            <h1 className='pl-5 text-end font-professional font-semibold text-[22px]'>75K+</h1>
                         </div>
                     </div>
                 </div>

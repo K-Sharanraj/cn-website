@@ -47,7 +47,7 @@ function Vision() {
       {/* Left side content */}
       <div className="w-full md:w-1/2  mx-auto flex flex-col justify-center pr-0 md:pr-8  lg:space-y-5">
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-wider" style={{ lineHeight: "1.4", fontFamily: "Loubag" }}>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-professional font-bold text-gray-900 tracking-wider" style={{ lineHeight: "1.4" }}>
           Cybernaut Developers Student Community
         </h1>
         
@@ -63,7 +63,7 @@ function Vision() {
               onClick={() => toggleSection('vision')}
               className="flex justify-between items-center w-full text-left group"
             >
-              <h2 className={`text-xl font-semibold ${openSection === 'vision' ? 'text-blue-600' : 'text-gray-800'} transition-colors duration-300`}>
+              <h2 className={`text-lg font-professional font-medium ${openSection === 'vision' ? 'text-blue-600' : 'text-gray-800'} transition-colors duration-300`}>
                 Our Vision
               </h2>
               <span className={`transform transition-transform duration-500 ${openSection === 'vision' ? 'rotate-180' : 'rotate-0'}`}>
@@ -87,7 +87,7 @@ function Vision() {
               onClick={() => toggleSection('mission')}
               className="flex justify-between items-center w-full text-left group"
             >
-              <h2 className={`text-xl font-semibold ${openSection === 'mission' ? 'text-blue-600' : 'text-gray-800'} transition-colors duration-300`}>
+              <h2 className={`text-lg font-professional font-medium ${openSection === 'mission' ? 'text-blue-600' : 'text-gray-800'} transition-colors duration-300`}>
                 Our Mission
               </h2>
               <span className={`transform transition-transform duration-500 ${openSection === 'mission' ? 'rotate-180' : 'rotate-0'}`}>
@@ -111,7 +111,7 @@ function Vision() {
               onClick={() => toggleSection('activities')}
               className="flex justify-between items-center w-full text-left group"
             >
-              <h2 className={`text-xl font-semibold ${openSection === 'activities' ? 'text-blue-600' : 'text-gray-800'} transition-colors duration-300`}>
+              <h2 className={`text-lg font-professional font-medium ${openSection === 'activities' ? 'text-blue-600' : 'text-gray-800'} transition-colors duration-300`}>
                 Core Activities
               </h2>
               <span className={`transform transition-transform duration-500 ${openSection === 'activities' ? 'rotate-180' : 'rotate-0'}`}>
@@ -156,7 +156,7 @@ function Vision() {
             key={currentImage.url}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-end p-8">
-            <h2 className="text-white text-xl md:text-4xl lg:text-5xl font-bold">{currentImage.title}</h2>
+            <h2 className="text-white text-lg md:text-3xl lg:text-4xl font-professional font-bold">{currentImage.title}</h2>
           </div>
         </div>
       </div>

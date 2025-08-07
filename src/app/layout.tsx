@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const quicksand = Quicksand({
   subsets: ['latin'],
-  variable: '--font-quicksand', 
+  variable: '--font-quicksand',
 });
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"className={quicksand.variable}>
+    <html lang="en" className={quicksand.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased __variable_4d318d __variable_ea5f4b`}
         cz-shortcut-listen="true"
