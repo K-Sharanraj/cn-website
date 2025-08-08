@@ -338,21 +338,34 @@ const FullStackDevelopment = () => {
                 </div>
             </section>
 
-            <div className='flex lg:w-11/12 mx-auto h-12 bg-gray-100 sticky -my-12 rounded-t-lg top-[70px] z-10'>
-                <ul className='flex w-full justify-start px-2 overflow-auto scroll-smooth lg:space-x-0 space-x-5 font-semibold'>
-                    <style jsx>{`ul::-webkit-scrollbar {height:1px;}`}</style>
-                    <button className={`w-32 h-10 text-center text-sm ${showDescription ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleDescriptionClick}>Description</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showCourses ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleModulesClick}>Modules</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showBenefits ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleBenefitsClick}>Benefits</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showCertification ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleCertificationClick}>Certification</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showRequirements ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleRequirementsClick}>Requirements</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showTestimonials ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleTestimonialsClick}>Testimonials</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showFAQs ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleFAQsClick}>FAQs</button>
-                </ul>
-            </div>
+            <div className="lg:w-11/12 mx-auto">
+                <div className='flex items-center h-16 bg-white shadow-md sticky top-28 z-10 rounded-lg'>
+                    <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
+                        <style jsx>{`
+                            .tabs-container::-webkit-scrollbar {
+                                height: 2px;
+                            }
+                            .tabs-container::-webkit-scrollbar-thumb {
+                                background-color: #cbd5e1;
+                                border-radius: 2px;
+                            }
+                            .tabs-container {
+                                scrollbar-width: thin;
+                                scrollbar-color: #cbd5e1 transparent;
+                            }
+                        `}</style>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showDescription ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleDescriptionClick}>Description</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCourses ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleModulesClick}>Modules</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showBenefits ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleBenefitsClick}>Benefits</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCertification ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleCertificationClick}>Certification</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showRequirements ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleRequirementsClick}>Requirements</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showTestimonials ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleTestimonialsClick}>Testimonials</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showFAQs ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleFAQsClick}>FAQs</button>
+                    </ul>
+                </div>
 
-            <section className='w-full min-h-[40rem] relative'>
-                <div className='lg:w-11/12 bg-[#f5f5f5] shadow-xl mx-auto overflow-hidden rounded-lg'>
+                <section className='w-full min-h-[40rem] relative mt-[-1px]'>
+                    <div className='bg-white shadow-xl overflow-hidden rounded-lg'>
                     <div className=" bg-gray-100 flex items-center justify-center lg:p-4">
                         <div ref={descriptionRef} className="w-full  flex flex-col md:flex-row justify-around gap-6 mt-10 lg:p-4">
                             <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
@@ -402,7 +415,7 @@ const FullStackDevelopment = () => {
                                         if (formjoinRef.current) {
                                             formjoinRef.current.scrollIntoView({ behavior: 'smooth' });
                                             if (nameInputRef.current) {
-                                                nameInputRef.current.focus();
+                                                nameInputrRef.current.focus();
                                             }
                                         }
                                     }}
@@ -426,7 +439,8 @@ const FullStackDevelopment = () => {
                         <Fqas />
                     </div>
                 </div>
-            </section>
+                </section>
+            </div>
         </section>
     )
 }

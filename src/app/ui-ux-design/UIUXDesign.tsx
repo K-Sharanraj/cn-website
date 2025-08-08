@@ -314,17 +314,110 @@ const UIUXDesign = () => {
                     </div>
                 </div>
             </section>  
-            <div className='flex sticky top-[70px] lg:w-11/12 mx-auto rounded-t-lg h-12 -mt-12 bg-gray-100 z-10'>
-                <ul className='flex w-full justify-start px-2 overflow-auto scroll-smooth lg:space-x-0 space-x-4 font-semibold'>
-                    <style jsx>{`ul::-webkit-scrollbar {height:1px;}`}</style>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showDescription ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleDescriptionClick}>Description</button>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showCourses ? 'text-blue-600      lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleModulesClick}>Modules</button>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showBenefits ? 'text-blue-600     lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleBenefitsClick}>Benefits</button>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showCertification ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleCertificationClick}>Certification</button>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showRequirements ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleRequirementsClick}>Requirements</button>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showTestimonials ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleTestimonialsClick}>Testimonials</button>
-                    <button className={`flex items-center justify-center w-32 h-10 text-center text-sm ${showFAQs ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleFAQsClick}>FAQs</button>
-                </ul>
+            <div className="lg:w-11/12 mx-auto">
+                <div className='flex items-center h-16 bg-white shadow-md sticky top-28 z-10 rounded-lg'>
+                    <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
+                        <style jsx>{`
+                            .tabs-container::-webkit-scrollbar {
+                                height: 2px;
+                            }
+                            .tabs-container::-webkit-scrollbar-thumb {
+                                background-color: #cbd5e1;
+                                border-radius: 2px;
+                            }
+                            .tabs-container {
+                                scrollbar-width: thin;
+                                scrollbar-color: #cbd5e1 transparent;
+                            }
+                        `}</style>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showDescription ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleDescriptionClick}>Description</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCourses ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleModulesClick}>Modules</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showBenefits ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleBenefitsClick}>Benefits</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCertification ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleCertificationClick}>Certification</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showRequirements ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleRequirementsClick}>Requirements</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showTestimonials ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleTestimonialsClick}>Testimonials</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showFAQs ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleFAQsClick}>FAQs</button>
+                    </ul>
+                </div>
+
+                <section className='w-full min-h-[40rem] relative mt-[-1px]'>
+                    <div className='bg-white shadow-xl overflow-hidden rounded-lg'>
+                    <div className="bg-white flex items-center justify-center lg:p-4">
+                        <div ref={descriptionRef} className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
+                            <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
+                                <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
+                                <p className="text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">
+                                    Explore the world of UI/UX Design with our 6-month hands-on training program, combining Figma and Adobe XD. This course covers essential design principles, user research, wireframing, prototyping, and UI/UX testing, preparing you to create intuitive, visually appealing user interfaces. Master the tools of the trade, from designing responsive layouts to crafting brand-aligned visuals.
+                                    <br className="hidden md:block" />
+                                    By the end of the program, you&apos;ll have a diverse portfolio of real-world projects and a certificate showcasing your skills. Whether you&apos;re an aspiring designer or a professional looking to upgrade your skills, this course will equip you with everything you need to succeed in UI/UX design.
+                                </p>
+                            </div>
+                            <div className="w-full md:w-1/2 flex items-center justify-center p-4">
+                                <div className="w-full lg:h-72 rounded-lg flex items-center justify-center">
+                                    <Image
+                                        width={500}
+                                        height={500}
+                                        src='https://res.cloudinary.com/dn60aovto/image/upload/v1742448913/ux_xfzu2m.png'
+                                        alt=""
+                                        className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ref={coursesRef} className="w-full min-h-[20rem]">
+                        <ThreeCourses />
+                    </div>
+
+                    <div ref={benefitsRef} className="w-full min-h-[20rem]">
+                        <Keybenifits />
+                    </div>
+
+                    <div ref={certificationRef} className="w-full place-content-center">
+                        <Samplecertificate />
+                    </div>
+
+                    <div ref={requirementsRef} className="w-full pt-10 place-content-center">
+                        <StartCourse />
+                    </div>
+
+                    <div className="w-full flex flex-col items-center justify-center p-4">
+                        <div className="flex flex-col md:flex-row justify-between items-center w-full p-4 md:p-5 gap-6 rounded-lg bg-transparent">
+                            <div className="w-full md:w-1/2 p-4 md:p-8 lg:p-12">
+                                <h1 className="text-3xl md:text-5xl font-bold">Join the Most Popular UI/UX Design Course now!</h1>
+                            </div>
+                            <div className="w-full md:w-1/2 flex items-center justify-center">
+                                <Button
+                                    variant="outline"
+                                    className="w-full md:w-60 h-12 bg-blue-500 text-white cursor-pointer hover:bg-blue-600 shadow-[4px_4px_2px_1px_#3DE4EB] transition-all"
+                                    onClick={() => {
+                                        if (formjoinRef.current) {
+                                            formjoinRef.current.scrollIntoView({ behavior: 'smooth' });
+                                            if (nameInputRef.current) {
+                                                nameInputRef.current.focus();
+                                            }
+                                        }
+                                    }}
+                                >
+                                    Enroll Now
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ref={requirementsRef} className="w-full pt-10 place-content-center">
+                        <OurProject />
+                    </div>
+
+                    <div ref={testimonialsRef} className="w-full pt-10 place-content-center">
+                        <Testimonials />
+                    </div>
+
+                    <div ref={faqsRef} className="w-full pt-10 place-content-center">
+                        <Fqas />
+                    </div>
+                </div>
+                </section>
             </div>
 
             <section className='container mx-auto min-h-[40rem]  relative '>

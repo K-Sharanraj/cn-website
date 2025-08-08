@@ -416,18 +416,18 @@ const Techtrio = () => {
                     </div>
 
                     {/* Right side form */}
-                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5 '>
-                        <div className="w-full sm:w-[25rem] min-h-[400px] lg:h-[400px] rounded-lg shadow p-4 sm:p-6 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0 lg:mt-[60px]">
-                            <div className="flex flex-col justify-center items-center">
-                                <h2 className="text-lg sm:text-xl text-center font-semibold text-zinc-500">
-                                    To learn this Course <span className='p-1 rounded-md bg-blue-500 text-white'>online</span>
-                                </h2>
+                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5'>
+                        <div className="w-full sm:w-[25rem] min-h-[400px] lg:h-auto rounded-2xl shadow-lg p-6 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0 lg:mt-[60px]">
+                            <div className="flex flex-row items-center justify-start mb-6 gap-3">
+                                <h2 className="text-2xl font-bold text-gray-800">To Learn this course</h2>
+                                <span className='inline-flex items-center py-1.5 px-3 rounded-md text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-blue-600'>
+                                    Online
+                                </span>
                             </div>
 
                             <form
                                 onSubmit={onSubmit}
-                                className='w-full mt-4 space-y-4 sm:space-y-2.5 place-content-center'
-
+                                className='w-full mt-4 space-y-5'
                             >
                                 {/* Hidden Access Key */}
                                 <input
@@ -438,7 +438,7 @@ const Techtrio = () => {
                                 <div>
                                     <input
                                         ref={nameInputRef}
-                                        className="outline-none border border-gray-300 h-[36px] rounded-md px-2 w-full text-slate-500 focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-12 rounded-lg px-4 w-full text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Name"
                                         id="Name"
                                         name="Name"
@@ -448,7 +448,7 @@ const Techtrio = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none border border-gray-300 h-[36px] rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-12 rounded-lg px-4 w-full text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Email"
                                         id="email"
                                         name="email"
@@ -458,7 +458,7 @@ const Techtrio = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none border border-gray-300 h-[36px]  rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-12 rounded-lg px-4 w-full text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Phone number"
                                         id="phone"
                                         name="phone"
@@ -469,7 +469,7 @@ const Techtrio = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none border border-gray-300 h-[36px]  rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-12 rounded-lg px-4 w-full text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Education Qualification"
                                         id="education"
                                         name="education"
@@ -479,7 +479,7 @@ const Techtrio = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none border border-gray-300 h-[36px] rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-12 rounded-lg px-4 w-full text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Current Profile"
                                         id="currentprofile"
                                         name="currentprofile"
@@ -489,7 +489,7 @@ const Techtrio = () => {
                                 </div>
 
                                 <button
-                                    className="w-full justify-center py-1 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-md text-white"
+                                    className="w-full justify-center py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 active:from-blue-700 active:to-blue-800 rounded-lg text-white font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                                     id="login"
                                     name="login"
                                     type="submit"
@@ -497,13 +497,17 @@ const Techtrio = () => {
                                     Enroll Now
                                 </button>
 
-                                <p className=" gap-2 space-x-1 bg-[#afe1ff] items-center justify-center flex py-1 rounded-md  text-xs sm:text-sm">
-                                    <NumberTicker
-                                        value={1450}
-                                        className="whitespace-pre-wrap font-semibold text-base sm:text-lg tracking-tighter text-black"
-                                    />
-                                    Enrolled in this course
-                                </p>
+                                <div className="flex items-center justify-center pt-4">
+                                    <User className="w-5 h-5 text-gray-500 mr-2" />
+                                    <p className="text-sm text-gray-600">
+                                        <NumberTicker
+                                            value={1450}
+                                            className="font-bold text-gray-800"
+                                        />
+                                        {' '}
+                                        enrolled in this course
+                                    </p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -511,27 +515,40 @@ const Techtrio = () => {
             </section>
 
             {/* Number box */}
-            <div className='flex lg:w-11/12  h-12 mx-auto bg-gray-100 sticky top-[70px] rounded-t-lg -mt-12 z-10'>
-                <ul className='flex w-full justify-start px-2 overflow-auto scroll-smooth lg:space-x-0 space-x-5 font-semibold'>
-                    <style jsx>{`ul::-webkit-scrollbar {height:1px;}`}</style>
-                    <button className={`w-32 h-10 text-center text-sm ${showDescription ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleDescriptionClick}>Description</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showCourses ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleModulesClick}>Modules</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showBenefits ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleBenefitsClick}>Benefits</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showCertification ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleCertificationClick}>Certification</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showRequirements ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleRequirementsClick}>Requirements</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showTestimonials ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleTestimonialsClick}>Testimonials</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showFAQs ? 'text-blue-600 lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleFAQsClick}>FAQs</button>
-                </ul>
-            </div>
-            <section className='w-full min-h-[40rem]  relative '>
+            <div className="lg:w-11/12 mx-auto">
+                <div className='flex items-center h-16 bg-white shadow-md top-28 z-10 rounded-lg'>
+                    <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
+                        <style jsx>{`
+                            .tabs-container::-webkit-scrollbar {
+                                height: 2px;
+                            }
+                            .tabs-container::-webkit-scrollbar-thumb {
+                                background-color: #cbd5e1;
+                                border-radius: 2px;
+                            }
+                            .tabs-container {
+                                scrollbar-width: thin;
+                                scrollbar-color: #cbd5e1 transparent;
+                            }
+                        `}</style>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showDescription ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleDescriptionClick}>Description</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCourses ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleModulesClick}>Modules</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showBenefits ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleBenefitsClick}>Benefits</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCertification ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleCertificationClick}>Certification</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showRequirements ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleRequirementsClick}>Requirements</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showTestimonials ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleTestimonialsClick}>Testimonials</button>
+                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showFAQs ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleFAQsClick}>FAQs</button>
+                    </ul>
+                </div>
+                <section className='w-full min-h-[40rem] relative mt-[10px]'>
 
-                <div className='lg:w-11/12 mx-auto bg-[#f5f5f5] shadow-xl   mx-start overflow-hidden lg:-top-12 lg:left-10 right-0 rounded-b-lg'>
+                    <div className='bg-white shadow-xl mx-start overflow-hidden rounded-b-lg'>
 
-                    <div className=" bg-gray-100 flex items-center justify-center p-4">
-                        <div ref={descriptionRef} className="w-full  flex flex-col md:flex-row justify-around gap-6 p-4">
+                    <div className="bg-white flex items-center justify-center p-4">
+                        <div ref={descriptionRef} className="w-full flex flex-col md:flex-row justify-around gap-6 p-4">
                             <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
                                 <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
-                                <p className="text-xs sm:text-sm md:text-base text-justify pt-3 md:pt-5 text-gray-600">
+                                <p className="text-sm md:text-base text-justify pt-3 md:pt-5 text-gray-600">
                                     {content.detailedDescription}
                                 </p>
                             </div>
@@ -812,11 +829,10 @@ const Techtrio = () => {
                     <div ref={faqsRef} className="w-ful pt-10 place-content-center">
                         <Fqas />
                     </div>
-
                 </div>
             </section>
-
-        </section>
+        </div>
+    </section>
     )
 }
 
