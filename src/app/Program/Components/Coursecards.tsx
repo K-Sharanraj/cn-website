@@ -313,20 +313,26 @@ function Coursecards() {
 // CourseCard component
 function CourseCard({ item }: { item: CourseItem }) {
     return (
-        <div className="flex flex-col  min-w-64 lg:w-full bg-white hover:border hover:border-gray-800 rounded-xl  overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            {/* Image container with aspect ratio */}
-            <div className="relative w-full pt-[56%]">
-                <Image
-                width={500}
-                height={500}
-                    src={item.icon}
-                    alt={item.title}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                />
-            </div>
+        <div className="group relative flex flex-col min-w-64 lg:w-full bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+            {/* Gradient border animation */}
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#2E77EF] via-[#55B4FF] to-[#2E77EF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+            <div className="absolute inset-[2px] rounded-xl bg-white z-10"></div>
+            
+            {/* Card content wrapper */}
+            <div className="relative z-20 flex flex-col h-full">
+                {/* Image container with aspect ratio */}
+                <div className="relative w-full pt-[56%]">
+                    <Image
+                    width={500}
+                    height={500}
+                        src={item.icon}
+                        alt={item.title}
+                        className="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl"
+                    />
+                </div>
 
-            {/* Content section with responsive padding */}
-            <div className="flex flex-col  flex-grow p-4 sm:p-5 gap-4">
+                {/* Content section with responsive padding */}
+                <div className="flex flex-col flex-grow p-4 sm:p-5 gap-4">
                 {/* Title with responsive font size */}
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 line-clamp-2">
                     {item.coursename}
@@ -377,6 +383,7 @@ function CourseCard({ item }: { item: CourseItem }) {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 
