@@ -248,25 +248,25 @@ const Techtrio = () => {
         {
             title: "AI-Powered Job Recommendation Platform",
             type: "AI Project",
-            image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461360/AI-Powered_Job_Recommendation_Platform_b0mhef.jpg",
+            image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666784/R4C1T1Ep-netflix-project.webp_usgfr2.png",
             icon: <MonitorPlay className="w-5 h-5" />
         },
         {
             title: "Automated Travel Data Extraction & Analysis",
             type: "AI Project",
-            image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461360/Automated_Travel_Data_Extraction_Analysis_bq0wuh.jpg",
+            image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666715/R4C1T1Ep-netflix-project.webp_mqyxzt.png",
             icon: <MonitorPlay className="w-5 h-5" />
         },
         {
             title: "Real-Time Fraud Detection System",
             type: "AI Project",
-            image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461360/Real-Time_Fraud_Detection_System_lwig1h.jpg",
+            image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666763/R4C1T1Ep-netflix-project.webp_vpv0b3.png",
             icon: <MonitorPlay className="w-5 h-5" />
         },
         {
             title: "Smart AI Chatbot for Businesses",
             type: "AI Project",
-            image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742460816/Dynamic_Traffic_Management_System_zqa0me.jpg",
+            image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666815/R4C1T1Ep-netflix-project.webp_cygsvg.png",
             icon: <LineChart className="w-5 h-5" />
         }
     ];

@@ -6,25 +6,25 @@ function App() {
     {
       title: "AI-Powered Task Management App",
       type: "EERN STACK",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461918/AI-Powered_Task_Management_App_z8laqi.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668222/1_mve0ga.png",
       icon: <MonitorPlay className="w-5 h-5" />
     },
     {
       title: "Personalized E-Learning Platform",
       type: "MEAN STACK",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461360/AI-Powered_Job_Recommendation_Platform_b0mhef.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668223/3_dhdofl.png",
       icon: <MonitorPlay className="w-5 h-5" />
     },
     {
       title: "Real-Time Collaborative Whiteboard",
       type: "DJANGO & REACT",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461916/Personalized_E-Learning_Platform_zp63a7.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668220/4_qncute.png",
       icon: <MonitorPlay className="w-5 h-5" />
     },
     {
       title: "Smart Online Booking System",
       type: "SPRING BOOT & REACT",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742460816/Dynamic_Traffic_Management_System_zqa0me.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668222/2_guvx35.png",
       icon: <LineChart className="w-5 h-5" />
     }
   ];

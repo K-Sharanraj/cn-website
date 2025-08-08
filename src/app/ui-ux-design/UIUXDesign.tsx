@@ -180,7 +180,7 @@ const UIUXDesign = () => {
             <section className='mt-[20px]'>
                 <div
                     className='flex flex-col lg:flex-row justify-between container mx-auto min-h-[569px]'
-                    style={{ backgroundImage: `url('https://res.cloudinary.com/dn60aovto/image/upload/v1742460377/HeadBg_jmdshj.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666950/2202758_1_vd4div.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                 {/* Left side content */}
                     <div className='w-full lg:w-1/2 flex items-start justify-center p-8 lg:p-24'>
@@ -357,8 +357,8 @@ const UIUXDesign = () => {
                                     <Image
                                         width={500}
                                         height={500}
-                                        src='https://res.cloudinary.com/dn60aovto/image/upload/v1742448913/ux_xfzu2m.png'
-                                        alt=""
+                                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760341/98647341-97d9-47a2-8b3f-ed544fa5ba91.png'
+                                        alt="course image"
                                         className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
                                 </div>
                             </div>
@@ -419,7 +419,7 @@ const UIUXDesign = () => {
                 </div>
                 </section>
             </div>
-
+{/* 
             <section className='container mx-auto min-h-[40rem]  relative '>
                 <div className=' bg-[#f5f5f5] shadow-xl  mx-start mx-auto overflow-hidden rounded-lg'>
                     <div className=" bg-gray-100 flex items-center justify-center lg:p-z4">
@@ -437,8 +437,8 @@ const UIUXDesign = () => {
                                     <Image
                                         width={500}
                                         height={500}
-                                        src='https://res.cloudinary.com/dn60aovto/image/upload/v1742448913/ux_xfzu2m.png'
-                                        alt=""
+                                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1754667262/Web_Dev_atficd.png'
+                                        alt="certification"
                                         className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
                                 </div>
                             </div>
@@ -499,7 +499,7 @@ const UIUXDesign = () => {
 
 
                 </div>
-            </section>
+            </section> */}
 
         </section>
     )

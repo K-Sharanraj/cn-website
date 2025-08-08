@@ -197,7 +197,7 @@ const FullStackDevelopment = () => {
             <section className='mt-[70px]'>
                 <div
                     className='flex flex-col lg:flex-row justify-between w-full min-h-[569px]'
-                    style={{ backgroundImage: `url('https://res.cloudinary.com/dn60aovto/image/upload/v1742460377/Fullstack_kc5hsw.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668079/2202758_1_wnw7yu.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                     {/* Left side content */}
                     <div className='w-full lg:w-1/2 flex items-start justify-center p-5 lg:p-24'>
@@ -375,11 +375,11 @@ const FullStackDevelopment = () => {
                             <div className="w-full md:w-1/2 flex items-center justify-center p-4">
                                 <div className="w-full  sm:h-48 md:h-60 lg:h-72 rounded-lg flex items-center justify-center">
                                     <Image
-                                        width={500}
-                                        height={500}
-                                        src='https://res.cloudinary.com/dn60aovto/image/upload/v1742448916/Full_Stack_pwfclb.png'
-                                        alt=""
-                                        className="w-full h-full rounded-lg object-cover" />
+                                        width={1000}
+                                        height={1000}
+                                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png'
+                                        alt="course image"
+                                        className="w-[40rem] h-full object-contain rounded-xl" />
                                 </div>
                             </div>
                         </div>

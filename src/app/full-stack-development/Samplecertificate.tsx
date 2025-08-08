@@ -11,7 +11,7 @@ function Samplecertificate() {
                     <Image
                         width={500}
                         height={500}
-                        src="https://res.cloudinary.com/dn60aovto/image/upload/v1742386629/Web_Dev_cdqdjp.png"
+                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1754667262/Web_Dev_atficd.png"
                         alt="Certificate"
                         className="object-contain w-full h-full"
                     />
