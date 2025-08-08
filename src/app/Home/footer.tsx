@@ -3,6 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Linkedin, Instagram, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 
 const footerData = {
   address: {
@@ -71,9 +72,13 @@ const Footer = () => {
             {/* Company Branding Section */}
             <div className='lg:col-span-1 space-y-6 text-left'>
               <div className='space-y-4'>
-                <h3 className='text-white text-xl sm:text-2xl font-professional font-bold text-left'>
-                  Cybernaut Edu-Tech
-                </h3>
+                <Image 
+                  width={240}
+                  height={64}
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753970365/9cbdf72c-7336-48df-8cab-7f6c3be6a73d.png"
+                  alt="Cybernaut Logo"
+                  className='w-full max-w-[120px] sm:max-w-[140px] lg:max-w-[150px] h-auto' 
+                />
                 <p className='text-gray-400 text-sm sm:text-base leading-relaxed text-left max-w-sm'>
                   Empowering the next generation of tech innovators through cutting-edge education and hands-on experience.
                 </p>
