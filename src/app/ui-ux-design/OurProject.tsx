@@ -7,25 +7,25 @@ function App() {
     {
       title: "Recreate Netflix Landing Page",
       type: "UI Project",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461918/AI-Powered_Task_Management_App_z8laqi.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754664663/R4C1T1Ep-netflix-project.webp_d3iddc.png",
       icon: <MonitorPlay className="w-5 h-5" />
     },
     {
       title: "Create your own Crypto Trading Dashboard",
       type: "UI Project",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461916/Personalized_E-Learning_Platform_zp63a7.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754664690/R4C1T1Ep-netflix-project.webp_n6mywy.png",
       icon: <MonitorPlay className="w-5 h-5" />
     },
     {
       title: "Heuristics Analysis report for a travel website",
       type: "UI Project",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461360/AI-Powered_Job_Recommendation_Platform_b0mhef.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754664711/R4C1T1Ep-netflix-project.webp_zwqh2v.png",
       icon: <MonitorPlay className="w-5 h-5" />
     },
     {
       title: "Create an E-commerce Website",
       type: "UI Project",
-      image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742461360/Real-Time_Fraud_Detection_System_lwig1h.jpg",
+      image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754664730/R4C1T1Ep-netflix-project.webp_t1eg01.png",
       icon: <LineChart className="w-5 h-5" />
     }
   ];

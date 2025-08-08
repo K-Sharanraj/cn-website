@@ -356,7 +356,7 @@ const Techtrio = () => {
         <section className=''>
             <section className='lg:mt-[10px] mt-[14px]'>
                 <div className='flex flex-col lg:flex-row justify-between w-full min-h-[569px]'
-                    style={{ backgroundImage: `url('https://res.cloudinary.com/dn60aovto/image/upload/v1742460976/coursesBG_dpaul6.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754664344/2202758_1_lyiupq.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                     {/* Left side content */}
                     <div className='w-full lg:w-1/2 flex items-start justify-center p-10  lg:p-24'>
@@ -557,8 +557,8 @@ const Techtrio = () => {
                                     <Image
                                         width={1000}
                                         height={1000}
-                                        src='https://res.cloudinary.com/dn60aovto/image/upload/v1742448913/Tech_trio_avv3ny.png'
-                                        alt="Certificate"
+                                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760318/dc8b4334-3d0e-4aba-b3b9-d62167505ff3.png'
+                                        alt="course image"
                                         className="w-[40rem] h-full object-contain rounded-xl" />
                                 </div>
                             </div>
@@ -614,7 +614,7 @@ const Techtrio = () => {
                                     <Image
                                         width={1000}
                                         height={500}
-                                        src="https://res.cloudinary.com/dn60aovto/image/upload/v1742386629/TechTrioC_soqlgo.png"
+                                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1754664567/Tech_Trio_C_jjwyan.png"
                                         alt="Certificate"
                                         className="object-contain w-full h-full"
                                     />

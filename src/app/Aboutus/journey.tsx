@@ -43,7 +43,7 @@ const timelineContent: TimelineContent = {
   '2023': {
     cards: [
       {
-        image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753868488/743f2f80-2a10-404e-bd9a-9c571783e019.png",
+        image: "https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto,c_fill,g_auto,w_800,h_414/v1753868488/743f2f80-2a10-404e-bd9a-9c571783e019.png",
         title: 'Awarded Young Entrepreneurship',
         description: 'In 2022, our efforts were recognized with the Young Entrepreneurship Award by SRM, validating our commitment to transforming education.',
       },
@@ -52,7 +52,7 @@ const timelineContent: TimelineContent = {
   '2024': {
     cards: [
       {
-        image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742451514/recognition_p5oiro.png",
+        image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754662018/2024_dng8me.png",
         title: 'National Recognition',
         description: 'Our dedication and innovation have earned us MSME, MCA, Startup India, and ISO certifications, showcasing our commitment to quality and excellence.',
       },
@@ -61,7 +61,7 @@ const timelineContent: TimelineContent = {
   '2025': {
     cards: [
       {
-        image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742453360/2025_jaxgkz.jpg",
+        image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754662025/2025_t2nom0.jpg",
         title: 'Our Reach',
         description: "We're proud to share that Cybernaut has partnered with SSN College of Engineering as the official UI & UX elective paper & Industrial training partner!",
       },

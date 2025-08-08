@@ -49,7 +49,7 @@ function About() {
                         {/* Main Image */}
                         <div className=" lg:w-[40rem] lg:h-[35rem]  relative  rounded-[30px]">
                             <VideoCard
-                                videoUrl="https://res.cloudinary.com/dn60aovto/video/upload/v1742274023/Cybernaut_fiki4i.mp4" // Use the relative path from the public directory
+                                videoUrl="https://res.cloudinary.com/ddpbtvesl/video/upload/v1754662599/Cybernaut_p5m3ot.mp4" // Use the relative path from the public directory
                             />
                         </div>
 

@@ -24,12 +24,12 @@ function Vision() {
         };
       case 'mission':
         return {
-          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753867815/Mission_f4gns0_cwji4w.webp',
+          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754661031/2_tojozn.jpg',
           title: "OUR MISSION"
         };
       case 'activities':
         return {
-          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753867843/Activities_tjmsge_e2n7ie.webp',
+          url: 'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504483/IMG_8240_eligcn.webp',
           title: "CORE ACTIVITIES"
         };
       default:

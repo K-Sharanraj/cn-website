@@ -89,7 +89,7 @@ const Founders = () => {
                       <Image
                         width={300}
                         height={354}
-                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717698/9a62482b-6138-4bee-a938-0a50eae0e7fc.png'
+                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504465/IMG_1931_tvasqn.jpg'
                         alt="Profile"
                         className="h-full w-full object-cover"
                       />
@@ -277,7 +277,7 @@ const Founders = () => {
               <Image
                 width={350}
                 height={354}
-                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717698/9a62482b-6138-4bee-a938-0a50eae0e7fc.png"
+                src="https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto,c_fill,g_auto,h_1000,w_1000/f_auto/v1753504461/IMG_1964_bzhdlq.jpg" //inga
                 alt="Profile"
                 className="lg:rounded-[2rem] place-self-start  lg:w-[30rem] w-[35rem] relative z-10 object-cover"
               />
@@ -433,7 +433,7 @@ const Founders = () => {
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717698/9a62482b-6138-4bee-a938-0a50eae0e7fc.png"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504465/IMG_1931_tvasqn.jpg" //inga
                   alt="Jayasurya Gnanavel"
                   className="rounded-[2rem] relative z-10 object-cover w-full max-w-xl mx-auto"
                 />
