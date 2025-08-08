@@ -26,7 +26,6 @@ export function useScrollDirection(options: ScrollDirectionOptions = {}) {
   const [scrollDir, setScrollDir] = useState(still);
   const blocked = useRef(false);
   const prevScrollY = useRef(0);
-  const prevScrollX = useRef(0);
 
   useEffect(() => {
     if (!scroller) return;

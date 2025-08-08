@@ -71,7 +71,7 @@ export default function WhyPartnerWithUs() {
             Why Partner With Us?
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We're looking to partner with communities, student groups, and developer circles to organize events and amplify the impact of Fins.
+            We&apos;re looking to partner with communities, student groups, and developer circles to organize events and amplify the impact of Fins.
           </p>
         </div>
 
