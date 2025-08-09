@@ -49,7 +49,9 @@ const Page = () => {
         </button>
 
       </div>
-      <Techtrio />
+      <div className="mt-20">
+        <Techtrio />
+      </div>
       <Contact />
       <Footer />
     </div>

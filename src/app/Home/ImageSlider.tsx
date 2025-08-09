@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 interface ImageSliderProps {
     galleryImages: string[];
@@ -86,7 +87,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     useEffect(() => {
         if (autoplayInterval) clearInterval(autoplayInterval);
         setAutoplayPaused(false);
-    }, [activeTab]);
+    }, [activeTab, autoplayInterval]);
 
     return (
         <div className="container mx-auto lg:py-5 px-4 sm:px-6 lg:px-8">
@@ -150,7 +151,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                 <div className="relative flex justify-center items-center gap-4">
                     {/* Left Image */}
                     <div className="w-1/4 lg:block hidden left-3 aspect-[3/4] rounded-lg overflow-hidden shadow-lg relative">
-                        <img
+                        <Image
+							width={500}
+							height={500}
                             src={images[(currentImage - 1 + images.length) % images.length]}
                             alt="Previous"
                             className="w-full h-full object-cover"
@@ -171,7 +174,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
                     {/* Center Image (Larger) */}
                     <div className="lg:w-1/2 w-10/12 aspect-[4/3] rounded-lg overflow-hidden shadow-lg relative">
-                        <img
+                        <Image
+							width={500}
+							height={500}
                             src={images[currentImage]}
                             alt="Current"
                             className="w-full h-full object-cover"
@@ -192,7 +197,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
                     {/* Right Image */}
                     <div className="w-1/4 lg:block right-3 hidden aspect-[3/4] rounded-lg overflow-hidden shadow-lg relative">
-                        <img
+                        <Image
+							width={500}
+							height={500}
                             src={images[(currentImage + 1) % images.length]}
                             alt="Next"
                             className="w-full h-full object-cover"

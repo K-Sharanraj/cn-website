@@ -50,7 +50,9 @@ return (
       </button>
 
     </div>
-    <DataAnalytics />
+    <div className="mt-20">
+      <DataAnalytics />
+    </div>
     <ContactUs />
     <Footer />
   </div>

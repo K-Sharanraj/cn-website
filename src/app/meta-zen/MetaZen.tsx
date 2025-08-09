@@ -17,9 +17,8 @@ import { MonitorPlay, LineChart } from 'lucide-react';
 
 const content = {
     courseTitle: 'METAZEN',
-    courseDescription: 'Master Full Stack Development with Meta Zen! Learn front-end, back-end, real-world projects, and soft skills. Gain hands-on experience, job-ready skills, and launch a successful web development career.',
-    detailedDescription1: `The Meta Zen Full Stack Development Course is designed for students, professionals, and tech enthusiasts looking to build websites and apps like a pro. This program covers everything from basic coding to advanced full-stack development, ensuring a step-by-step learning process. You'll master front-end and back-end technologies, work on real-world projects, and develop problem-solving skills. The course also includes soft skills training and job-specific preparation, making it ideal for those aiming to start or advance their careers in web development. `,
-    detailedDescription2: ` With placement support, industry-focused curriculum, and interactive learning, this course provides hands-on experience with HTML, CSS, JavaScript, React.js, and backend development, equipping learners with placement-ready skills for in-demand tech jobs.`,
+    heroDescription: 'Master Full Stack Development with Meta Zen! Learn front-end, back-end, real-world projects, and soft skills. Gain hands-on experience, job-ready skills, and launch a successful web development career.',
+    detailedCourseDescription: `The Meta Zen Full Stack Development Course is designed for students, professionals, and tech enthusiasts looking to build websites and apps like a pro. This program covers everything from basic coding to advanced full-stack development, ensuring a step-by-step learning process. You'll master front-end and back-end technologies, work on real-world projects, and develop problem-solving skills. The course also includes soft skills training and job-specific preparation, making it ideal for those aiming to start or advance their careers in web development. With placement support, industry-focused curriculum, and interactive learning, this course provides hands-on experience with HTML, CSS, JavaScript, React.js, and backend development, equipping learners with placement-ready skills for in-demand tech jobs.`,
     certificate: {
         benefits: [
             'Earn course and internship certificates to validate expertise.',
@@ -157,8 +156,6 @@ const MetaZen = () => {
 
     ]
     // numberbox
-
-    const [phoneNumber, setPhoneNumber] = useState('');
 
 
 
@@ -379,14 +376,14 @@ const MetaZen = () => {
     const formjoinRef = useRef<HTMLDivElement>(null);
     const nameInputRef = useRef<HTMLInputElement>(null);
     return (
-        <section className=''>
-            <section className='mt-[20px]'>
+        <section className='pt-[40px]'>
+            <section className=''>
                 <div
-                    className='flex flex-col lg:flex-row justify-between w-full min-h-[569px]'
+                    className='flex flex-col lg:flex-row justify-between min-h-[450px]'
                     style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668079/2202758_1_wnw7yu.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
-                    {/* Left side content */}
-                    <div className='w-full lg:w-1/2 flex items-start justify-center p-5 lg:p-24'>
+                {/* Left side content */}
+                    <div className='w-full lg:w-1/2 flex items-start justify-center p-8 lg:p-24'>
                         <div className='relative lg:-top-10 w-full'>
                             {/* Navigation */}
                             <div className='flex justify-start h-10 overflow-x-auto lg:overflow-visible'>
@@ -410,7 +407,7 @@ const MetaZen = () => {
                             <div className='relative lg:top-14 text-white'>
                                 <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold'>{content.courseTitle}</h1>
                                 <p className='py-5 text-base lg:text-lg'>
-                                    {content.courseDescription}
+                                    {content.heroDescription}
                                 </p>
 
                                 {/* Stats */}
@@ -439,21 +436,29 @@ const MetaZen = () => {
                     </div>
 
                     {/* Right side form */}
-                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5 '>
-                        <div className="w-full sm:w-[25rem] h-[400px] rounded-lg shadow p-4 sm:p-6 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0 lg:mt-[60px]">
-                            <div className="flex flex-col justify-center items-center">
-                                <h2 className="text-lg sm:text-xl text-center font-semibold text-zinc-500">
-                                    To learn this Course <span className='p-1 rounded-md bg-blue-500 text-white'>online</span>
-                                </h2>
+                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5 items-center'>
+                        <div className="w-full sm:w-[25rem] lg:h-auto rounded-2xl shadow-lg p-4 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0">
+                            <div className="flex flex-row items-center justify-start mb-3 gap-2">
+                                <h2 className="text-lg font-bold text-gray-800">To Learn this course</h2>
+                                <span className='inline-flex items-center py-1 px-2 rounded-md text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-blue-600'>
+                                    Online
+                                </span>
                             </div>
 
                             <form
                                 onSubmit={onSubmit}
-                                className="w-full mt-4 space-y-4 sm:space-y-2.5 place-content-center">
+                                className='w-full space-y-2'
+                            >
+                                {/* Hidden Access Key */}
+                                <input
+                                    type="hidden"
+                                    name="access_key"
+                                    value="701509da-ad7d-43d7-9c9e-6f849ee8ff6d"
+                                />
                                 <div>
                                     <input
                                         ref={nameInputRef}
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 w-full text-slate-500 focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Name"
                                         id="Name"
                                         name="Name"
@@ -463,7 +468,7 @@ const MetaZen = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Email"
                                         id="email"
                                         name="email"
@@ -473,18 +478,17 @@ const MetaZen = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Phone number"
                                         id="phone"
                                         name="phone"
                                         type="tel"
-                                        value={phoneNumber}
-                                        onChange={(e) => setPhoneNumber(e.target.value)}
+                                        required
                                     />
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Education Qualification"
                                         id="education"
                                         name="education"
@@ -494,7 +498,7 @@ const MetaZen = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Current Profile"
                                         id="currentprofile"
                                         name="currentprofile"
@@ -504,7 +508,7 @@ const MetaZen = () => {
                                 </div>
 
                                 <button
-                                    className="w-full justify-center py-1 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-md text-white"
+                                    className="w-full justify-center py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 active:from-blue-700 active:to-blue-800 rounded-lg text-white font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                                     id="login"
                                     name="login"
                                     type="submit"
@@ -512,53 +516,68 @@ const MetaZen = () => {
                                     Enroll Now
                                 </button>
 
-                                <p className="flex justify-center gap-2 space-x-1 bg-[#EAF7FF] py-1 rounded-md text-[#00A3FF] text-xs sm:text-sm">
-                                    <NumberTicker
-                                        value={1450}
-                                        className="whitespace-pre-wrap font-semibold text-base sm:text-lg tracking-tighter text-[#00A3FF]"
-                                    />
-                                    enrolled in this course
-                                </p>
+                                <div className="flex items-center justify-center pt-3">
+                                    <User className="w-4 h-4 text-gray-500 mr-1" />
+                                    <p className="text-xs text-gray-600">
+                                        <NumberTicker
+                                            value={1450}
+                                            className="font-bold text-gray-800 text-sm"
+                                        />
+                                        {' '}
+                                        enrolled in this course
+                                    </p>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </section>
             {/* Number box */}
-            <div className='flex lg:w-11/12 mx-auto h-12 bg-gray-100 sticky top-[70px] -mt-12 rounded-t-lg  z-10'>
-                <ul className='flex w-full justify-start px-2 overflow-auto scroll-smooth lg:space-x-0 space-x-5 font-semibold'>
-                    <style jsx>{`ul::-webkit-scrollbar {height:1px;}`}</style>
-                    <button className={`w-32 h-10 text-center text-sm ${showDescription ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleDescriptionClick}>Description</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showCourses ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleModulesClick}>Modules</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showBenefits ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleBenefitsClick}>Benefits</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showCertification ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleCertificationClick}>Certification</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showRequirements ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleRequirementsClick}>Requirements</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showTestimonials ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleTestimonialsClick}>Testimonials</button>
-                    <button className={`w-32 h-10 text-center text-sm ${showFAQs ? 'text-blue-600  lg:bg-blue-100 border-blue-600' : ''}`} onClick={handleFAQsClick}>FAQs</button>
-                </ul>
-            </div>
-            <section className='w-full min-h-[40rem]  relative '>
+            <div className="lg:w-11/12 mx-auto">
+                <div className='flex items-center h-16 bg-white shadow-md top-28 z-10 rounded-lg my-2.5 w-11/12 mx-auto'>
+                    <ul className='tabs-container flex items-center w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
+                        <style jsx>{`
+                            .tabs-container::-webkit-scrollbar {
+                                height: 2px;
+                            }
+                            .tabs-container::-webkit-scrollbar-thumb {
+                                background-color: #cbd5e1;
+                                border-radius: 2px;
+                            }
+                            .tabs-container {
+                                scrollbar-width: thin;
+                                scrollbar-color: #cbd5e1 transparent;
+                            }
+                        `}</style>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showDescription ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleDescriptionClick}>Description</button>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCourses ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleModulesClick}>Modules</button>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showBenefits ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleBenefitsClick}>Benefits</button>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCertification ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleCertificationClick}>Certification</button>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showRequirements ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleRequirementsClick}>Requirements</button>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showTestimonials ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleTestimonialsClick}>Testimonials</button>
+                        <button className={`inline-flex items-center justify-center py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showFAQs ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleFAQsClick}>FAQs</button>
+                    </ul>
+                </div>
+
+                <section className='w-full min-h-[40rem] relative mt-[-1px]'>
                 <div className='lg:w-11/12 mx-auto bg-[#f5f5f5] shadow-xl  mx-start  overflow-hidden rounded-lg'>
 
-                    <div className=" bg-gray-100 flex items-center justify-center p-4">
-                        <div ref={descriptionRef} className="w-full  flex flex-col md:flex-row justify-around gap-6  lg:p-4">
-                            <div className="w-full md:w-1/2 place-content-center lg:p-4 md:p-8">
+                    <div className="bg-white flex items-center justify-center lg:p-4">
+                        <div ref={descriptionRef} className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
+                            <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
                                 <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
-                                <p className="text-xs sm:text-sm md:text-base pt-3 text-justify md:pt-5 text-gray-600">
-                                    {content.detailedDescription1}
-                                </p>
-                                <p className="text-xs sm:text-sm md:text-base pt-3 text-justify md:pt-5 text-gray-600">
-                                    {content.detailedDescription2}
+                                <p className="text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">
+                                    {content.detailedCourseDescription}
                                 </p>
                             </div>
                             <div className="w-full md:w-1/2 flex items-center justify-center p-4">
                                 <div className="w-full lg:h-72 rounded-lg flex items-center justify-center">
                                     <Image
-                                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760409/978dd857-95f0-4d01-bca2-0ace606959c0.png"
+                                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png"
                                         alt="MetaZen"
                                         width={500}
                                         height={500}
-                                        className="lg:w-8/12 h-full rounded-lg text-gray-500" />
+                                        className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
                                 </div>
                             </div>
                         </div>
@@ -835,6 +854,7 @@ const MetaZen = () => {
                 </div>
             </section>
 
+        </div>
         </section>
     )
 }

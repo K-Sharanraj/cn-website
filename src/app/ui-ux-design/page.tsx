@@ -50,7 +50,9 @@ const Page = () => {
         </button>
 
       </div>
-      <UIUXDesign />
+      <div className="mt-32">
+        <UIUXDesign />
+      </div>
 
       <Contact />
       <Footer/>
