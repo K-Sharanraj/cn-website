@@ -48,7 +48,9 @@ const Page = () => {
         </button>
       </div>
 
-      <FullStackDevelopment />
+      <div className="mt-20">
+        <FullStackDevelopment />
+      </div>
       <ContactUs />
       <Footer />
     </div>

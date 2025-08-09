@@ -21,7 +21,8 @@ const navItems = [
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const path = usePathname();
-    
+    const isHomePage = path === '/';
+
     // Use the new smooth scroll animation hook
     const {
         scrollProgress,
@@ -43,7 +44,7 @@ export default function Navbar() {
         scrollThreshold: 10,
         hideThreshold: 150,
         hideDirection: 'down',
-        animationStartThreshold: 1800, // Start animations after first scroll section (around 1800px)
+        animationStartThreshold: isHomePage ? 1800 : 0, // Start animations after first scroll section (around 1800px)
         disableHiding: true // Don't hide the navbar, keep it visible
     });
 

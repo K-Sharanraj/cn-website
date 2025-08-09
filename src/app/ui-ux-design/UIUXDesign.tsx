@@ -179,7 +179,7 @@ const UIUXDesign = () => {
         <section className=''>
             <section className='mt-[20px]'>
                 <div
-                    className='flex flex-col lg:flex-row justify-between container mx-auto min-h-[569px]'
+                    className='flex flex-col lg:flex-row justify-between min-h-[450px]'
                     style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666950/2202758_1_vd4div.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                 {/* Left side content */}
@@ -235,87 +235,104 @@ const UIUXDesign = () => {
                     </div>
 
                     {/* Right side form */}
-                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5  '>
-                        <div className="w-full sm:w-[25rem] lg:h-[400px] h-auto rounded-lg shadow p-4 sm:p-6 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0 lg:mt-[60px]">
-                            <div className="flex flex-col justify-center items-center">
-                                <h2 className="text-lg sm:text-xl text-center font-semibold text-zinc-500">
-                                    To learn this Course <span className='p-1 rounded-md bg-blue-500 text-white'>online</span>
-                                </h2>
+                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5 items-center'>
+                        <div className="w-full sm:w-[25rem] lg:h-auto rounded-2xl shadow-lg p-4 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0">
+                            <div className="flex flex-row items-center justify-start mb-3 gap-2">
+                                <h2 className="text-lg font-bold text-gray-800">To Learn this course</h2>
+                                <span className='inline-flex items-center py-1 px-2 rounded-md text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-blue-600'>
+                                    Online
+                                </span>
                             </div>
-                            <div>
+
+                            <form
+                                onSubmit={onSubmit}
+                                className='w-full space-y-2'
+                            >
+                                {/* Hidden Access Key */}
+                                <input
+                                    type="hidden"
+                                    name="access_key"
+                                    value="701509da-ad7d-43d7-9c9e-6f849ee8ff6d"
+                                />
                                 <div>
-                                    <form
-
-                                        onSubmit={onSubmit}
-                                        className="w-full mt-4 space-y-4 sm:space-y-2.5 place-content-center">
-
-                                        <div>
-                                            <input
-                                                ref={nameInputRef}
-                                                className="outline-none h-[36px] border border-gray-200 rounded-md px-2 w-full text-slate-500 focus:border-blue-300"
-                                                placeholder="Name"
-                                                id="Name"
-                                                name="Name"
-                                                type="text"
-                                                required
-                                            />
-                                        </div>
-                                        <div>
-                                            <input
-                                                className="outline-none h-[36px] border border-gray-200  rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
-                                                placeholder="Email"
-                                                id="email"
-                                                name="email"
-                                                type="email"
-                                                required
-                                            />
-                                        </div>
-                                        <div>
-                                            <input
-                                                className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
-                                                placeholder="Education Qualification"
-                                                id="education"
-                                                name="education"
-                                                type="text"
-                                                required
-                                            />
-                                        </div>
-                                        <div>
-                                            <input
-                                                className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
-                                                placeholder="Current Profile"
-                                                id="currentprofile"
-                                                name="currentprofile"
-                                                type="text"
-                                                required
-                                            />
-                                        </div>
-
-                                        <button
-                                            className="w-full justify-center py-1 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-md text-white"
-                                            id="login"
-                                            name="login"
-                                            type="submit"
-                                        >
-                                            Enroll Now
-                                        </button>
-
-                                        <p className="flex justify-center gap-2 space-x-1 bg-[#EAF7FF] py-1 rounded-md text-[#00A3FF] text-xs sm:text-sm">
-                                            <NumberTicker
-                                                value={1450}
-                                                className="whitespace-pre-wrap font-semibold text-base sm:text-lg tracking-tighter text-[#00A3FF]"
-                                            />
-                                            enrolled in this course
-                                        </p>
-                                    </form>
+                                    <input
+                                        ref={nameInputRef}
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
+                                        placeholder="Name"
+                                        id="Name"
+                                        name="Name"
+                                        type="text"
+                                        required
+                                    />
                                 </div>
-                            </div>
+                                <div>
+                                    <input
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
+                                        placeholder="Email"
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
+                                        placeholder="Phone number"
+                                        id="phone"
+                                        name="phone"
+                                        type="tel"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
+                                        placeholder="Education Qualification"
+                                        id="education"
+                                        name="education"
+                                        type="text"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
+                                        placeholder="Current Profile"
+                                        id="currentprofile"
+                                        name="currentprofile"
+                                        type="text"
+                                        required
+                                    />
+                                </div>
+
+                                <button
+                                    className="w-full justify-center py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 active:from-blue-700 active:to-blue-800 rounded-lg text-white font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                                    id="login"
+                                    name="login"
+                                    type="submit"
+                                >
+                                    Enroll Now
+                                </button>
+
+                                <div className="flex items-center justify-center pt-3">
+                                    <User className="w-4 h-4 text-gray-500 mr-1" />
+                                    <p className="text-xs text-gray-600">
+                                        <NumberTicker
+                                            value={1450}
+                                            className="font-bold text-gray-800 text-sm"
+                                        />
+                                        {' '}
+                                        enrolled in this course
+                                    </p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </section>  
             <div className="lg:w-11/12 mx-auto">
-                <div className='flex items-center h-16 bg-white shadow-md sticky top-28 z-10 rounded-lg'>
+                <div className='flex items-center h-16 bg-white shadow-md top-28 z-10 rounded-lg my-2.5'>
                     <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
                         <style jsx>{`
                             .tabs-container::-webkit-scrollbar {

@@ -23,8 +23,8 @@ const Programs = () => {
     return (
         <div className=''>
             {/* IMage Slider */}
-            <div className='min-h-80 flex items-center justify-center mt-24 rounded-xl my-10 w-full'>
-                <div className='container lg:block hidden relative mx-auto  mt-24'>
+            <div className='min-h-80 flex items-center justify-center mt-10 rounded-xl my-10 w-full'>
+                <div className='container lg:block hidden relative mx-auto  mt-10'>
                     <Slider
                         dots={false}
                         infinite={true}

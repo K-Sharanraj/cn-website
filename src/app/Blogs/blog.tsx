@@ -28,14 +28,22 @@ function App() {
         fetch("https://medium-postscraper-api.onrender.com/scrape?url=https://cybernautblogs.medium.com/")
             .then(response => response.json())
             .then(data => {
-                const categorizedBlogs = data.map((blog: Blog) => ({
-                    ...blog,
-                    category: categorizeBlog(blog)
-                }));
-                setBlogs(categorizedBlogs);
-                setFilteredBlogs(categorizedBlogs);
+                if (Array.isArray(data)) {
+                    const categorizedBlogs = data.map((blog: Blog) => ({
+                        ...blog,
+                        category: categorizeBlog(blog)
+                    }));
+                    setBlogs(categorizedBlogs);
+                    setFilteredBlogs(categorizedBlogs);
+                } else {
+                    setBlogs([]);
+                    setFilteredBlogs([]);
+                }
             })
-            .catch(error => console.error(`Error fetching blogs: ${error}`));
+            .catch(error => {
+                setBlogs([]);
+                setFilteredBlogs([]);
+            });
     }, []);
 
 
@@ -76,10 +84,10 @@ function App() {
     return (
         <div className="min-h-screen mt-10 bg-white">
             <Nav />
-            <section className="container mx-auto px-4 text-center">
+            <section className="container mx-auto px-4 text-center pt-3">
                 <div className="mx-auto">
                     <LampContainer>
-                        <motion.h1
+                        <motion.div
                             initial={{ opacity: 0.5, y: 100 }}
                             whileInView={{ opacity: 1, y: -30 }}
                             transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
@@ -97,7 +105,7 @@ function App() {
                             <p className="text-sm md:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto px-4">
                                 Stay informed with the latest insights, trends, and updates. Explore expert opinions, industry news, and valuable knowledge—all in one place.
                             </p>
-                        </motion.h1>
+                        </motion.div>
                     </LampContainer>
                 </div>
             </section>

@@ -196,7 +196,7 @@ const FullStackDevelopment = () => {
         <section className=''>
             <section className='mt-[70px]'>
                 <div
-                    className='flex flex-col lg:flex-row justify-between w-full min-h-[569px]'
+                                        className='flex flex-col lg:flex-row justify-between w-full min-h-[450px]'
                     style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668079/2202758_1_wnw7yu.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                     {/* Left side content */}
@@ -253,21 +253,29 @@ const FullStackDevelopment = () => {
                     </div>
 
                     {/* Right side form */}
-                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5 '>
-                        <div className="w-full sm:w-[25rem] h-[400px] rounded-lg shadow p-4 sm:p-6 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0 lg:mt-[10px]">
-                            <div className="flex flex-col justify-center items-center">
-                                <h2 className="text-lg sm:text-xl text-center font-semibold text-zinc-500">
-                                    {content.enrollmentMessage}
-                                </h2>
+                    <div ref={formjoinRef} className='w-full lg:w-1/2 flex justify-center lg:justify-end p-5 items-center'>
+                        <div className="w-full sm:w-[25rem] lg:h-auto rounded-2xl shadow-lg p-4 bg-white relative overflow-hidden mx-auto lg:mr-20 mb-10 lg:mb-0">
+                            <div className="flex flex-row items-center justify-start mb-3 gap-2">
+                                <h2 className="text-lg font-bold text-gray-800">To Learn this course</h2>
+                                <span className='inline-flex items-center py-1 px-2 rounded-md text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-blue-600'>
+                                    Online
+                                </span>
                             </div>
 
                             <form
                                 onSubmit={onSubmit}
-                                className="w-full mt-1 space-y-4 sm:space-y-2.5 place-content-center">
+                                className='w-full space-y-2'
+                            >
+                                {/* Hidden Access Key */}
+                                <input
+                                    type="hidden"
+                                    name="access_key"
+                                    value="701509da-ad7d-43d7-9c9e-6f849ee8ff6d"
+                                />
                                 <div>
                                     <input
                                         ref={nameInputRef}
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 w-full text-slate-500 focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Name"
                                         id="Name"
                                         name="Name"
@@ -277,7 +285,7 @@ const FullStackDevelopment = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Email"
                                         id="email"
                                         name="email"
@@ -287,8 +295,8 @@ const FullStackDevelopment = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
-                                        placeholder="Phone Number"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
+                                        placeholder="Phone number"
                                         id="phone"
                                         name="phone"
                                         type="tel"
@@ -297,7 +305,7 @@ const FullStackDevelopment = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Education Qualification"
                                         id="education"
                                         name="education"
@@ -307,7 +315,7 @@ const FullStackDevelopment = () => {
                                 </div>
                                 <div>
                                     <input
-                                        className="outline-none h-[36px] border border-gray-200 rounded-md px-2 text-slate-500 w-full focus:border-blue-300"
+                                        className="outline-none border border-gray-300 h-9 rounded-lg px-3 w-full text-sm text-gray-700 focus:ring-2 focus:ring-blue-300 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
                                         placeholder="Current Profile"
                                         id="currentprofile"
                                         name="currentprofile"
@@ -317,7 +325,7 @@ const FullStackDevelopment = () => {
                                 </div>
 
                                 <button
-                                    className="w-full justify-center py-1 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-md text-white"
+                                    className="w-full justify-center py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 active:from-blue-700 active:to-blue-800 rounded-lg text-white font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                                     id="login"
                                     name="login"
                                     type="submit"
@@ -325,13 +333,17 @@ const FullStackDevelopment = () => {
                                     Enroll Now
                                 </button>
 
-                                <p className="flex justify-center gap-2 space-x-1 bg-[#EAF7FF] py-1 rounded-md text-[#00A3FF] text-xs sm:text-sm">
-                                    <NumberTicker
-                                        value={1450}
-                                        className="whitespace-pre-wrap font-semibold text-base sm:text-lg tracking-tighter text-[#00A3FF]"
-                                    />
-                                    enrolled in this course
-                                </p>
+                                <div className="flex items-center justify-center pt-3">
+                                    <User className="w-4 h-4 text-gray-500 mr-1" />
+                                    <p className="text-xs text-gray-600">
+                                        <NumberTicker
+                                            value={1450}
+                                            className="font-bold text-gray-800 text-sm"
+                                        />
+                                        {' '}
+                                        enrolled in this course
+                                    </p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -339,7 +351,7 @@ const FullStackDevelopment = () => {
             </section>
 
             <div className="lg:w-11/12 mx-auto">
-                <div className='flex items-center h-16 bg-white shadow-md sticky top-28 z-10 rounded-lg'>
+                <div className='flex items-center h-16 bg-white shadow-md top-28 z-10 rounded-lg my-2.5'>
                     <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
                         <style jsx>{`
                             .tabs-container::-webkit-scrollbar {
@@ -366,20 +378,22 @@ const FullStackDevelopment = () => {
 
                 <section className='w-full min-h-[40rem] relative mt-[-1px]'>
                     <div className='bg-white shadow-xl overflow-hidden rounded-lg'>
-                    <div className=" bg-gray-100 flex items-center justify-center lg:p-4">
-                        <div ref={descriptionRef} className="w-full  flex flex-col md:flex-row justify-around gap-6 mt-10 lg:p-4">
+                    <div className="bg-white flex items-center justify-center lg:p-4">
+                        <div ref={descriptionRef} className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
                             <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
                                 <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
-                                <p className="text-xs sm:text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">{content.courseDescription}</p>
+                                <p className="text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">
+                                    {content.courseDescription}
+                                </p>
                             </div>
                             <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-                                <div className="w-full  sm:h-48 md:h-60 lg:h-72 rounded-lg flex items-center justify-center">
+                                <div className="w-full lg:h-72 rounded-lg flex items-center justify-center">
                                     <Image
-                                        width={1000}
-                                        height={1000}
+                                        width={500}
+                                        height={500}
                                         src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png'
                                         alt="course image"
-                                        className="w-[40rem] h-full object-contain rounded-xl" />
+                                        className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
                                 </div>
                             </div>
                         </div>
@@ -415,7 +429,7 @@ const FullStackDevelopment = () => {
                                         if (formjoinRef.current) {
                                             formjoinRef.current.scrollIntoView({ behavior: 'smooth' });
                                             if (nameInputRef.current) {
-                                                nameInputrRef.current.focus();
+                                                nameInputRef.current.focus();
                                             }
                                         }
                                     }}
