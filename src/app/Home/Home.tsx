@@ -113,7 +113,7 @@ function HeroIllustration() {
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657813/1_pa9zkf.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657809/2_yfxvfp.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657811/4_axnumq.jpg',
-  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657809/7_oowzww.jpg',
+//   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657809/7_oowzww.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657808/6_jp0jgw.jpg',
   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657807/5_gscaze.jpg' // student community
 ]
@@ -123,7 +123,7 @@ function HeroIllustration() {
     const getImageSrc = () => {
         if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[1], sliderImages[2], sliderImages[3], sliderImages[4], sliderImages[5]];
         if (scrollTranslate <= 1000) return [sliderImages[6],sliderImages[7], sliderImages[8], sliderImages[9],sliderImages[10], sliderImages[11], sliderImages[12]];
-        return [ sliderImages[13],sliderImages[14],sliderImages[15],sliderImages[16],sliderImages[17],sliderImages[18]];
+        return [ sliderImages[13],sliderImages[14],sliderImages[15],sliderImages[16],sliderImages[17]];
     };
 
 
