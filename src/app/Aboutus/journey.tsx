@@ -99,13 +99,13 @@ const journeyData: JourneyData[] = [
     year: 2024,
     title: "National Recognition",
     description: "Our dedication and innovation have earned us MSME, MCA, Startup India, and ISO certifications, showcasing our commitment to quality and excellence.",
-    image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742451514/recognition_p5oiro.png"
+    image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754662018/2024_dng8me.png"
   },
   {
     year: 2025,
     title: "Our Reach",
     description: "We're proud to share that Cybernaut has partnered with SSN College of Engineering as the official UI & UX elective paper & Industrial training partner!",
-    image: "https://res.cloudinary.com/dn60aovto/image/upload/v1742453360/2025_jaxgkz.jpg"
+    image: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754662025/2025_t2nom0.jpg"
   }
 ];
 
