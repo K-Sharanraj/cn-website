@@ -40,7 +40,7 @@ function App() {
                     setFilteredBlogs([]);
                 }
             })
-            .catch(error => {
+            .catch(() => {
                 setBlogs([]);
                 setFilteredBlogs([]);
             });

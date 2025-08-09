@@ -394,7 +394,7 @@ export default function Home() {
             window.removeEventListener('scroll', handleScroll);
             clearInterval(interval);
         };
-    }, []);
+    }, [quotes.length]);
 
     // Calculate smooth vertical movement
     const moveDistance = Math.min(scrollY * 0.3, 450); // Stop at 800px

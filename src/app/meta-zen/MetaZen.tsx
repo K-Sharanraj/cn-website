@@ -157,8 +157,6 @@ const MetaZen = () => {
     ]
     // numberbox
 
-    const [phoneNumber, setPhoneNumber] = useState('');
-
 
 
     // three courses

@@ -24,30 +24,6 @@ export default function NavbarEnhanced() {
     const path = usePathname();
     const { theme } = useTheme();
     
-    // Use the new smooth scroll animation hook
-    const {
-        opacity,
-        scale,
-        blur,
-        height,
-        translateY
-    } = useSmoothScrollAnimation({
-        maxScroll: 300, // Animation range after the start threshold
-        minOpacity: 0.85,
-        maxOpacity: 1,
-        minScale: 0.98,
-        maxScale: 1,
-        minBlur: 8,
-        maxBlur: 20,
-        minHeight: 56,
-        maxHeight: 80,
-        scrollThreshold: 10,
-        hideThreshold: 150,
-        hideDirection: 'down',
-        animationStartThreshold: 1800, // Start animations after first scroll section (around 1800px)
-        disableHiding: true // Don't hide the navbar, keep it visible
-    });
-
     // Animation variants for the navbar
     const navVariants = {
         visible: {
@@ -73,7 +49,6 @@ export default function NavbarEnhanced() {
     return (
         <motion.header
             initial="visible"
-            animate={hidden ? 'hidden' : 'visible'}
             variants={navVariants}
             className={cn(
                 'fixed top-5 left-0 right-0 mx-auto z-50 flex items-center justify-center transition-all duration-300',
