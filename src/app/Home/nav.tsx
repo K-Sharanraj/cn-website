@@ -73,7 +73,7 @@ export default function Navbar() {
                 'fixed z-50 flex items-center justify-center',
                 'w-full',
                 // Mobile: top-2 with smaller margins, Desktop: top-5
-                'top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 lg:top-5 lg:left-0 lg:right-0 lg:mx-auto',
+                'top-2 left-0 right-0 sm:top-3 sm:left-3 sm:right-3 lg:top-5 lg:left-0 lg:right-0 lg:mx-auto',
                 // Responsive max-width and border radius
                 'rounded-2xl sm:rounded-3xl lg:rounded-full',
                 scrollProgress > 0.5 ? 'lg:max-w-5xl' : 'lg:max-w-7xl',

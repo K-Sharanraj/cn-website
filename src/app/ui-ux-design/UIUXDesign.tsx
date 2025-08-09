@@ -179,7 +179,7 @@ const UIUXDesign = () => {
         <section className=''>
             <section className='mt-[20px]'>
                 <div
-                    className='flex flex-col lg:flex-row justify-between min-h-[450px]'
+                    className='flex flex-col lg:flex-row justify-between w-full min-h-[450px]'
                     style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754666950/2202758_1_vd4div.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                 {/* Left side content */}
