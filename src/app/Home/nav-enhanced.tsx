@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { useSmoothScrollAnimation } from '@/hooks/useSmoothScrollAnimation';
+
 
 const navItems = [
     { name: 'Home', link: '/' },

@@ -228,7 +228,7 @@ export default function Home() {
         }, 3000); // Change content every 3 seconds
 
         return () => clearInterval(interval);
-    }, []);
+    }, [bodycontents.length]);
 
 
     const handleScroll = useCallback(() => {
@@ -288,7 +288,7 @@ export default function Home() {
         }, 3000); // Change content every 3 seconds
 
         return () => clearInterval(interval);
-    }, []);
+    }, [autoContents.length]);
 
     const people: { id: number; name: string; designation: string; image: string | StaticImageData }[] = [
         {
@@ -329,7 +329,7 @@ export default function Home() {
         }, 3000); // Change content every 9 seconds
 
         return () => clearInterval(interval);
-    }, []);
+    }, [autoContents.length, bodycontents.length]);
     // slider
     const [, setCurrentSlide] = useState(0)
      const sliderImages = [
@@ -367,7 +367,7 @@ export default function Home() {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [autoContents.length, bodycontents.length]);
     // mic animeation
 
     const [scrollY, setScrollY] = useState(0);
