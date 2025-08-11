@@ -10,6 +10,7 @@ import StartCourse from './Start-course';
 import Testimonials from './Testimonials';
 import Fqas from './FQAs';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import OurProject from './OurProject';
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import Link from 'next/link'
@@ -17,6 +18,7 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { User, Star, StarHalf, BarChart3 } from 'lucide-react';
 import Image from 'next/image';
+gsap.registerPlugin(ScrollTrigger);
 
 
 const UIUXDesign = () => {
@@ -176,7 +178,7 @@ const UIUXDesign = () => {
         }
     };
     return (
-        <section className=''>
+        <section ref={sectionRef} className=''>
             <section className='mt-[20px]'>
                 <div
                     className='flex flex-col lg:flex-row justify-between w-full min-h-[450px]'
