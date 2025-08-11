@@ -231,56 +231,64 @@ export default function Home() {
     }, [bodycontents.length]);
 
 
-    const handleScroll = useCallback(() => {
-        const scrollPosition = window.scrollY;
+    // GSAP ScrollTrigger for pinned scroll sections
+    useEffect(() => {
+        // Pin the main hero section and change content based on scroll progress
+        const heroSection = document.querySelector('.hero-pin-section');
+        
+        if (heroSection) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top top",
+                    end: "+=3000", // 3000px of scroll to go through all 3 content sections
+                    pin: true,
+                    scrub: 1,
+                    onUpdate: (self) => {
+                        const progress = self.progress;
+                        
+                        if (progress < 0.33) {
+                            setWordIndex(0);
+                            setScrollTranslate(0);
+                        } else if (progress < 0.66) {
+                            setWordIndex(1);
+                            setScrollTranslate(200);
+                        } else {
+                            setWordIndex(2);
+                            setScrollTranslate(300);
+                        }
+                    }
+                }
+            });
 
-        if (scrollPosition < 500) {
-            setWordIndex(0);
-            setScrollTranslate(0);
-        } else if (scrollPosition < 1000) {
-            setWordIndex(1);
-            setScrollTranslate(200);
-        } else if (scrollPosition < 1800) {
-            setWordIndex(2);
-            setScrollTranslate(300);
-        } else {
-            setScrollTranslate(300);
+            return () => {
+                tl.kill();
+            };
         }
     }, []);
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [handleScroll]);
 
     const [content, setContent] = useState('Learn to code, build innovative solutions, and shape the digital future. Every line you write brings you closer to new possibilities and powers the next big breakthrough. Step into the world of tech—your adventure begins now!');
     const [isAnimating, setIsAnimating] = useState(false);
 
 
+    // Update content based on scroll progress from ScrollTrigger
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            let newContent = content;
+        let newContent = content;
 
-            if (scrollPosition < 500) {
-                newContent = 'Learn to code, build innovative solutions, and shape the digital future. Every line you write brings you closer to new possibilities and powers the next big breakthrough. Step into the world of tech—your adventure begins now!';
-            } else if (scrollPosition < 1000) {
-                newContent = `At Cybernaut Edu-Tech, we empower students to code, create, and innovate with industry-leading tools. Together, let's shape the future of learning and technology!`;
-            } else {
-                newContent = `Connect with tech minds, access exclusive resources, and level up your skills. At CDSC, innovation isn’t just learned—it’s built. Ready to enter the next era of tech?`;
-            }
+        if (scrollTranslate === 0) {
+            newContent = 'Learn to code, build innovative solutions, and shape the digital future. Every line you write brings you closer to new possibilities and powers the next big breakthrough. Step into the world of tech—your adventure begins now!';
+        } else if (scrollTranslate === 200) {
+            newContent = `At Cybernaut Edu-Tech, we empower students to code, create, and innovate with industry-leading tools. Together, let's shape the future of learning and technology!`;
+        } else if (scrollTranslate === 300) {
+            newContent = `Connect with tech minds, access exclusive resources, and level up your skills. At CDSC, innovation isn't just learned—it's built. Ready to enter the next era of tech?`;
+        }
 
-            if (newContent !== content) {
-                setIsAnimating(true);
-                setContent(newContent);
-                setIsAnimating(false);
-
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [content]);
+        if (newContent !== content) {
+            setIsAnimating(true);
+            setContent(newContent);
+            setTimeout(() => setIsAnimating(false), 100);
+        }
+    }, [scrollTranslate, content]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -403,11 +411,11 @@ export default function Home() {
         <>
             {/* Desktop View */}
             <div className="container mx-auto hidden lg:block w-full max-w-[90vw] min-h-screen px-4 pb-40">
-                <section className="container mx-auto min-h-[140rem] relative top-28 w-full">
+                <section className="hero-pin-section container mx-auto min-h-[140rem] relative top-28 w-full" style={{ marginTop: '10px' }}>
                     <main className="mx-auto h-auto w-12/12 rounded-xl sticky top-28 place-content-center overflow-hidden shadow-[0px_-80px_50px_5px_#F8F8F8]">                        <div className="flex items-center justify-center w-full">
                         <div className="min-h-auto w-1/2 space-y-4">
-                            <h1 className="text-2xl md:text-xl lg:text-2xl xl:text-3xl w-[35rem] md:w-[30rem] lg:w-[35rem] xl:w-[40rem] text-start font-professional font-semibold transition-all duration-300 ease-in-out">
-                                <span className="text-[clamp(1.5rem,4vw,2.5rem)] tracking-wider" style={{ fontFamily: 'Loubag' }}>
+                            <h1 className="text-2xl md:text-xl lg:text-2xl xl:text-3xl w-[35rem] md:w-[30rem] lg:w-[35rem] xl:w-[40rem] text-start font-sans font-bold transition-all duration-300 ease-in-out">
+                                <span className="text-[clamp(1.25rem,3.5vw,2.25rem)] tracking-wider font-sans font-extrabold">
                                     {getContent(scrollTranslate)}
                                 </span>
                             </h1>
@@ -493,7 +501,7 @@ export default function Home() {
                     <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
 
-                    <div className="relative py-16 mt-12 px-8">
+                    <div className="relative py-16 mt-12 px-8" style={{ marginTop: 'calc(3rem + 10px)' }}>
                         <div className="container mx-auto">
                             <div className="max-w-4xl mx-auto">
                                 <div className="space-y-8">
@@ -501,7 +509,7 @@ export default function Home() {
                                     <div className="space-y-10">
                                         <h1
                                             style={{ lineHeight: '1.2' }}
-                                            className={`text-[clamp(1.7rem, 2.2vw, 2.7rem)]  min-h-2  tracking-wide py-3 text-start lg:text-4xl font-professional font-bold transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
+                                            className={`text-[clamp(1.5rem, 2vw, 2.5rem)]  min-h-2  tracking-wide py-3 text-start lg:text-4xl font-sans font-extrabold transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'
                                                 }`}
                                         >
                                             {autoContents[autoContentIndex]}
@@ -568,12 +576,12 @@ export default function Home() {
             </section>
 
             {/* Mobile View */}
-            <section className='block md:hidden container  mt-24'>
+            <section className='block md:hidden container  mt-24' style={{ marginTop: 'calc(6rem + 10px)' }}>
                 <div className="heading pb-5 p-4">
                     <div className='w-full py-5 min-h-[13rem] '>
                         <p
                             style={{ lineHeight: '1.2' }}
-                            className={`text-[23px] min-h-32 tracking-wide py-3 text-start lg:text-4xl font-professional font-bold transform transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-0 ' : 'opacity-100'}`}
+                            className={`text-[19px] min-h-32 tracking-wide py-3 text-start lg:text-4xl font-sans font-extrabold transform transition-all duration-300 ease-in-out ${isAnimating ? 'opacity-0 ' : 'opacity-100'}`}
                         >
                             {autoContents[autoContentIndex]}
                         </p>
