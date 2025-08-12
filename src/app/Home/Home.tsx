@@ -340,28 +340,32 @@ export default function Home() {
     }, [autoContents.length, bodycontents.length]);
     // slider
     const [, setCurrentSlide] = useState(0)
-     const sliderImages = [
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716405/c2a66f6b-1757-4270-aa37-2e87a2460b6d.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716430/2d27f8b0-0f8c-46c6-ba81-0eef3a5d8144.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716373/2e31533e-2f20-4db9-b937-1fab48bd5722.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716357/9acf9192-d373-4c83-9a3b-94f7d459fc10.png', 
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716388/b7df062c-5516-4433-916b-16454077b74e.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504481/IMG_8114_h8xeri.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504483/IMG_8448_brmbpu.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504295/IMG_6137_vrppyd.jpg',//
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504297/IMG_1701_qe20ur.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504296/IMG_0279_hkuqgw.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753716015/f14ceae9-18f7-4e6e-8dc9-74d11a12ac97.png', //
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715988/d3a6a190-c4ad-49fd-bc1c-2cec97198808.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/v1753715927/7e381005-e555-46cd-9604-e2f9b6331f91.png',
-        'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504500/IMG_4455_vpcx0u.png'
-    ];
-    
+       const sliderImages = [
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657082/1_d3rq80.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657083/2_lkf8lf.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657084/4_awi3ve.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/v1754657094/3_msykn9.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657101/6_jqatla.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657127/5_n84jvq.jpg', // b2c
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657607/1_zump3v.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657604/2_s7h8bu.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657604/3_a0bfow.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657610/3_1_qaqgjo.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657600/4_zctk3i.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657608/5_gr6b0h.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657598/6_epkorv.jpg', // b2b
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657813/1_pa9zkf.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657809/2_yfxvfp.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657811/4_axnumq.jpg',
+//   'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657809/7_oowzww.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657808/6_jp0jgw.jpg',
+  'https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1754657807/5_gscaze.jpg' // student community
+]
 
-    const getImageSrc = () => {
-        if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[1], sliderImages[2], sliderImages[3], sliderImages[4], sliderImages[5], sliderImages[6]];
-        if (scrollTranslate <= 1000) return [sliderImages[7], sliderImages[8], sliderImages[9]];
-        return [sliderImages[10], sliderImages[11], sliderImages[12], sliderImages[13]];
+   const getImageSrc = () => {
+        if (scrollTranslate <= 500) return [sliderImages[0], sliderImages[1], sliderImages[2], sliderImages[3], sliderImages[4], sliderImages[5]];
+        if (scrollTranslate <= 1000) return [sliderImages[6],sliderImages[7], sliderImages[8], sliderImages[9],sliderImages[10], sliderImages[11], sliderImages[12]];
+        return [ sliderImages[13],sliderImages[14],sliderImages[15],sliderImages[16],sliderImages[17]];
     };
 
     useEffect(() => {

@@ -559,7 +559,7 @@ const Techtrio = () => {
                             <div className="w-full md:w-1/2 flex items-center justify-center p-4">
                                 <div className="w-full lg:h-72 rounded-lg flex items-center justify-center">
                                     <Image
-                                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png"
+                                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760318/dc8b4334-3d0e-4aba-b3b9-d62167505ff3.png"
                                         alt="Tech Trio"
                                         width={500}
                                         height={500}
