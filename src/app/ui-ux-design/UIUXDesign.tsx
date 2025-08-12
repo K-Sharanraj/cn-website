@@ -1,7 +1,7 @@
 
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import ThreeCourses from './ThreeCourses';
 import Keybenifits from './Keybenifits';
@@ -9,7 +9,6 @@ import Samplecertificate from './Samplecertificate';
 import StartCourse from './Start-course';
 import Testimonials from './Testimonials';
 import Fqas from './FQAs';
-import gsap from 'gsap';
 import OurProject from './OurProject';
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import Link from 'next/link'
@@ -113,30 +112,9 @@ const UIUXDesign = () => {
         faqsRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const triggerRef = useRef<HTMLDivElement>(null);
     const formjoinRef = useRef<HTMLInputElement>(null);
     const nameInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        const pin = gsap.to(sectionRef.current, {
-            translateX: "-600vw", // Adjusted for 7 sections (100vw * 6)
-            ease: "none",
-            scrollTrigger: {
-                trigger: triggerRef.current,
-                start: "top top",
-                end: "+=3500",
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-            }
-        });
-
-        return () => {
-            pin.scrollTrigger?.kill();
-            pin.kill();
-        };
-    }, []);
 
     const path = usePathname()
 
