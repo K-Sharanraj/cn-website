@@ -59,7 +59,7 @@ export default function NavbarEnhanced() {
                 'overflow-hidden'
             )}
         >
-            <nav className="w-full px-6 sm:px-8 lg:px-10">
+            <nav className="w-full pl-5 pr-4 sm:px-8 lg:px-10">
                 <div className="flex items-center justify-between h-full">
                     {/* Logo */}
                     <Link href="/" className="flex items-center py-2">
@@ -158,7 +158,7 @@ export default function NavbarEnhanced() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4"
+                        className="md:hidden absolute top-full left-0 right-0 mt-2 ml-4 mr-2"
                     >
                         <div className={cn(
                             "rounded-2xl shadow-lg border overflow-hidden",
