@@ -13,7 +13,7 @@ const sliderImages = [
     "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753971466/c4b4818a-58fd-4448-9230-228b938b92e0.png",
 ]
 const mobileSliderImages = [
-    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753972741/Ad_Banner_tsj1ry.png",
+    "https://res.cloudinary.com/ddpbtvesl/image/upload/v1754753040/Ad_Banner_qlk99f.png",
     "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753972744/Ad_Banner2_iwueyg.png",
     "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760409/978dd857-95f0-4d01-bca2-0ace606959c0.png",
 ]

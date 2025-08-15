@@ -277,7 +277,7 @@ const Founders = () => {
               <Image
                 width={350}
                 height={354}
-                src="https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto,c_fill,g_auto,h_1000,w_1000/f_auto/v1753504461/IMG_1964_bzhdlq.jpg" //inga
+                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1755187128/IMG_1964_xwqect_p36nju.jpg" //inga
                 alt="Profile"
                 className="lg:rounded-[2rem] place-self-start  lg:w-[30rem] w-[35rem] relative z-10 object-cover"
               />

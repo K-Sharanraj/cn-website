@@ -85,7 +85,7 @@ function Mobileoffers() {
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742448505/Outreach_1_lc97mp.jpg"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753504501/IMG_6403_1_vimqzs.jpg"
                   alt="Students in classroom"
                   className="rounded-lg w-full h-32 object-cover"
                 />
@@ -93,7 +93,7 @@ function Mobileoffers() {
                   width={500}
                   height={500}
 
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742455415/15_ylloii.jpg"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753758987/DSC05921_etypcu.jpg"
                   alt="Students in auditorium"
                   className="rounded-lg w-full h-32 object-cover"
                 />
@@ -148,14 +148,14 @@ function Mobileoffers() {
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742450774/forCompanies_kgsikx.jpg"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753717500/0ecc75ea-28cd-4c67-aacd-376dfc92d8fc.png"
                   alt="Corporate meeting"
                   className="rounded-lg w-full h-32 object-cover"
                 />
                 <Image
                   width={500}
                   height={500}
-                  src="https://res.cloudinary.com/dn60aovto/image/upload/v1742813815/163a62c7-5212-4d08-aa3f-0535b0562dda.png"
+                  src="https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504472/IMG_4822_sglei6.jpg"
                   alt="Business team"
                   className="rounded-lg w-full h-32 object-cover"
                 />

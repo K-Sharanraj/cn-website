@@ -28,6 +28,7 @@ interface SmoothScrollOptions {
   hideDirection?: 'up' | 'down';
   animationStartThreshold?: number; // New: When to start animations
   disableHiding?: boolean; // New: Option to disable hiding
+  disabled?: boolean; // New: Option to completely disable all animations
 }
 
 export function useSmoothScrollAnimation(options: SmoothScrollOptions = {}) {
@@ -45,7 +46,8 @@ export function useSmoothScrollAnimation(options: SmoothScrollOptions = {}) {
     hideThreshold = 150,
     hideDirection = 'down',
     animationStartThreshold = 0, // New: Default to start immediately
-    disableHiding = false // New: Default to allow hiding
+    disableHiding = false, // New: Default to allow hiding
+    disabled = false // New: Default to enable animations
   } = options;
 
   const [animationState, setAnimationState] = useState<ScrollAnimationState>({
@@ -70,6 +72,20 @@ export function useSmoothScrollAnimation(options: SmoothScrollOptions = {}) {
 
   // Calculate animation values based on scroll position
   const calculateAnimationValues = useCallback((scrollY: number) => {
+    // If animations are disabled, return fixed values
+    if (disabled) {
+      return {
+        scrollY,
+        scrollProgress: 0,
+        isScrolled: scrollY > scrollThreshold,
+        opacity: maxOpacity,
+        scale: maxScale,
+        blur: minBlur,
+        height: maxHeight,
+        translateY: 0
+      };
+    }
+    
     // Check if we should start animations based on threshold
     const shouldAnimate = scrollY >= animationStartThreshold;
     
@@ -107,7 +123,7 @@ export function useSmoothScrollAnimation(options: SmoothScrollOptions = {}) {
       height,
       translateY
     };
-  }, [maxScroll, scrollThreshold, hideThreshold, hideDirection, animationStartThreshold, disableHiding, lerp, minOpacity, maxOpacity, minScale, maxScale, minBlur, maxBlur, minHeight, maxHeight]);
+  }, [disabled, maxScroll, scrollThreshold, hideThreshold, hideDirection, animationStartThreshold, disableHiding, lerp, minOpacity, maxOpacity, minScale, maxScale, minBlur, maxBlur, minHeight, maxHeight]);
 
   // Smooth scroll handler with requestAnimationFrame
   const handleScroll = useCallback(() => {

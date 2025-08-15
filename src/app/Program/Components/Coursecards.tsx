@@ -376,7 +376,7 @@ function CourseCard({ item }: { item: CourseItem }) {
                         <span className="lg:text-sm text-[0.7rem] text-gray-400 line-through">{item.Discount}</span>
                     </div>
                     <div className="flex">
-                        <Link href={`/${item.title.replace(/ /g, '')}`} className="lg:px-4 px-2 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl transition-colors ">
+                        <Link href={`/${item.title.replace(/ /g, '')}`} className="lg:px-4 px-2 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl transition-colors whitespace-nowrap">
                             {item.button}
                         </Link>
                     </div>
@@ -388,4 +388,3 @@ function CourseCard({ item }: { item: CourseItem }) {
 }
 
 export default Coursecards;
-
