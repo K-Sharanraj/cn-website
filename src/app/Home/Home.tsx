@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { StaticImageData } from 'next/image';
 import AnimatedTooltip from '@/components/ui/animated-tooltip'
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/MOU.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -13,12 +13,6 @@ import Image from 'next/image';
 import { Code2, Network } from 'lucide-react';
 import { MonitorPlay, LineChart } from 'lucide-react';
 import { useStickyTabs } from '@/hooks/useStickyTabs';
-import ThreeCourses from './ThreeCourses';
-import Keybenifits from './Keybenifits';
-import Samplecertificate from './Samplecertificate';
-import StartCourse from './Start-course';
-import Testimonials from './Testimonials';
-import OurProject from './OurProject';
 
 const content = {
     courseTitle: 'Data Analytics',
