@@ -78,7 +78,8 @@ const Blogs: React.FC = () => {
                 // Handle different types of errors
                 if (error instanceof Error) {
                     if (error.name === 'AbortError') {
-                        console.warn("Blog fetch request timed out, using fallback data");
+                        // Silently handle timeout - this is expected behavior
+                        // console.debug("Blog fetch request timed out, using fallback data");
                     } else {
                         console.warn("Error fetching blogs from external API:", error.message);
                     }
