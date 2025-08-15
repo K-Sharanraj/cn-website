@@ -149,9 +149,10 @@ const FullStackDevelopment = () => {
                             {/* Course info */}
                             <div className='relative lg:top-14 text-white'>
                                 <h1 className='lg:w-[40rem] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>{content.title}</h1>
-                                <p className='py-1 lg:w-[50rem] text-base lg:text-lg font-bold'>{content.description}</p>
+                                <p className='py-1 lg:w-[40rem] text-base lg:text-lg font-bold'>{content.description}</p>
                                 {/* Stats */}
-                                <div className='flex flex-col sm:flex-row justify-start items-start sm:items-center py-5 text-white gap-3 sm:gap-5'>
+                                <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center py-5 mt-4 text-white gap-3 sm:gap-5">
+
                                     <span className='flex items-center justify-center gap-1 text-sm sm:text-base font-bold'>
                                         <User className="w-4 h-4 sm:w-5 sm:h-5" />
                                         {content.stats.enrolled}
