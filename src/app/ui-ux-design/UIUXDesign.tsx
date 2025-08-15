@@ -24,7 +24,7 @@ const content = {
     rating: 4.75,
     level: 'beginner',
     enrollmentMessage: 'To learn this Course online',
-    courseDescription: "Explore the world of UI/UX Design with our 6-month hands-on training program, combining Figma and Adobe XD. This course covers essential design principles, user research, wireframing, prototyping, and UI/UX testing, preparing you to create intuitive, visually appealing user interfaces. Master the tools of the trade, from designing responsive layouts to crafting brand-aligned visuals.\
+    courseDescription: "Explore the world of UI/UX Design with our 6-month hands-on training program, combining Figma and Adobe XD. This course covers essential design principles, user research, wireframing, prototyping, and UI/UX testing, preparing you to create intuitive, visually appealing user interfaces. Master the tools of the trade, from designing responsive layouts to crafting brand-aligned visuals.
                                     By the end of the program, you'll have a diverse portfolio of real-world projects and a certificate showcasing your skills. Whether you're an aspiring designer or a professional looking to upgrade your skills, this course will equip you with everything you need to succeed in UI/UX design.",
     buttons: {
         enrollNow: 'Enroll Now',
