@@ -1,7 +1,7 @@
 
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import ThreeCourses from './ThreeCourses';
 import Keybenifits from './Keybenifits';
@@ -9,7 +9,6 @@ import Samplecertificate from './Samplecertificate';
 import StartCourse from './Start-course';
 import Testimonials from './Testimonials';
 import Fqas from './FQAs';
-import gsap from 'gsap';
 import OurProject from './OurProject';
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import Link from 'next/link'
@@ -17,6 +16,7 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { User, Star, StarHalf, BarChart3 } from 'lucide-react';
 import Image from 'next/image'
+import { useStickyTabs } from '@/hooks/useStickyTabs';
 
 const content = {
     title: 'Full Stack Development',
@@ -42,14 +42,6 @@ const content = {
 };
 
 const FullStackDevelopment = () => {
-    const [showCourses, setShowCourses] = useState(false);
-    const [showDescription, setShowDescription] = useState(true);
-    const [showBenefits, setShowBenefits] = useState(false);
-    const [showCertification, setShowCertification] = useState(false);
-    const [showRequirements, setShowRequirements] = useState(false);
-    const [showTestimonials, setShowTestimonials] = useState(false);
-    const [showFAQs, setShowFAQs] = useState(false);
-
     const descriptionRef = useRef<HTMLDivElement>(null);
     const coursesRef = useRef<HTMLDivElement>(null);
     const benefitsRef = useRef<HTMLDivElement>(null);
@@ -57,106 +49,39 @@ const FullStackDevelopment = () => {
     const requirementsRef = useRef<HTMLDivElement>(null);
     const testimonialsRef = useRef<HTMLDivElement>(null);
     const faqsRef = useRef<HTMLDivElement>(null);
+    const projectsRef = useRef<HTMLDivElement>(null);
+    const sentinelRef = useRef<HTMLDivElement>(null);
 
-    const handleModulesClick = () => {
-        setShowCourses(true);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        coursesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const tabRefs = {
+        description: useRef<HTMLButtonElement>(null),
+        modules: useRef<HTMLButtonElement>(null),
+        benefits: useRef<HTMLButtonElement>(null),
+        certification: useRef<HTMLButtonElement>(null),
+        requirements: useRef<HTMLButtonElement>(null),
+        testimonials: useRef<HTMLButtonElement>(null),
+        faqs: useRef<HTMLButtonElement>(null),
+        projects: useRef<HTMLButtonElement>(null),
     };
 
-    const handleDescriptionClick = () => {
-        setShowDescription(true);
-        setShowCourses(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        descriptionRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleBenefitsClick = () => {
-        setShowBenefits(true);
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        benefitsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleCertificationClick = () => {
-        setShowCertification(true);
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        certificationRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleRequirementsClick = () => {
-        setShowRequirements(true);
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        requirementsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleTestimonialsClick = () => {
-        setShowTestimonials(true); // Show testimonials
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowFAQs(false);
-        testimonialsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleFAQsClick = () => {
-        setShowFAQs(true); // Show FAQs
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        faqsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-    const path = usePathname()
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const triggerRef = useRef<HTMLDivElement>(null);
+    const sectionRefs = [descriptionRef, coursesRef, benefitsRef, certificationRef, requirementsRef, testimonialsRef, faqsRef, projectsRef];
+    const { activeTab, isFixed, tabContainerRef } = useStickyTabs({ sectionRefs, sentinelRef });
 
     useEffect(() => {
-        const pin = gsap.to(sectionRef.current, {
-            translateX: "-600vw", // Adjusted for 7 sections (100vw * 6)
-            ease: "none",
-            scrollTrigger: {
-                trigger: triggerRef.current,
-                start: "top top",
-                end: "+=3500",
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-            }
-        });
+        if (activeTab && tabRefs[activeTab]?.current) {
+            tabRefs[activeTab].current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }, [activeTab, tabRefs]);
 
-        return () => {
-            pin.scrollTrigger?.kill();
-            pin.kill();
-        };
-    }, []);
+
+    const handleTabClick = (ref: React.RefObject<HTMLDivElement>) => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const path = usePathname()
 
     //web3 forms 
     const courseName = "Full Stack Development"; // This matches your file name full-stack-development
@@ -352,108 +277,112 @@ const FullStackDevelopment = () => {
             </section>
 
             <div className="lg:w-11/12 mx-auto">
-                <div className='flex items-center h-16 bg-white shadow-md top-28 z-10 rounded-lg my-2.5'>
-                    <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
-                        <style jsx>{`
-                            .tabs-container::-webkit-scrollbar {
-                                height: 2px;
-                            }
-                            .tabs-container::-webkit-scrollbar-thumb {
-                                background-color: #cbd5e1;
-                                border-radius: 2px;
-                            }
-                            .tabs-container {
-                                scrollbar-width: thin;
-                                scrollbar-color: #cbd5e1 transparent;
-                            }
-                        `}</style>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showDescription ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleDescriptionClick}>Description</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCourses ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleModulesClick}>Modules</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showBenefits ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleBenefitsClick}>Benefits</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCertification ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleCertificationClick}>Certification</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showRequirements ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleRequirementsClick}>Requirements</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showTestimonials ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleTestimonialsClick}>Testimonials</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showFAQs ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleFAQsClick}>FAQs</button>
-                    </ul>
+                <div ref={sentinelRef} style={{ height: '1px' }} />
+                <div style={{ height: '4rem' }}> {/* Placeholder */}
+                    <div ref={tabContainerRef} className={`flex items-center h-16 bg-white shadow-md z-10 rounded-lg my-2.5 ${isFixed ? 'fixed top-0 w-full' : ''}`}>
+                        <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
+                            <style jsx>{`
+                                .tabs-container::-webkit-scrollbar {
+                                    height: 2px;
+                                }
+                                .tabs-container::-webkit-scrollbar-thumb {
+                                    background-color: #cbd5e1;
+                                    border-radius: 2px;
+                                }
+                                .tabs-container {
+                                    scrollbar-width: thin;
+                                    scrollbar-color: #cbd5e1 transparent;
+                                }
+                            `}</style>
+                            <button ref={tabRefs.description} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'description' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(descriptionRef)}>Description</button>
+                            <button ref={tabRefs.modules} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'modules' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(coursesRef)}>Modules</button>
+                            <button ref={tabRefs.benefits} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'benefits' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(benefitsRef)}>Benefits</button>
+                            <button ref={tabRefs.certification} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'certification' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(certificationRef)}>Certification</button>
+                            <button ref={tabRefs.requirements} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'requirements' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(requirementsRef)}>Requirements</button>
+                            <button ref={tabRefs.projects} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'projects' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(projectsRef)}>Projects</button>
+                            <button ref={tabRefs.testimonials} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'testimonials' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(testimonialsRef)}>Testimonials</button>
+                            <button ref={tabRefs.faqs} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'faqs' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(faqsRef)}>FAQs</button>
+                        </ul>
+                    </div>
                 </div>
 
                 <section className='w-full min-h-[40rem] relative mt-[-1px]'>
                     <div className='bg-white shadow-xl overflow-hidden rounded-lg'>
-                    <div className="bg-white flex items-center justify-center lg:p-4">
-                        <div ref={descriptionRef} className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
-                            <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
-                                <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
-                                <p className="text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">
-                                    {content.courseDescription}
-                                </p>
-                            </div>
-                            <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-                                <div className="w-full lg:h-72 rounded-lg flex items-center justify-center">
-                                    <Image
-                                        width={500}
-                                        height={500}
-                                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png'
-                                        alt="course image"
-                                        className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
+                        <div id="description" ref={descriptionRef} className="bg-white flex items-center justify-center lg:p-4">
+                            <div className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
+                                <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
+                                    <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
+                                    <p className="text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">
+                                        {content.courseDescription}
+                                    </p>
+                                </div>
+                                <div className="w-full md:w-1/2 flex items-center justify-center p-4">
+                                    <div className="w-full lg:h-72 rounded-lg flex items-center justify-center">
+                                        <Image
+                                            width={500}
+                                            height={500}
+                                            src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png'
+                                            alt="course image"
+                                            className="lg:w-8/12 w-full h-full rounded-lg object-cover" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div ref={coursesRef} className="w-ful min-h-[20rem]">
-                        <ThreeCourses />
-                    </div>
+                        <div id="modules" ref={coursesRef} className="w-ful min-h-[20rem]">
+                            <ThreeCourses />
+                        </div>
 
-                    <div ref={benefitsRef} className="w-ful min-h-[20rem]">
-                        <Keybenifits />
-                    </div>
+                        <div id="benefits" ref={benefitsRef} className="w-ful min-h-[20rem]">
+                            <Keybenifits />
+                        </div>
 
-                    <div ref={certificationRef} className="w-ful place-content-center">
-                        <Samplecertificate />
-                    </div>
+                        <div id="certification" ref={certificationRef} className="w-ful place-content-center">
+                            <Samplecertificate />
+                        </div>
 
-                    <div ref={requirementsRef} className="w-ful pt-10 place-content-center">
-                        <StartCourse />
-                    </div>
+                        <div id="requirements" ref={requirementsRef} className="w-ful pt-10 place-content-center">
+                            <StartCourse />
+                        </div>
 
-                    <div className="w-full flex flex-col items-center justify-center p-4">
-                        <div className="flex flex-col md:flex-row justify-between items-center w-full  p-4 md:p-5 gap-6 rounded-lg  bg-transparent ">
-                            <div className="w-full md:w-1/2 p-4 md:p-8 lg:p-12 ">
-                                <h1 className="text-3xl md:text-5xl font-bold">{content.joinMessage}</h1>
-                            </div>
+                        <div className="w-full flex flex-col items-center justify-center p-4">
+                            <div className="flex flex-col md:flex-row justify-between items-center w-full  p-4 md:p-5 gap-6 rounded-lg  bg-transparent ">
+                                <div className="w-full md:w-1/2 p-4 md:p-8 lg:p-12 ">
+                                    <h1 className="text-3xl md:text-5xl font-bold">{content.joinMessage}</h1>
+                                </div>
 
-                            <div className="w-full md:w-1/2 flex items-center justify-center">
-                                <Button
-                                    variant="outline"
-                                    className="w-full md:w-60 h-12 cursor-pointer bg-blue-500 text-white hover:bg-blue-600 shadow-[4px_4px_2px_1px_#3DE4EB] transition-all"
-                                    onClick={() => {
-                                        if (formjoinRef.current) {
-                                            formjoinRef.current.scrollIntoView({ behavior: 'smooth' });
-                                            if (nameInputRef.current) {
-                                                nameInputRef.current.focus();
+                                <div className="w-full md:w-1/2 flex items-center justify-center">
+                                    <Button
+                                        variant="outline"
+                                        className="w-full md:w-60 h-12 cursor-pointer bg-blue-500 text-white hover:bg-blue-600 shadow-[4px_4px_2px_1px_#3DE4EB] transition-all"
+                                        onClick={() => {
+                                            if (formjoinRef.current) {
+                                                formjoinRef.current.scrollIntoView({ behavior: 'smooth' });
+                                                if (nameInputRef.current) {
+                                                    nameInputRef.current.focus();
+                                                }
                                             }
-                                        }
-                                    }}
-                                >
-                                    Enroll Now
-                                </Button>
+                                        }}
+                                    >
+                                        Enroll Now
+                                    </Button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div ref={requirementsRef} className="w-ful pt-10 place-content-center">
-                        <OurProject />
-                    </div>
+                        <div id="projects" ref={projectsRef} className="w-ful pt-10 place-content-center">
+                            <OurProject />
+                        </div>
 
-                    <div ref={testimonialsRef} className="w-ful pt-10 place-content-center">
-                        <Testimonials />
-                    </div>
+                        <div id="testimonials" ref={testimonialsRef} className="w-ful pt-10 place-content-center">
+                            <Testimonials />
+                        </div>
 
-                    <div ref={faqsRef} className="w-ful pt-10 place-content-center">
-                        <Fqas />
+                        <div id="faqs" ref={faqsRef} className="w-ful pt-10 place-content-center">
+                            <Fqas />
+                        </div>
                     </div>
-                </div>
                 </section>
             </div>
         </section>

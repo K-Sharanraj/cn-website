@@ -33,7 +33,7 @@ const Page = () => {
   };
   return (
 
-    <div className=' '>
+    <div className='pt-2.5 lg:pt-4'>
 
       <Nav />
       <Home />

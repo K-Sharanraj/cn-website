@@ -40,13 +40,15 @@ const Blogs: React.FC = () => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
+            let timeoutId: NodeJS.Timeout;
+            
             try {
                 setLoading(true);
                 setError(null);
                 
                 // Add timeout to prevent hanging requests
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => {
+                timeoutId = setTimeout(() => {
                     controller.abort();
                 }, 8000); // 8 second timeout
                 
@@ -75,10 +77,16 @@ const Blogs: React.FC = () => {
                     setBlogs(fallbackBlogs);
                 }
             } catch (error) {
+                // Clear the timeout to prevent memory leaks
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+                
                 // Handle different types of errors
                 if (error instanceof Error) {
                     if (error.name === 'AbortError') {
-                        console.warn("Blog fetch request timed out, using fallback data");
+                        // Silently handle timeout - this is expected behavior
+                        // console.debug("Blog fetch request timed out, using fallback data");
                     } else {
                         console.warn("Error fetching blogs from external API:", error.message);
                     }
