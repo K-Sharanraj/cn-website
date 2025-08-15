@@ -1,7 +1,11 @@
 'use client';
-import { LightbulbIcon, CheckCircle } from 'lucide-react'
+import { LightbulbIcon, CheckCircle, Users, BookOpen, Award, Target, TrendingUp, Briefcase } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import Marquee from 'react-fast-marquee'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { NumberTicker } from '@/components/magicui/number-ticker'
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 
 
 interface MilestoneCardProps {
@@ -28,6 +32,212 @@ function MilestoneCard({ type, number, label, className }: MilestoneCardProps) {
                 <p className="text-gray-600 text-lg">{label}</p>
             </CardContent>
         </Card>
+    )
+}
+
+// Modern Mobile Milestones Component
+function MobileMilestonesSection() {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+    const milestoneData = [
+        { 
+            icon: BookOpen, 
+            number: 10, 
+            suffix: "+", 
+            label: "Colleges Supported",
+            color: "from-[#61bdfa] to-[#2563eb]",
+            bgColor: "bg-sky-50",
+            delay: 0
+        },
+        { 
+            icon: Users, 
+            number: 5000, 
+            suffix: "+", 
+            label: "Students Trained",
+            color: "from-[#61bdfa] to-[#2563eb]",
+            bgColor: "bg-blue-50",
+            delay: 0.1
+        },
+        { 
+            icon: Award, 
+            number: 20, 
+            suffix: "+", 
+            label: "MOUs Signed",
+            color: "from-[#61bdfa] to-[#2563eb]",
+            bgColor: "bg-sky-50",
+            delay: 0.2
+        },
+        { 
+            icon: Target, 
+            number: 1000, 
+            suffix: "+", 
+            label: "MAANG Alumni",
+            color: "from-[#61bdfa] to-[#2563eb]",
+            bgColor: "bg-blue-50",
+            delay: 0.3
+        },
+        { 
+            icon: Briefcase, 
+            number: 1500, 
+            suffix: "+", 
+            label: "Project Interns",
+            color: "from-[#61bdfa] to-[#2563eb]",
+            bgColor: "bg-sky-50",
+            delay: 0.4
+        },
+        { 
+            icon: TrendingUp, 
+            number: 150, 
+            suffix: "+", 
+            label: "Outreach Programs",
+            color: "from-[#61bdfa] to-[#2563eb]",
+            bgColor: "bg-blue-50",
+            delay: 0.5
+        }
+    ]
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    }
+
+    const cardVariants = {
+        hidden: { 
+            opacity: 0, 
+            y: 50,
+            scale: 0.9
+        },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                duration: 0.6
+            }
+        }
+    }
+
+    return (
+        <div className='block lg:hidden w-full px-4 py-8' ref={ref}>
+            {/* Header */}
+            <motion.div 
+                className="text-center mb-8"
+                initial={{ opacity: 0, y: -30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+                <TextGenerateEffect 
+                    words="OUR MILESTONES" 
+                    className="text-3xl font-bold bg-gradient-to-r from-[#61bdfa] to-[#2563eb] bg-clip-text text-transparent mb-2"
+                />
+                <motion.p 
+                    className="text-slate-600 text-sm"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                >
+                    Celebrating our journey of impact and growth
+                </motion.p>
+            </motion.div>
+
+            {/* Milestone Cards Grid */}
+            <motion.div 
+                className="grid grid-cols-2 gap-4 max-w-sm mx-auto"
+                variants={containerVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+            >
+                {milestoneData.map((milestone, index) => (
+                    <motion.div
+                        key={index}
+                        variants={cardVariants}
+                        className="relative group"
+                        whileHover={{ 
+                            scale: 1.05,
+                            transition: { type: "spring", stiffness: 300, damping: 20 }
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <div className={`
+                            relative overflow-hidden rounded-2xl p-4 h-32
+                            bg-white shadow-lg border border-gray-100
+                            group-hover:shadow-xl transition-all duration-300
+                            ${milestone.bgColor}
+                        `}>
+                            {/* Background Gradient Overlay */}
+                            <div className={`
+                                absolute inset-0 bg-gradient-to-br ${milestone.color} 
+                                opacity-0 group-hover:opacity-10 transition-opacity duration-300
+                            `} />
+                            
+                            {/* Icon */}
+                            <div className={`
+                                w-8 h-8 rounded-lg bg-gradient-to-br ${milestone.color} 
+                                flex items-center justify-center mb-2
+                                group-hover:scale-110 transition-transform duration-300
+                            `}>
+                                <milestone.icon className="w-4 h-4 text-white" />
+                            </div>
+
+                            {/* Number with Animation */}
+                            <div className="flex items-baseline mb-1">
+                                <NumberTicker
+                                    value={milestone.number}
+                                    className={`
+                                        text-2xl font-bold bg-gradient-to-r ${milestone.color} 
+                                        bg-clip-text text-transparent
+                                    `}
+                                    delay={milestone.delay}
+                                />
+                                <span className={`
+                                    text-xl font-bold bg-gradient-to-r ${milestone.color} 
+                                    bg-clip-text text-transparent ml-0.5
+                                `}>
+                                    {milestone.suffix}
+                                </span>
+                            </div>
+
+                            {/* Label */}
+                            <p className="text-xs font-medium text-slate-600 leading-tight">
+                                {milestone.label}
+                            </p>
+
+                            {/* Animated Border */}
+                            <div className={`
+                                absolute inset-0 rounded-2xl border-2 border-transparent
+                                bg-gradient-to-br ${milestone.color} bg-clip-border
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)]
+                                [mask-composite:subtract]
+                            `} />
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            {/* Bottom Accent */}
+            <motion.div 
+                className="mt-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 1.2, duration: 0.6 }}
+            >
+                <div className="w-16 h-1 bg-gradient-to-r from-[#61bdfa] to-[#2563eb] rounded-full mx-auto" />
+                <p className="text-xs text-slate-500 mt-2">
+                    5 Years of Excellence
+                </p>
+            </motion.div>
+        </div>
     )
 }
 
@@ -111,101 +321,7 @@ export default function Page() {
             </div>
 
 
-            <div className='block lg:hidden w-full min-h-60'>
-                <div
-                    className="fitCard flex min-h-[24em] mx-auto w-80 flex-col items-center justify-center gap-[0.5rem] rounded-[1.5em] bg-[#2563EB]/20 p-[0.5rem] font-monts"
-                >
-                    <div
-                        className="flex h-[4em] w-full items-center justify-center rounded-[1.5em] bg-[#FFF] p-[0.5rem]"
-                    >
-                        <p className="text-[1.25rem] text-center font-semibold">10+ Colleges Supported</p>
-                    </div>
-                    <div className="flex h-fit w-full items-center justify-center gap-[0.5em]">
-                        <div
-                            className="group relative flex h-[10em] w-[10em] items-center justify-center rounded-[1.5em] bg-[#FFF] px-[0.5rem] pt-[1rem]"
-                        >
-                            <svg
-                                className="absolute left-1/2 top-[calc(50%+8px)] h-[9rem] w-[9rem] -translate-x-1/2 -translate-y-1/2"
-                                viewBox="0 0 160 160"
-                                fill="none"
-                                height="160"
-                                width="160"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M130.912 130.912a71.997 71.997 0 0 0-10.911-110.778A71.999 71.999 0 0 0 9.383 94.046a72.004 72.004 0 0 0 19.705 36.866"
-                                    strokeWidth="16"
-                                    strokeLinecap="round"
-                                    stroke="#abddff"
-                                ></path>
-                                <path
-                                    d="M146.65 52.764A72.004 72.004 0 0 0 69.647 8.748a71.998 71.998 0 0 0-40.559 122.164"
-                                    className="duration-[1s] [stroke-dasharray:100] [stroke-dashoffset:0]"
-                                    pathLength="100"
-                                    strokeWidth="16"
-                                    strokeLinecap="round"
-                                    stroke="#09b9ff"
-                                ></path>
-                            </svg>
-                            <p className="text-[0.75rem] text-center font-semibold">5K+ Students <br /> Trained</p>
-                        </div>
-                        <div
-                            className="flex h-[10em] flex-1 flex-col items-center justify-center gap-[0.5rem]"
-                        >
-                            <div
-                                className="flex w-full flex-1 items-center justify-center rounded-[1.5rem] bg-[#FFF] group relative overflow-hidden"
-                            >
-                                <p
-                                    className="h-fit w-full text-center text-[1rem] font-bold duration-300 "
-                                >
-                                    5 Years of Impact
-                                </p>
-                            </div>
-                            <div
-                                className="flex w-full flex-1 items-center justify-center rounded-[1.5rem] bg-[#FFF] group relative overflow-hidden"
-                            >
-                                <p
-                                    className="text-center text-[1rem] font-bold"
-                                >
-                                    20+ MOUs Signed
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className="flex h-[4.5rem] w-full flex-row items-center justify-center gap-[0.5rem]"
-                    >
-                        <div
-                            className="flex h-full w-[10rem] items-center justify-center rounded-[1.5rem] bg-[#FFF] group relative overflow-hidden"
-                        >
-                            <p
-                                className="text-[1rem] text-center font-bold"
-                            >
-                                1,000+ MAANG Alumni
-                            </p>
-                        </div>
-                        <div
-                            className="flex h-full w-[6.5rem] items-center justify-center rounded-[1.5rem] bg-[#FFF] relative group overflow-hidden"
-                        >
-                            <p
-                                className="text-[0.8rem] text-center font-bold"
-                            >
-                                1500+ Project Intern
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="group relative flex h-[5em] w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#FFF]"
-                    >
-                        <p
-                            className="text-center text-[1rem] font-bold"
-                        >
-                            150+ Outreach Programs
-                        </p>    
-                    </div>
-                </div>
-
-            </div>
+            <MobileMilestonesSection />
 
 
         </section>

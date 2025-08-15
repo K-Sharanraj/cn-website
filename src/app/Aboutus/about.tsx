@@ -91,7 +91,7 @@ function About() {
                 </div>
 
                 {/* Right Section */}
-                <div className="w-full md:w-1/2 pt-10 lg:py-0 space-y-4">
+                <div className="w-full md:w-1/2 pt-10 lg:py-0 space-y-4 pl-[3px]">
                     {/* About Us Header */}
                     <div className="flex items-center gap-2 ">
                         <h3 className="text-blue-500 font-professional font-semibold text-lg">About Us</h3>
@@ -235,12 +235,12 @@ function VideoCard({ videoUrl }: VideoCardProps) {
     }, []);
 
     return (
-        <Card className="h-full shadow-none border-none bg-transparent w-full transition-transform duration-300 hover:scale-105">
+        <Card className="h-full shadow-none border-none bg-transparent w-full">
             <CardContent className="p-0 relative" ref={containerRef}>
                 <div className="relative aspect-video">
                     <video
                         ref={videoRef}
-                        className="w-[30rem] shadow-none relative lg:left-10  mx-auto rounded-xl h-[28rem] lg:h-[35rem] object-cover"
+                        className="w-[29.375rem] shadow-none relative lg:left-10  mx-auto rounded-xl h-[27.375rem] lg:h-[34.375rem] object-cover"
                         loop
                         muted
                         playsInline

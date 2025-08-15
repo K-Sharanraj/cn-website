@@ -36,41 +36,38 @@ const Ratings: React.FC<RatingsProps> = () => {
 
     return (
         <>
-            {/* Desktop View */}
-            <div className="hidden md:grid grid-cols-3 gap-6 px-4 py-8 w-full max-w-4xl mx-auto">
-                {items.map((item, index) => (
-                    <div
-                        key={index}
-                        className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col items-center"
-                    >
-                        <div className="flex items-center gap-2 text-4xl font-bold text-blue-600">
-                            <span>{item.Ratings}</span>
-                            {item.starIcon}
-                        </div>
-                        <p className="mt-2 text-gray-600 text-sm">{item.Reviews}</p>
+        {/* Desktop View */}
+        <div className="hidden md:flex flex-wrap justify-center gap-6 px-4 py-8 w-full max-w-4xl mx-auto">
+            {items.map((item, index) => (
+                <div
+                    key={index}
+                    className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col items-center flex-1 min-w-[250px] max-w-[300px]"
+                >
+                    <div className="flex items-center gap-2 text-4xl font-bold text-blue-600">
+                        <span>{item.Ratings}</span>
+                        {item.starIcon}
                     </div>
-                ))}
-            </div>
-
-            {/* Mobile View */}
-            <div className="md:hidden w-full max-w-md mx-auto px-4 py-10">
-                <h1 className="text-xl font-semibold text-center mb-6 text-blue-800">Our Achievements</h1>
-                <div className="space-y-4">
-                    {items.map((item, index) => (
-                        <div
-                            key={index}
-                            className="bg-white shadow-md rounded-xl p-4 flex justify-between items-center"
-                        >
-                            <div className="flex flex-col items-start">
-                                <span className="text-2xl font-bold text-blue-600 flex items-center gap-1">
-                                    {item.Ratings} {item.starIcon}
-                                </span>
-                                <p className="text-gray-600 text-sm">{item.Reviews}</p>
-                            </div>
-                        </div>
-                    ))}
+                    <p className="mt-2 text-gray-600 text-sm">{item.Reviews}</p>
                 </div>
-            </div>
+            ))}
+        </div>
+
+        {/* Mobile View */}
+        <div className="flex md:hidden justify-center items-center gap-6 px-4 py-8 w-full max-w-4xl mx-auto">
+            {items.map((item, index) => (
+                <div
+                    key={index}
+                    className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-4 flex flex-col items-center text-center"
+                >
+                    <div className="flex items-center gap-2 text-2xl font-bold text-blue-600">
+                        <span>{item.Ratings}</span>
+                        <span className="text-lg">{item.starIcon}</span>
+                    </div>
+                    <p className="mt-2 text-gray-600 text-xs">{item.Reviews}</p>
+                </div>
+            ))}
+        </div>
+
         </>
     );
 };

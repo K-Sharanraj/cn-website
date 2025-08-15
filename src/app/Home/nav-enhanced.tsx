@@ -71,7 +71,7 @@ export default function NavbarEnhanced() {
                                 src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753970365/9cbdf72c-7336-48df-8cab-7f6c3be6a73d.png"
                                 width={500}
                                 height={100}
-                                className="w-[7rem] lg:w-36"
+                                className="w-32 lg:w-40"
                                 alt="Logo"
                                 priority
                             />
@@ -163,8 +163,8 @@ export default function NavbarEnhanced() {
                         <div className={cn(
                             "rounded-2xl shadow-lg border overflow-hidden",
                             theme === 'dark'
-                                ? "bg-black/90 backdrop-blur-lg border-white/10"
-                                : "bg-white/90 backdrop-blur-lg border-white/20"
+                                ? "bg-gray-900 border-gray-700"
+                                : "bg-white border-gray-200"
                         )}>
                             <ul className="py-2">
                                 {navItems.map(({ link, name }, index) => (

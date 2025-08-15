@@ -196,11 +196,12 @@ const FullStackDevelopment = () => {
         <section className=''>
             <section className='mt-[70px]'>
                 <div
-                                        className='flex flex-col lg:flex-row justify-between w-full min-h-[450px]'
+                    className='flex flex-col lg:flex-row justify-between w-full min-h-[450px] relative'
                     style={{ backgroundImage: `url('https://res.cloudinary.com/ddpbtvesl/image/upload/v1754668079/2202758_1_wnw7yu.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
+                    <div className="absolute inset-0 bg-black/60"></div>
                     {/* Left side content */}
-                    <div className='w-full lg:w-1/2 flex items-start justify-center p-5 lg:p-24'>
+                    <div className='w-full lg:w-1/2 flex items-start justify-center p-5 lg:p-24 z-10'>
                         <div className='relative lg:-top-10 w-full'>
                             {/* Navigation */}
                             <div className='flex justify-start h-10 overflow-x-auto lg:overflow-visible'>
@@ -210,7 +211,7 @@ const FullStackDevelopment = () => {
                                             key={link}
                                             href={link}
                                             className={cn(
-                                                'text-sm font-medium transition-all hover:text-black whitespace-nowrap',
+                                                'text-sm font-bold transition-all hover:text-black whitespace-nowrap',
                                                 path === link ? 'text-white' : 'text-white'
                                             )}
                                         >
@@ -222,11 +223,11 @@ const FullStackDevelopment = () => {
 
                             {/* Course info */}
                             <div className='relative lg:top-14 text-white'>
-                                <h1 className='lg:w-[40rem] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold'>{content.title}</h1>
-                                <p className='py-1 lg:w-[50rem] text-base lg:text-lg'>{content.description}</p>
+                                <h1 className='lg:w-[40rem] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>{content.title}</h1>
+                                <p className='py-1 lg:w-[50rem] text-base lg:text-lg font-bold'>{content.description}</p>
                                 {/* Stats */}
                                 <div className='flex flex-col sm:flex-row justify-start items-start sm:items-center py-5 text-white gap-3 sm:gap-5'>
-                                    <span className='flex items-center justify-center gap-1 text-sm sm:text-base'>
+                                    <span className='flex items-center justify-center gap-1 text-sm sm:text-base font-bold'>
                                         <User className="w-4 h-4 sm:w-5 sm:h-5" />
                                         {content.stats.enrolled}
                                     </span>
@@ -238,8 +239,8 @@ const FullStackDevelopment = () => {
                                             <Star className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400 text-yellow-400" />
                                             <StarHalf className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400 text-yellow-400" />
                                         </div>
-                                        <span className="text-xs sm:text-sm pr-2 sm:pr-5">{content.stats.rating}</span>
-                                        <span className='flex items-center gap-1 justify-center text-sm sm:text-base'>
+                                        <span className="text-xs sm:text-sm pr-2 sm:pr-5 font-bold">{content.stats.rating}</span>
+                                        <span className='flex items-center gap-1 justify-center text-sm sm:text-base font-bold'>
                                             <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5" />
                                             {content.level}
                                         </span>

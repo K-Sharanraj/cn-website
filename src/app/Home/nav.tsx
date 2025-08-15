@@ -22,8 +22,18 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const path = usePathname();
     const isHomePage = path === '/';
+    
+    // Define course pages where navbar should be fixed
+    const coursePages = [
+        '/tech-trio',
+        '/meta-zen',
+        '/full-stack-development',
+        '/ui-ux-design',
+        '/data-analytics'
+    ];
+    const isCoursePage = coursePages.includes(path);
 
-    // Use the new smooth scroll animation hook
+    // Use the new smooth scroll animation hook - disable for course pages
     const {
         scrollProgress,
         opacity,
@@ -45,7 +55,8 @@ export default function Navbar() {
         hideThreshold: 150,
         hideDirection: 'down',
         animationStartThreshold: isHomePage ? 1800 : 0, // Start animations after first scroll section (around 1800px)
-        disableHiding: true // Don't hide the navbar, keep it visible
+        disableHiding: true, // Don't hide the navbar, keep it visible
+        disabled: isCoursePage // Disable all scroll animations for course pages
     });
 
     // Dynamic styles based on scroll animation
@@ -94,7 +105,7 @@ export default function Navbar() {
                                 src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1753970365/9cbdf72c-7336-48df-8cab-7f6c3be6a73d.png"
                                 width={500}
                                 height={100}
-                                className="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 h-auto"
+                                className="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44 h-auto"
                                 alt="Logo"
                                 priority
                             />
@@ -189,7 +200,7 @@ export default function Navbar() {
                         transition={{ duration: 0.2 }}
                         className="lg:hidden fixed top-20 left-2 right-2 sm:left-3 sm:right-3 z-[60]"
                     >
-                        <div className="bg-white/95 backdrop-blur-lg rounded-xl sm:rounded-2xl shadow-lg border border-white/20 overflow-hidden">
+                        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
                             <ul className="py-1 sm:py-2">
                                 {navItems.map(({ link, name }, index) => (
                                     <motion.li
