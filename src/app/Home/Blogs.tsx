@@ -18,7 +18,7 @@ const Blogs: React.FC = () => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
-            let timeoutId: NodeJS.Timeout;
+            let timeoutId: NodeJS.Timeout | null = null;
 
             try {
                 setLoading(true);
@@ -37,7 +37,7 @@ const Blogs: React.FC = () => {
                     }
                 );
 
-                clearTimeout(timeoutId);
+                if (timeoutId) clearTimeout(timeoutId);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -50,11 +50,11 @@ const Blogs: React.FC = () => {
                 } else {
                     setBlogs([]); // No blogs found
                 }
-            } catch (error) {
+            } catch (err) {
                 if (timeoutId) clearTimeout(timeoutId);
 
-                if (error instanceof Error && error.name !== 'AbortError') {
-                    console.warn("Error fetching blogs:", error.message);
+                if (err instanceof Error && err.name !== 'AbortError') {
+                    console.warn("Error fetching blogs:", err.message);
                     setError("Failed to load blogs");
                 }
                 setBlogs([]); // Ensure empty state
@@ -69,7 +69,12 @@ const Blogs: React.FC = () => {
     return (
         <div className="py-5 px-4 md:px-10 mx-auto xl:container">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-xl lg:text-4xl font-bold text-gray-900 my-4 tracking-wider" style={{ fontFamily: 'Loubag' }}>Explore the Blog</h1>
+                <h1 
+                    className="text-xl lg:text-4xl font-bold text-gray-900 my-4 tracking-wider" 
+                    style={{ fontFamily: 'Loubag' }}
+                >
+                    Explore the Blog
+                </h1>
                 <p className="lg:text-lg text-sm text-gray-600 max-w-2xl mx-auto my-6 tracking-wide">
                     Discover the latest handpicked blog entries to get started
                 </p>
@@ -87,12 +92,17 @@ const Blogs: React.FC = () => {
                         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
                         <p className="ml-4 text-gray-600">Loading blogs...</p>
                     </div>
+                ) : error ? (
+                    <p className="text-center text-red-500 text-lg mt-10">{error}</p>
                 ) : blogs.length === 0 ? (
                     <p className="text-center text-gray-500 text-lg mt-10">No posts found.</p>
                 ) : (
                     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mt-10">
                         {blogs.map((blog, index) => (
-                            <div key={index} className="rounded-lg overflow-hidden bg-white hover:shadow-md shadow-lg transition-transform hover:scale-105 duration-300 p-6">
+                            <div 
+                                key={index} 
+                                className="rounded-lg overflow-hidden bg-white hover:shadow-md shadow-lg transition-transform hover:scale-105 duration-300 p-6"
+                            >
                                 <div className="mb-6">
                                     <div className="w-full h-[15rem] aspect-h-9 relative">
                                         <Image
@@ -105,7 +115,10 @@ const Blogs: React.FC = () => {
                                 </div>
                                 <h3 className="font-bold text-2xl text-gray-900 mb-3">{blog.title}</h3>
                                 <p className="text-gray-600">{blog.description}</p>
-                                <Link href={blog.url} className="text-blue-500 flex items-center gap-2 hover:gap-3 transition-all mt-4 font-semibold">
+                                <Link 
+                                    href={blog.url} 
+                                    className="text-blue-500 flex items-center gap-2 hover:gap-3 transition-all mt-4 font-semibold"
+                                >
                                     Read Post <ChevronRight size={16} />
                                 </Link>
                             </div>
