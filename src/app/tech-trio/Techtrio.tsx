@@ -3,7 +3,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Fqas from './FQAs';
-import gsap from 'gsap';
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -13,6 +12,8 @@ import { Package } from 'lucide-react';
 import Image from 'next/image';
 import { Code2, Network } from 'lucide-react';
 import { MonitorPlay, LineChart } from 'lucide-react';
+import { useStickyTabs } from '@/hooks/useStickyTabs';
+
 
 const content = {
     courseTitle: 'Tech trio - core coding',
@@ -33,14 +34,6 @@ skills Master Class.`,
 };
 
 const Techtrio = () => {
-    const [showCourses, setShowCourses] = useState(false);
-    const [showDescription, setShowDescription] = useState(true);
-    const [showBenefits, setShowBenefits] = useState(false);
-    const [showCertification, setShowCertification] = useState(false);
-    const [showRequirements, setShowRequirements] = useState(false);
-    const [showTestimonials, setShowTestimonials] = useState(false);
-    const [showFAQs, setShowFAQs] = useState(false);
-
     const descriptionRef = useRef<HTMLDivElement>(null);
     const coursesRef = useRef<HTMLDivElement>(null);
     const benefitsRef = useRef<HTMLDivElement>(null);
@@ -48,107 +41,36 @@ const Techtrio = () => {
     const requirementsRef = useRef<HTMLDivElement>(null);
     const testimonialsRef = useRef<HTMLDivElement>(null);
     const faqsRef = useRef<HTMLDivElement>(null);
+    const projectsRef = useRef<HTMLDivElement>(null);
+    const sentinelRef = useRef<HTMLDivElement>(null);
 
-    const handleModulesClick = () => {
-        setShowCourses(true);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        coursesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const tabRefs = {
+        description: useRef<HTMLButtonElement>(null),
+        modules: useRef<HTMLButtonElement>(null),
+        benefits: useRef<HTMLButtonElement>(null),
+        certification: useRef<HTMLButtonElement>(null),
+        requirements: useRef<HTMLButtonElement>(null),
+        testimonials: useRef<HTMLButtonElement>(null),
+        faqs: useRef<HTMLButtonElement>(null),
+        projects: useRef<HTMLButtonElement>(null),
     };
 
-    const handleDescriptionClick = () => {
-        setShowDescription(true);
-        setShowCourses(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        descriptionRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleBenefitsClick = () => {
-        setShowBenefits(true);
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        benefitsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleCertificationClick = () => {
-        setShowCertification(true);
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        certificationRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleRequirementsClick = () => {
-        setShowRequirements(true);
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowTestimonials(false);
-        setShowFAQs(false);
-        requirementsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleTestimonialsClick = () => {
-        setShowTestimonials(true); // Show testimonials
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowFAQs(false);
-        testimonialsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const handleFAQsClick = () => {
-        setShowFAQs(true); // Show FAQs
-        setShowCourses(false);
-        setShowDescription(false);
-        setShowBenefits(false);
-        setShowCertification(false);
-        setShowRequirements(false);
-        setShowTestimonials(false);
-        faqsRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const triggerRef = useRef<HTMLDivElement>(null);
+    const sectionRefs = [descriptionRef, coursesRef, benefitsRef, certificationRef, requirementsRef, testimonialsRef, faqsRef, projectsRef];
+    const { activeTab, isFixed, tabContainerRef } = useStickyTabs({ sectionRefs, sentinelRef });
 
     useEffect(() => {
-        const pin = gsap.to(sectionRef.current, {
-            translateX: "-600vw", // Adjusted for 7 sections (100vw * 6)
-            ease: "none",
-            scrollTrigger: {
-                trigger: triggerRef.current,
-                start: "top top",
-                end: "+=3500",
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-            }
-        });
+        if (activeTab && tabRefs[activeTab]?.current) {
+            tabRefs[activeTab].current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }, [activeTab, tabRefs]);
 
-        return () => {
-            pin.scrollTrigger?.kill();
-            pin.kill();
-        };
-    }, []);
+    const handleTabClick = (ref: React.RefObject<HTMLDivElement>) => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const path = usePathname()
 
@@ -521,36 +443,40 @@ const Techtrio = () => {
 
             {/* Number box */}
             <div className="lg:w-11/12 mx-auto">
-                <div className='flex items-center h-16 bg-white shadow-md top-28 z-10 rounded-lg my-2.5'>
-                    <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
-                        <style jsx>{`
-                            .tabs-container::-webkit-scrollbar {
-                                height: 2px;
-                            }
-                            .tabs-container::-webkit-scrollbar-thumb {
-                                background-color: #cbd5e1;
-                                border-radius: 2px;
-                            }
-                            .tabs-container {
-                                scrollbar-width: thin;
-                                scrollbar-color: #cbd5e1 transparent;
-                            }
-                        `}</style>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showDescription ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleDescriptionClick}>Description</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCourses ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleModulesClick}>Modules</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showBenefits ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleBenefitsClick}>Benefits</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showCertification ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleCertificationClick}>Certification</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showRequirements ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleRequirementsClick}>Requirements</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showTestimonials ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleTestimonialsClick}>Testimonials</button>
-                        <button className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${showFAQs ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={handleFAQsClick}>FAQs</button>
-                    </ul>
+                <div ref={sentinelRef} style={{ height: '1px' }} />
+                <div style={{ height: '4rem' }}> {/* Placeholder */}
+                    <div ref={tabContainerRef} className={`flex items-center h-16 bg-white shadow-md z-10 rounded-lg my-2.5 ${isFixed ? 'fixed top-0 w-full' : ''}`}>
+                        <ul className='tabs-container flex w-full justify-start px-4 overflow-x-auto scroll-smooth space-x-8 font-semibold'>
+                            <style jsx>{`
+                                .tabs-container::-webkit-scrollbar {
+                                    height: 2px;
+                                }
+                                .tabs-container::-webkit-scrollbar-thumb {
+                                    background-color: #cbd5e1;
+                                    border-radius: 2px;
+                                }
+                                .tabs-container {
+                                    scrollbar-width: thin;
+                                    scrollbar-color: #cbd5e1 transparent;
+                                }
+                            `}</style>
+                            <button ref={tabRefs.description} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'description' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(descriptionRef)}>Description</button>
+                            <button ref={tabRefs.modules} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'modules' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(coursesRef)}>Modules</button>
+                            <button ref={tabRefs.benefits} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'benefits' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(benefitsRef)}>Benefits</button>
+                            <button ref={tabRefs.certification} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'certification' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(certificationRef)}>Certification</button>
+                            <button ref={tabRefs.requirements} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'requirements' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(requirementsRef)}>Requirements</button>
+                            <button ref={tabRefs.projects} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'projects' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(projectsRef)}>Projects</button>
+                            <button ref={tabRefs.testimonials} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'testimonials' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(testimonialsRef)}>Testimonials</button>
+                            <button ref={tabRefs.faqs} className={`py-2 px-4 text-center text-sm rounded-md transition-all duration-300 whitespace-nowrap ${activeTab === 'faqs' ? 'text-blue-600 bg-blue-100 font-bold' : 'text-gray-600 hover:bg-gray-100'}`} onClick={() => handleTabClick(faqsRef)}>FAQs</button>
+                        </ul>
+                    </div>
                 </div>
                 <section className='w-full min-h-[40rem] relative mt-[10px]'>
 
                     <div className='bg-white shadow-xl mx-start overflow-hidden rounded-b-lg'>
 
-                    <div className="bg-white flex items-center justify-center lg:p-4">
-                        <div ref={descriptionRef} className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
+                    <div id="description" ref={descriptionRef} className="bg-white flex items-center justify-center lg:p-4">
+                        <div className="w-full flex flex-col md:flex-row justify-around lg:gap-6 p-4">
                             <div className="w-full md:w-1/2 place-content-center p-4 md:p-8">
                                 <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">Course Description</h1>
                                 <p className="text-sm md:text-base pt-3 md:pt-5 text-gray-600 text-justify">
@@ -570,12 +496,12 @@ const Techtrio = () => {
                         </div>
                     </div>
 
-                    <div ref={coursesRef} className="w-ful min-h-[20rem]">
+                    <div id="modules" ref={coursesRef} className="w-ful min-h-[20rem]">
                         {/* <ThreeCourses /> */}
                         <div className="min-h-[30rem]  items-center justify-center p-8">
                             <div className='py-4 w-11/12 mx-auto space-y-2'>
                                 <h1 className="text-xl font-semibold">What you Learn</h1>
-                                <p className='text-md text-gray-600'>Whether your&apos;re a beginner or have prior experience, our course will equip you with the knowledge and skills needed to excel in the world of STACK development.</p>
+                                <p className='text-md text-gray-600'>Whether your're a beginner or have prior experience, our course will equip you with the knowledge and skills needed to excel in the world of STACK development.</p>
                             </div>
                             <div className="mx-auto rounded-xl text-justify overflow-hidden">
                                 {languages.map((language, index) => (
@@ -590,7 +516,7 @@ const Techtrio = () => {
                         </div>
                     </div>
 
-                    <div ref={benefitsRef} className="w-ful min-h-[20rem]">
+                    <div id="benefits" ref={benefitsRef} className="w-ful min-h-[20rem]">
                         {/* <Keybenifits /> */}
                         <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
                             <div className="max-w-7xl mx-auto">
@@ -608,7 +534,7 @@ const Techtrio = () => {
                         </div>
                     </div>
 
-                    <div ref={certificationRef} className="w-ful place-content-center">
+                    <div id="certification" ref={certificationRef} className="w-ful place-content-center">
                         {/* <Samplecertificate /> */}
                         <div className=" w-11/12 mx-auto p-8 lg:py-10 ">
                             <h1 className="text-3xl font-bold mb-8">Certificate on Completion</h1>
@@ -645,7 +571,7 @@ const Techtrio = () => {
 
                     </div>
 
-                    <div ref={requirementsRef} className="w-ful pt-10 place-content-center">
+                    <div id="requirements" ref={requirementsRef} className="w-ful pt-10 place-content-center">
                         {/* <StartCourse /> */}
 
                         <div className=" bg-white px-4 my-10 sm:p-6 md:p-8 lg:p-16">
@@ -747,7 +673,7 @@ const Techtrio = () => {
                     </div>
 
 
-                    <div ref={requirementsRef} className="w-ful pt-10 place-content-center">
+                    <div id="projects" ref={projectsRef} className="w-ful pt-10 place-content-center">
                         {/* <OurProject /> */}
                         <div className="min-h-screen bg-white">
                             {/* Header Section */}
@@ -792,7 +718,7 @@ const Techtrio = () => {
                         </div>
                     </div>
 
-                    <div ref={testimonialsRef} className="w-ful pt-10 place-content-center">
+                    <div id="testimonials" ref={testimonialsRef} className="w-ful pt-10 place-content-center">
                         {/* <Testimonials /> */}
                         <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
                             <div className="max-w-7xl mx-auto">
@@ -831,7 +757,7 @@ const Techtrio = () => {
                         </div>
                     </div>
 
-                    <div ref={faqsRef} className="w-ful pt-10 place-content-center">
+                    <div id="faqs" ref={faqsRef} className="w-ful pt-10 place-content-center">
                         <Fqas />
                     </div>
                 </div>

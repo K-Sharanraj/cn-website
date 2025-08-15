@@ -23,7 +23,7 @@ export default function Navbar() {
     const path = usePathname();
     const isHomePage = path === '/';
     
-    // Define course pages where navbar should be fixed
+    // Define course pages where navbar should be fixed at top with no animations
     const coursePages = [
         '/tech-trio',
         '/meta-zen',
@@ -61,7 +61,19 @@ export default function Navbar() {
 
     // Dynamic styles based on scroll animation
     const backgroundOpacity = 0.2 + (scrollProgress * 0.3); // Increase background opacity on scroll
-    const navbarStyle = {
+    
+    // Course pages: Fixed styles without animations
+    const coursePageStyle = {
+        height: '80px',
+        opacity: 1,
+        transform: 'scale(1) translateY(0px)',
+        backdropFilter: 'blur(10px)',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    };
+    
+    // Regular pages: Dynamic styles with animations
+    const regularPageStyle = {
         height: `${height}px`,
         opacity: opacity,
         transform: `scale(${scale}) translateY(${translateY}px)`,
@@ -69,9 +81,11 @@ export default function Navbar() {
         backgroundColor: `rgba(255, 255, 255, ${backgroundOpacity})`,
         transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
     };
+    
+    const navbarStyle = isCoursePage ? coursePageStyle : regularPageStyle;
 
     // Calculate logo size based on scroll progress
-    const logoScale = 1 - (scrollProgress * 0.15); // Shrink logo by up to 15%
+    const logoScale = isCoursePage ? 1 : 1 - (scrollProgress * 0.15); // Fixed size for course pages, dynamic for others
     const logoSize = {
         transform: `scale(${logoScale})`,
         transition: 'transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -81,13 +95,21 @@ export default function Navbar() {
         <motion.header
             style={navbarStyle}
             className={cn(
-                'fixed z-50 flex items-center justify-center',
+                // Course pages: Absolute positioning (doesn't follow scroll), Other pages: Fixed positioning (follows scroll)
+                isCoursePage ? 'absolute' : 'fixed',
+                'z-50 flex items-center justify-center',
                 'w-full',
-                // Mobile: top-2 with smaller margins, Desktop: top-5
-                'top-2 left-0 right-0 sm:top-3 sm:left-3 sm:right-3 lg:top-5 lg:left-0 lg:right-0 lg:mx-auto',
+                // Course pages: Static at top, Other pages: Dynamic positioning
+                isCoursePage 
+                    ? 'top-0 left-0 right-0' 
+                    : 'top-2 left-0 right-0 sm:top-3 sm:left-3 sm:right-3 lg:top-5 lg:left-0 lg:right-0 lg:mx-auto',
                 // Responsive max-width and border radius
-                'rounded-2xl sm:rounded-3xl lg:rounded-full',
-                scrollProgress > 0.5 ? 'lg:max-w-5xl' : 'lg:max-w-7xl',
+                isCoursePage 
+                    ? 'rounded-none' 
+                    : 'rounded-2xl sm:rounded-3xl lg:rounded-full',
+                isCoursePage 
+                    ? 'max-w-full' 
+                    : (scrollProgress > 0.5 ? 'lg:max-w-5xl' : 'lg:max-w-7xl'),
                 'border border-white/20',
                 'shadow-lg shadow-black/10'
             )}
