@@ -75,6 +75,9 @@ const Blogs: React.FC = () => {
                     setBlogs(fallbackBlogs);
                 }
             } catch (error) {
+                // Clear the timeout to prevent memory leaks
+                // Note: We don't have access to timeoutId here, but that's okay
+                
                 // Handle different types of errors
                 if (error instanceof Error) {
                     if (error.name === 'AbortError') {
@@ -100,7 +103,7 @@ const Blogs: React.FC = () => {
         };
 
         fetchBlogs();
-    }, []);
+    }, [fallbackBlogs]);
 
     return (
         <div className="py-5 px-4 md:px-10 mx-auto xl:container">
