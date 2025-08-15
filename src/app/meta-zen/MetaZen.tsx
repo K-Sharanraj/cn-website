@@ -555,7 +555,7 @@ const MetaZen = () => {
                                     <Image
                                         width={500}
                                         height={500}
-                                        src="https://res.cloudinary.com/dn60aovto/image/upload/v1742386629/TechTrioC_soqlgo.png"
+                                        src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1754970245/MetaZEN_extnqx.png"
                                         alt="Certificate"
                                         className="object-contain w-full h-full"
                                     />
@@ -853,7 +853,7 @@ function BenefitCard({ title, description }: { title: string; description: strin
     return (
         <div className="flex flex-col items-start gap-4">
             <div className="bg-[#00A3FF] p-3 rounded-lg">
-                <Package className="w-6 h-6 text-white" />
+                
             </div>
             <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
             <p className="text-gray-600">{description}</p>

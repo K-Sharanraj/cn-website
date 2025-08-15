@@ -89,7 +89,7 @@ const Founders = () => {
                       <Image
                         width={300}
                         height={354}
-                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/f_auto/v1753504465/IMG_1931_tvasqn.jpg'
+                        src='https://res.cloudinary.com/ddpbtvesl/image/upload/v1755271847/igm_areiqx.jpg'
                         alt="Profile"
                         className="h-full w-full object-cover"
                       />
@@ -272,12 +272,12 @@ const Founders = () => {
 
           <div className="w-full md:w-1/2 lg:w-full lg:h-[30rem] space-y-6 flex items-center justify-center ">
             <div className='relative w-full  bg-white  lg:w-[29rem] lg:min-h-96'>
-              <div className='w-80 h-80 bg-blue-200 hidden lg:block rounded-[2rem] absolute -right-5 -bottom-5'>
+              <div className='w-110 h-70 bg-blue-200 hidden lg:block rounded-[2rem] absolute left-12 top-15'>
               </div>
               <Image
                 width={350}
                 height={354}
-                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1755187128/IMG_1964_xwqect_p36nju.jpg" //inga
+                src="https://res.cloudinary.com/ddpbtvesl/image/upload/v1755271847/igm_areiqx.jpg" //inga
                 alt="Profile"
                 className="lg:rounded-[2rem] place-self-start  lg:w-[30rem] w-[35rem] relative z-10 object-cover"
               />
