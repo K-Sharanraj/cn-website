@@ -501,7 +501,7 @@ const Techtrio = () => {
                         <div className="min-h-[30rem]  items-center justify-center p-8">
                             <div className='py-4 w-11/12 mx-auto space-y-2'>
                                 <h1 className="text-xl font-semibold">What you Learn</h1>
-                                <p className='text-md text-gray-600'>Whether you're a beginner or have prior experience, our course will equip you with the knowledge and skills needed to excel in the world of STACK development.</p>
+                                <p className='text-md text-gray-600'>Whether you&apos;re a beginner or have prior experience, our course will equip you with the knowledge and skills needed to excel in the world of STACK development.</p>
                             </div>
                             <div className="mx-auto rounded-xl text-justify overflow-hidden">
                                 {languages.map((language, index) => (

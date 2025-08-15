@@ -40,13 +40,15 @@ const Blogs: React.FC = () => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
+            let timeoutId: NodeJS.Timeout;
+            
             try {
                 setLoading(true);
                 setError(null);
                 
                 // Add timeout to prevent hanging requests
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => {
+                timeoutId = setTimeout(() => {
                     controller.abort();
                 }, 8000); // 8 second timeout
                 
@@ -76,7 +78,9 @@ const Blogs: React.FC = () => {
                 }
             } catch (error) {
                 // Clear the timeout to prevent memory leaks
-                // Note: We don't have access to timeoutId here, but that's okay
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
                 
                 // Handle different types of errors
                 if (error instanceof Error) {
@@ -103,7 +107,7 @@ const Blogs: React.FC = () => {
         };
 
         fetchBlogs();
-    }, [fallbackBlogs]);
+    }, []);
 
     return (
         <div className="py-5 px-4 md:px-10 mx-auto xl:container">
