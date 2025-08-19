@@ -16,7 +16,7 @@ import { useStickyTabs } from '@/hooks/useStickyTabs';
 
 
 const content = {
-    courseTitle: 'Tech trio - core coding',
+    courseTitle: 'Tech Trio - core coding',
     heroDescription: `Master C++, Java, and Python with 15+ projects, earn certificates, gain
 internship experience, and enhance your resume with free Git/GitHub and soft
 skills Master Class.`,
@@ -55,7 +55,7 @@ const Techtrio = () => {
         projects: useRef<HTMLButtonElement>(null),
     };
 
-    const sectionRefs = [descriptionRef, coursesRef, benefitsRef, certificationRef, requirementsRef, testimonialsRef, faqsRef, projectsRef];
+    const sectionRefs = [descriptionRef, coursesRef, benefitsRef, certificationRef, requirementsRef, projectsRef, testimonialsRef, faqsRef];
     const { activeTab, isFixed, tabContainerRef } = useStickyTabs({ sectionRefs, sentinelRef });
 
     useEffect(() => {
