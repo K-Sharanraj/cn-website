@@ -8,7 +8,7 @@ const courseList = [
     {
         id: 1,
         title: "tech-trio",
-        coursename:'TechTrio',
+        coursename:'Tech Trio',
         icon: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760318/dc8b4334-3d0e-4aba-b3b9-d62167505ff3.png",
         Duriation: "60+ Hours",
         Language: "Tamil",
@@ -23,14 +23,14 @@ const courseList = [
     {
         id: 2,
         title: "meta-zen",
-        coursename:'Metazen',
+        coursename:'MetaZen',
         icon: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760409/978dd857-95f0-4d01-bca2-0ace606959c0.png",
         Duriation: "60+ Hours",
         Language: "Tamil",
         Role: "Internship",
         Enrolled: "1k Enrolled",
         Rating: "4.9/5.0",
-        Price: "₹40000/-",
+        Price: "₹45000/-",
         Discount: "₹90000/-",
         button: "Enroll Now",
         category: "offline"
@@ -38,7 +38,7 @@ const courseList = [
     {
         id: 3,
         title: "ui-ux-design",
-        coursename:'UIUXDesign',
+        coursename:'UI/UX Design',
         icon: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760341/98647341-97d9-47a2-8b3f-ed544fa5ba91.png",
         Duriation: "60+ Hours",
         Language: "Tamil",
@@ -53,7 +53,7 @@ const courseList = [
     {
         id: 4,
         title: "full-stack-development",
-        coursename:'FullStackDevelopment',
+        coursename:'Full Stack Development',
         icon: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760362/e8099a88-51ca-4e42-8321-2dd6407a98ac.png",
         Duriation: "60+ Hours",
         Language: "Tamil",
@@ -68,7 +68,7 @@ const courseList = [
     {
         id: 5,
         title: "data-analytics",
-        coursename:'DataAnalytics',
+        coursename:'Data Analytics',
         icon: "https://res.cloudinary.com/ddpbtvesl/image/upload/v1753760383/fea80710-ebb8-4ee2-a6a6-9a10fd096bcb.png",
         Duriation: "60+ Hours",
         Language: "Tamil",

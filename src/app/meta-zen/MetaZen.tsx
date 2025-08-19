@@ -49,7 +49,7 @@ const MetaZen = () => {
         projects: useRef<HTMLButtonElement>(null),
     };
 
-    const sectionRefs = [descriptionRef, coursesRef, benefitsRef, certificationRef, requirementsRef, testimonialsRef, faqsRef, projectsRef];
+    const sectionRefs = [descriptionRef, coursesRef, benefitsRef, certificationRef, requirementsRef, projectsRef, testimonialsRef, faqsRef];
     const { activeTab, isFixed, tabContainerRef } = useStickyTabs({ sectionRefs, sentinelRef });
 
     useEffect(() => {
